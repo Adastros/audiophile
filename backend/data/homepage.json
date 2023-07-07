@@ -1,0 +1,64 @@
+{
+  "hero": {
+    "new": true,
+    "headline": "XX99 MARK II HEADPHONES",
+    "action": "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.",
+    "image": {
+      "desktop": "assets/home/desktop/image-hero_fgzzmu.jpg",
+      "tablet": "assets/home/tablet/image-header_mhzlii.jpg",
+      "mobile": "assets/home/mobile/image-header_ybjcg9.jpg"
+    }
+  },
+  "gallery": {
+    "headphones": {
+      "image": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
+    },
+    "speakers": {
+      "image": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
+    },
+    "earphones": {
+      "image": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
+    }
+  },
+  "productCards": {
+    "primary": {
+      "product": "ZX9 SPEAKER",
+      "action": "Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.",
+      "image": {
+        "desktop": "assets/home/desktop/image-speaker-zx9_ujx9kv.png",
+        "tablet": "assets/home/tablet/image-speaker-zx9_jyzsaz.png",
+        "mobile": "assets/home/mobile/image-speaker-zx9_lohqps.png"
+      },
+      "circlePattern": "assets/home/desktop/pattern-circles_lozyyy.svg"
+    },
+    "secondary": {
+      "product": "ZX7 SPEAKER",
+      "image": {
+        "desktop": "assets/home/desktop/image-speaker-zx7_ara7el.jpg",
+        "tablet": "assets/home/tablet/image-speaker-zx7_k6awp3,jpg",
+        "mobile": "assets/home/mobile/image-speaker-zx7_eubgps.jpg"
+      }
+    },
+    "tertiary": {
+      "product": "YX1 EARPHONES",
+      "image": {
+        "desktop": "assets/home/desktop/image-earphones-yx1_ldpgkd.jpg",
+        "tablet": "assets/home/tablet/image-earphones-yx1_h9r5a3.jpg",
+        "mobile": "assets/home/mobile/image-earphones-yx1_nbms5g.jpg"
+      }
+    }
+  },
+  "closing": {
+    "headline": "BRINGING YOU THE BEST AUDIO GEAR",
+    "action": "Located at the heart of New York City, Audiophile is the premier store for high end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.",
+    "image": {
+      "desktop": "assets/shared/desktop/image-best-gear_yb8zwy.jpg",
+      "tablet": "assets/shared/tablet/image-best-gear_pjdwom.jpg",
+      "mobile": "assets/shared/mobile/image-best-gear_lxwhfh.jpg"
+    }
+  },
+  "footer": {
+    "about": "Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days a week.",
+    "copyright": "Copyright 2021. All Rights Reserved"
+  }
+}
