@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const assetRouter = require("./controllers/assetController");
+const pageRouter = require("./controllers/pageController");
 // const mongoose = require("mongoose");
 const morgan = require("morgan"); // middleware used to monitor http requests to backend
 
@@ -19,6 +20,7 @@ app.use(
 
 // Routes
 app.use("/api/assets", assetRouter);
+app.use("/api/page", pageRouter);
 
 const PORT = process.env.LOCAL_PORT;
 app.listen(PORT, () => {
