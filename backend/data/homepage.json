@@ -11,13 +11,19 @@
   },
   "gallery": {
     "headphones": {
-      "image": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
+      "image": {
+        "shared": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
+      }
     },
     "speakers": {
-      "image": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
+      "image": {
+        "shared": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
+      }
     },
     "earphones": {
-      "image": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
+      "image": {
+        "shared": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
+      }
     }
   },
   "productCards": {
@@ -29,7 +35,7 @@
         "tablet": "assets/home/tablet/image-speaker-zx9_jyzsaz.png",
         "mobile": "assets/home/mobile/image-speaker-zx9_lohqps.png"
       },
-      "circlePattern": "assets/home/desktop/pattern-circles_lozyyy.svg"
+      "imageDecoration": "assets/home/desktop/pattern-circles_lozyyy.svg"
     },
     "secondary": {
       "product": "ZX7 SPEAKER",
