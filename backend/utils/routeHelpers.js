@@ -1,4 +1,6 @@
 const cloudinary = require("cloudinary").v2;
+const fs = require("fs");
+const path = require("path");
 
 // Flattens a multi-level, nested object into a single-level object
 const flattenObj = (obj) => {
@@ -39,9 +41,7 @@ const unflattenObj = (obj) => {
     // Use the split keys to recreate the object's original structure
     keys.reduce((acc, cur, j) => {
       // If the key exists in results, return variable result unchanged
-      if (acc[cur]) {
-        return acc[cur];
-      }
+      if (acc[cur]) return acc[cur];
 
       // If this is not the last key name, assign an empty object as the value.
       // Otherwise, return the value from the flattened object.
@@ -66,4 +66,27 @@ const cloudinaryUrlConverter = (obj) => {
   return newObj;
 };
 
-module.exports = { flattenObj, unflattenObj, cloudinaryUrlConverter };
+const readLocalFile = (fileName) => {
+  return new Promise((resolve, reject) => {
+    fs.readFile(
+      path.join(__dirname, `../data/${fileName}.json`),
+      "utf8",
+      (err, data) => {
+        if (err) reject(err);
+
+        const flatData = flattenObj(JSON.parse(data));
+        const convertedData = cloudinaryUrlConverter(flatData);
+        const pageData = unflattenObj(convertedData);
+
+        resolve(pageData);
+      }
+    );
+  });
+};
+
+module.exports = {
+  flattenObj,
+  unflattenObj,
+  cloudinaryUrlConverter,
+  readLocalFile,
+};
