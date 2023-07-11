@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const assetRouter = require("./controllers/assetController");
 const pageRouter = require("./controllers/pageController");
 // const mongoose = require("mongoose");
@@ -13,6 +14,7 @@ morgan.token("body", (req) => {
 
 // Middleware
 // app.use(express.static("build"));
+app.use(cors());
 app.use(express.json()); // Parses requests with json type
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :body")
