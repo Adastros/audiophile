@@ -56,7 +56,7 @@ const cloudinaryUrlConverter = (obj) => {
   let newObj = {};
 
   Object.keys(obj).forEach((key) => {
-    if (key.includes("image")) {
+    if (key.includes("path")) {
       newObj[key] = cloudinary.url(obj[key], { secure: true });
     } else {
       newObj[key] = obj[key];

@@ -1,8 +1,14 @@
 {
   "header": {
-    "icons": {
-      "hamburger": "assets/shared/tablet/icon-hamburger_p9jk63",
-      "cart": "assets/shared/desktop/icon-cart_sgics3"
+    "icon": {
+      "hamburger": {
+        "path": "assets/shared/tablet/icon-hamburger_p9jk63",
+        "aria": { "hidden": false, "label": "Menu" }
+      },
+      "cart": {
+        "path": "assets/shared/desktop/icon-cart_sgics3",
+        "aria": { "hidden": false, "label": "Cart" }
+      }
     }
   }
 }
