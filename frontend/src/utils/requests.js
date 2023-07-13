@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = process.env.LOCAL_BACKEND_BASE_URL;
+const baseUrl = "http://localhost:3003/api";
 
 const getPageData = async () => {
   const response = await axios.get(`${baseUrl}/page/homepage`);
