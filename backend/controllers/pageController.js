@@ -8,11 +8,7 @@ const helper = require("../utils/routeHelpers");
 pageRouter.get("/:pageName", async (request, response) => {
   const { pageName } = request.params;
 
-  const headerData = await helper.readLocalFile("header");
-  const pageBodyData = await helper.readLocalFile(pageName);
-  const footerData = await helper.readLocalFile("footer");
-
-  const pageData = await Promise.all([headerData, pageBodyData, footerData]);
+  const pageData = await helper.readLocalFile(pageName);
 
   return response.status(200).json(pageData);
 });

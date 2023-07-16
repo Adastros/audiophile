@@ -1,17 +1,44 @@
-import { ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider, theme, ColorModeScript } from '@chakra-ui/react';
 import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
+import HomePage from './components/pages/home/HomePage';
+import { getContent } from './utils/helper';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
+const queryClient = new QueryClient();
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <div>Error! Page failed to load</div>,
+    loader: async () => {
+      return [await getContent('header'), await getContent('footer')];
+    },
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+        loader: () => getContent('homepage'),
+      },
+    ],
+  },
+]);
 
 root.render(
   <StrictMode>
-    <ColorModeScript />
-    <App />
+    {/* <ColorModeScript /> */}
+    <ChakraProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router}></RouterProvider>
+      </QueryClientProvider>
+    </ChakraProvider>
   </StrictMode>
 );
 
