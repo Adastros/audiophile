@@ -8,6 +8,10 @@
       "cart": {
         "path": "assets/shared/desktop/icon-cart_sgics3",
         "aria": { "hidden": false, "label": "Cart" }
+      },
+      "rightArrow": {
+        "path": "assets/shared/desktop/icon-arrow-right_dqhcg5",
+        "aria": { "hidden": true, "label": "" }
       }
     }
   }
