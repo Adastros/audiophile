@@ -4,6 +4,7 @@ import Header from '../../shared/Header';
 import Banner from './Banner';
 import ProductCategories from '../../shared/ProductCategories';
 import ProductCards from './ProductCards';
+import Closing from '../../shared/Closing';
 
 const HomePage = () => {
   const contentData = useLoaderData();
@@ -19,6 +20,9 @@ const HomePage = () => {
       </Box>
       <Box>
         <ProductCards productCardData={contentData.productCards} />
+      </Box>
+      <Box>
+        <Closing />
       </Box>
     </Flex>
   );

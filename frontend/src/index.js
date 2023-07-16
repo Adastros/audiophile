@@ -21,7 +21,7 @@ const router = createBrowserRouter([
     loader: async () => {
       return await Promise.all([
         getContent('header'),
-        getContent('about'),
+        getContent('closing'),
         getContent('footer'),
       ]);
     },
