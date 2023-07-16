@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Image } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import { useLoaderData } from 'react-router-dom';
 import Header from '../../shared/Header';
 import Banner from './Banner';
@@ -12,7 +12,9 @@ const HomePage = () => {
       <Box bgColor="black">
         <Header />
         <Banner heroData={contentData.hero} />
-        <ProductCategories prodCatImgData={contentData.productCategories} />
+      </Box>
+      <Box>
+        <ProductCategories />
       </Box>
     </Flex>
   );
