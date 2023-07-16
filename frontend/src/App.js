@@ -3,12 +3,11 @@ import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Outlet, useLoaderData } from 'react-router-dom';
 
 function App() {
-  const headerAndFooterData = useLoaderData();
-  // console.log(headerData);
+  const headerAboutFooterData = useLoaderData();
 
   return (
     <>
-      <Outlet context={headerAndFooterData} />
+      <Outlet context={headerAboutFooterData} />
     </>
   );
 }

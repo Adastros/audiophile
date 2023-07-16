@@ -19,7 +19,11 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <div>Error! Page failed to load</div>,
     loader: async () => {
-      return [await getContent('header'), await getContent('footer')];
+      return await Promise.all([
+        getContent('header'),
+        getContent('about'),
+        getContent('footer'),
+      ]);
     },
     children: [
       {
