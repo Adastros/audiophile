@@ -10,32 +10,6 @@
       "alt": "XX99 MARK II HEADPHONES"
     }
   },
-  "productCategories": {
-    "headphones": {
-      "image": {
-        "shared": {
-          "path": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
-        },
-        "alt": ""
-      }
-    },
-    "speakers": {
-      "image": {
-        "shared": {
-          "path": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
-        },
-        "alt": ""
-      }
-    },
-    "earphones": {
-      "image": {
-        "shared": {
-          "path": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
-        },
-        "alt": ""
-      }
-    }
-  },
   "productCards": {
     "primary": {
       "product": "ZX9 SPEAKER",
