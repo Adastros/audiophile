@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/home/HomePage';
 import { getContent } from './utils/helper';
+import websiteTheme from './theme';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
 root.render(
   <StrictMode>
     {/* <ColorModeScript /> */}
-    <ChakraProvider theme={theme}>
+    <ChakraProvider theme={websiteTheme}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router}></RouterProvider>
       </QueryClientProvider>
