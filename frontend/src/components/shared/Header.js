@@ -1,15 +1,13 @@
 import { Flex } from '@chakra-ui/react';
 import Navigation from './Navigation';
 import CartIconButton from './CartIconButton';
-import CompanyName from './CompanyName';
+import Logo from './Logo';
 
 const Header = () => {
   return (
-    <Flex align="center">
-      <Flex>
-        <Navigation />
-        <CompanyName />
-      </Flex>
+    <Flex align="center" justify="space-between" p="32px 39.61px">
+      <Navigation />
+      <Logo />
       <CartIconButton />
     </Flex>
   );

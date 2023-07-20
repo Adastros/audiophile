@@ -5,7 +5,7 @@ const MenuIcon = () => {
   const headerData = useOutletContext()[0];
   const hamburgerIconUrl = headerData.header.icon.hamburger.path;
 
-  return <Image src={hamburgerIconUrl} alt="" />;
+  return <Image src={hamburgerIconUrl} alt="" backgroundColor="brand.black" />;
 };
 
 export default MenuIcon;
