@@ -5,7 +5,7 @@ const colors = {
       night: '#101010',
       antiFlashWhite: '#F1F1F1',
       seaSalt: '#FAFAFA',
-      atomicTangerine: '#fbaf85',
+      atomicTangerine: '#FBAF85',
       white: '#FFFFFF',
       black: '#000000',
     },

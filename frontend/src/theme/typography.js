@@ -8,8 +8,8 @@ const typography = {
     heading: `Manrope, ${base.fonts?.heading}`,
     body: `Manrope, ${base.fonts?.body}`,
   },
-  letterSpacing: {
-    brand: {
+  letterSpacings: {
+    design: {
       h1: '2px',
       h2: '1.5px',
       h3: '1.15px',
@@ -21,7 +21,7 @@ const typography = {
     },
   },
   lineHeights: {
-    brand: {
+    design: {
       h1: '58px',
       h2: '44px',
       h3: '36px',
@@ -34,7 +34,7 @@ const typography = {
     },
   },
   fontSizes: {
-    brand: {
+    design: {
       h1: '56px',
       h2: '40px',
       h3: '32px',

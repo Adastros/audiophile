@@ -5,7 +5,7 @@ const Button = defineStyleConfig({
     fontWeight: 'bold',
     letterSpacing: '1px',
     textTransform: 'uppercase',
-    borderRadius: "0"
+    borderRadius: '0',
   },
   sizes: {
     brandSm: {
@@ -23,15 +23,24 @@ const Button = defineStyleConfig({
   },
   variants: {
     seeProductCaramel: {
-      color: '#FFFFFF',
-      backgroundColor: '#D87D4A',
+      color: 'brand.white',
+      backgroundColor: 'brand.caramel',
       border: 'none',
+      _hover: {
+        backgroundColor: 'brand.atomicTangerine',
+      },
     },
     seeProductWhite: {
-      color: '#000000',
+      color: 'brand.black',
+      backgroundColor: 'brand.white',
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: '#000000',
+      borderColor: 'brand.black',
+      _hover: {
+        color: 'brand.white',
+        backgroundColor: 'brand.black',
+        border: 'none',
+      },
     },
     shop: {
       opacity: '0.5',

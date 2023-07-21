@@ -5,7 +5,16 @@ import Logo from './Logo';
 
 const Header = () => {
   return (
-    <Flex align="center" justify="space-between" p="32px 39.61px">
+    <Flex
+      w="100%"
+      align="center"
+      justify="space-between"
+      p="32px 39.61px"
+      backgroundColor="brand.black"
+      position="relative"
+      top="0"
+      left="0"
+    >
       <Navigation />
       <Logo />
       <CartIconButton />
