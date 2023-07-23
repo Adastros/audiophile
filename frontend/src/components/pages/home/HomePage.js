@@ -11,7 +11,7 @@ const HomePage = () => {
   const contentData = useLoaderData();
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" backgroundColor="design.seaSalt">
       <Box backgroundColor="brand.black">
         <Header />
         <Box h="1px" w="100%" backgroundColor="brand.white" opacity="0.104" />

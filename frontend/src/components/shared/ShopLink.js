@@ -6,8 +6,17 @@ const ShopLink = () => {
   const rightArrowIconData = headerData.header.icon.rightArrow;
 
   return (
-    <Flex align="center">
-      <Text>SHOP</Text>
+    <Flex zIndex="1" align="center" justify="center" gap="0.5rem">
+      <Text
+        fontSize="design.subtitle"
+        fontWeight="bold"
+        lineHeight="normal"
+        letterSpacing="design.subtitle"
+        textTransform="uppercase"
+        opacity="0.5"
+      >
+        SHOP
+      </Text>
       <Image
         src={rightArrowIconData.path}
         alt=""
