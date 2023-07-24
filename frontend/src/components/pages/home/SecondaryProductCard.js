@@ -7,14 +7,37 @@ const SecondaryProductCards = ({ secondaryCardData }) => {
 
   return (
     <Box
-      w="100%"
+      h="320px"
+      w="327px"
+      borderRadius="8px"
       backgroundImage={imageUrl}
+      backgroundSize="contain"
       backgroundRepeat="no-repeat"
-      backgroundPosition="center"
+      backgroundPosition="top"
+      backgroundColor="brand.antiFlashWhite"
     >
-      <VStack justify="flex-start">
-        <Heading as="h3">{productName}</Heading>
-        <SeeProductButton />
+      <VStack
+        h="100%"
+        w="100%"
+        paddingLeft="24px"
+        align="flex-start"
+        justify="center"
+        gap="32px"
+      >
+        <Heading
+          as="h3"
+          fontSize="design.h4"
+          fontWeight="bold"
+          lineHeight="normal"
+          letterSpacing="design.h1"
+          textTransform="uppercase"
+        >
+          {productName}
+        </Heading>
+        <SeeProductButton
+          buttonVariant={'seeProductWhite'}
+          buttonSize={'brandMd'}
+        />
       </VStack>
     </Box>
   );

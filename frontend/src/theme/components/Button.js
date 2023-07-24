@@ -32,7 +32,7 @@ const Button = defineStyleConfig({
     },
     seeProductWhite: {
       color: 'brand.black',
-      backgroundColor: 'brand.white',
+      backgroundColor: 'transparent',
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: 'brand.black',
@@ -40,6 +40,14 @@ const Button = defineStyleConfig({
         color: 'brand.white',
         backgroundColor: 'brand.black',
         border: 'none',
+      },
+    },
+    seeProductBlack: {
+      color: 'brand.white',
+      backgroundColor: 'brand.black',
+      border: 'none',
+      _hover: {
+        backgroundColor: 'component.davyGrey',
       },
     },
     shop: {

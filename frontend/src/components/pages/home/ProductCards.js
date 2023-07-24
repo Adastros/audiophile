@@ -5,7 +5,7 @@ import TertiaryProductCards from './TertiaryProductCard';
 
 const ProductCards = ({ productCardData }) => {
   return (
-    <Flex direction="column" align="center">
+    <Flex py="96px" direction="column" align="center" gap="24px">
       <PrimaryProductCards primaryCardData={productCardData.primary} />
       <SecondaryProductCards secondaryCardData={productCardData.secondary} />
       <TertiaryProductCards tertiaryCardData={productCardData.tertiary} />

@@ -11,6 +11,7 @@ const colors = {
     },
     component: {
       fireEngineRed: '#CD2C2C',
+      davyGrey: '#4C4C4C',
     },
   },
 };
