@@ -5,7 +5,17 @@ const About = () => {
   const footerData = useOutletContext()[2];
   const aboutText = footerData.footer.about;
 
-  return <Text>{aboutText}</Text>;
+  return (
+    <Text
+      w="327px"
+      fontSize="design.body"
+      fontWeight="500"
+      lineHeight="design.body"  
+      textAlign="center"
+    >
+      {aboutText}
+    </Text>
+  );
 };
 
 export default About;

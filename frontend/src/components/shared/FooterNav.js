@@ -3,7 +3,16 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 
 const FooterNav = () => {
   return (
-    <Flex direction="column" align="center">
+    <Flex
+      direction="column"
+      align="center"
+      gap="16px"
+      fontSize="design.subtitle"
+      fontWeight="bold"
+      lineHeight="design.body"
+      letterSpacing="design.h1"
+      textTransform="uppercase"
+    >
       <Link as={ReactRouterLink} to="/">
         Home
       </Link>

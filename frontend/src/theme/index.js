@@ -4,6 +4,7 @@ import typography from './typography';
 import Button from './components/Button';
 import Input from './components/Input';
 import Text from './components/Text';
+import Link from './components/Link';
 
 const websiteTheme = extendTheme({
   ...colors,
@@ -12,6 +13,7 @@ const websiteTheme = extendTheme({
     Button,
     Input,
     Text,
+    Link,
   },
 });
 
