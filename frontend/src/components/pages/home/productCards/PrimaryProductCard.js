@@ -1,5 +1,5 @@
 import { Flex, Image, Heading, Text } from '@chakra-ui/react';
-import SeeProductButton from '../../shared/SeeProductButton';
+import SeeProductButton from '../../../shared/SeeProductButton';
 
 const PrimaryProductCards = ({ primaryCardData }) => {
   const imgUrl = primaryCardData.image.mobile.path;
@@ -53,7 +53,7 @@ const PrimaryProductCards = ({ primaryCardData }) => {
       </Text>
       <SeeProductButton
         buttonVariant={'seeProductBlack'}
-        buttonSize={'brandMd'}
+        buttonSize={'designMd'}
       />
     </Flex>
   );

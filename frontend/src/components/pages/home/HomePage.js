@@ -1,34 +1,26 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { useLoaderData } from 'react-router-dom';
-import Header from '../../shared/Header';
-import Banner from './Banner';
-import ProductCategories from '../../shared/ProductCategories';
-import ProductCards from './ProductCards';
-import Closing from '../../shared/Closing';
-import Footer from '../../shared/Footer';
+import Header from '../../shared/header/Header';
+import Banner from './banner/Banner';
+import ProductCategories from '../../shared/productCategories/ProductCategories';
+import ProductCards from './productCards/ProductCards';
+import Closing from '../../shared/closing/Closing';
+import Footer from '../../shared/footer/Footer';
 
 const HomePage = () => {
   const contentData = useLoaderData();
 
   return (
     <Flex direction="column" backgroundColor="design.seaSalt">
-      <Box backgroundColor="brand.black">
+      <Box backgroundColor="black">
         <Header />
-        <Box h="1px" w="100%" backgroundColor="brand.white" opacity="0.104" />
+        <Box h="1px" w="100%" backgroundColor="white" opacity="0.104" />
         <Banner heroData={contentData.hero} />
       </Box>
-      <Box>
-        <ProductCategories />
-      </Box>
-      <Box>
-        <ProductCards productCardData={contentData.productCards} />
-      </Box>
-      <Box>
-        <Closing />
-      </Box>
-      <Box>
-        <Footer />
-      </Box>
+      <ProductCategories />
+      <ProductCards productCardData={contentData.productCards} />
+      <Closing />
+      <Footer />
     </Flex>
   );
 };

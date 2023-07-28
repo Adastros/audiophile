@@ -8,14 +8,14 @@ const CartIconButton = () => {
 
   return (
     <IconButton
+      className="iconHover"
       aria-label={cartIconAriaLabel}
       icon={<CartIcon />}
       h="20px"
       w="23px"
       minW="0"
-      p="0"
-      m="0"
-      flexShrink="0"
+      padding="0"
+      margin="0"
     />
   );
 };

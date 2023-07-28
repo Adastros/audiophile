@@ -8,13 +8,13 @@ const Button = defineStyleConfig({
     borderRadius: '0',
   },
   sizes: {
-    brandSm: {
+    designSm: {
       h: '18px',
       w: '57.3px',
       fontSize: '13px',
       flexShrink: '0',
     },
-    brandMd: {
+    designMd: {
       h: '48px',
       w: '160px',
       fontSize: '13px',

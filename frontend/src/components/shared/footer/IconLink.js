@@ -1,11 +1,10 @@
 import { LinkOverlay, LinkBox, Icon } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
-import '../../index.css';
 
 const IconLink = ({ iconPath, iconAriaLabel, routePath, isExternalUrl }) => {
   return (
-    <LinkBox className="social-icon">
+    <LinkBox className="iconHover">
       <LinkOverlay
         as={ReactRouterLink}
         to={routePath}

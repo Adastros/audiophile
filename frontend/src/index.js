@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/home/HomePage';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
+import './index.css';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);

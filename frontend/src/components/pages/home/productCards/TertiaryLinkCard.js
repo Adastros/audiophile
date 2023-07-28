@@ -1,5 +1,5 @@
 import { Flex, Heading } from '@chakra-ui/react';
-import SeeProductButton from '../../shared/SeeProductButton';
+import SeeProductButton from '../../../shared/SeeProductButton';
 
 const TertiaryLinkCard = ({ productName }) => {
   return (
@@ -26,7 +26,7 @@ const TertiaryLinkCard = ({ productName }) => {
       </Heading>
       <SeeProductButton
         buttonVariant={'seeProductWhite'}
-        buttonSize={'brandMd'}
+        buttonSize={'designMd'}
       />
     </Flex>
   );

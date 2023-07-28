@@ -2,17 +2,17 @@ import { Box, Flex } from '@chakra-ui/react';
 import NewProduct from './NewProduct';
 import Hero from './Hero';
 import HeroSubtext from './HeroSubtext';
-import SeeProductButton from '../../shared/SeeProductButton';
+import SeeProductButton from '../../../shared/SeeProductButton';
 
 const Banner = ({ heroData }) => {
   return (
     <Box
       h="600px"
       w="100%"
-      marginTop="-6rem"
-      color="brand.white"
+      marginTop="-96px"
+      color="white"
       backgroundImage={`url(${heroData.image.mobile.path})`}
-      backgroundColor="brand.black"
+      backgroundColor="black"
       backgroundSize="100% 100%"
       backgroundRepeat="no-repeat"
     >
@@ -20,13 +20,16 @@ const Banner = ({ heroData }) => {
         direction="column"
         align="center"
         justify="center"
-        paddingTop="12.4rem"
+        paddingTop="198px"
         margin="0 auto"
       >
         <NewProduct isNew={heroData.new} textVariant={'newProductBanner'} />
         <Hero headline={heroData.headline} />
         <HeroSubtext action={heroData.action} />
-        <SeeProductButton />
+        <SeeProductButton
+          buttonVariant="seeProductCaramel"
+          buttonSize="designMd"
+        />
       </Flex>
     </Box>
   );

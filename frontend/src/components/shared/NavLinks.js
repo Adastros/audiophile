@@ -1,7 +1,7 @@
 import { Flex, Link } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-const FooterNav = () => {
+const NavLinks = () => {
   return (
     <Flex
       direction="column"
@@ -29,4 +29,4 @@ const FooterNav = () => {
   );
 };
 
-export default FooterNav;
+export default NavLinks;

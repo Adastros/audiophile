@@ -1,7 +1,7 @@
 /* 
-Only used to change the color of the social media 
-icons when the parent div is hovered over.
+Only used to change the color of icons when the 
+parent div is hovered over.
 */
-.social-icon:hover path {
-  fill: #d87d4a; /*caramel color */
+.iconHover:hover path {
+  fill: #d87d4a; /* caramel color */
 }

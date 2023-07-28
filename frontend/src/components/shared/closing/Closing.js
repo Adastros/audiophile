@@ -1,6 +1,8 @@
-import { Flex, Image, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { useOutletContext } from 'react-router-dom';
+import ClosingImage from './ClosingImage';
 import ClosingHeadline from './ClosingHeadline';
+import ClosingParagraph from './ClosingParagraph';
 
 const Closing = () => {
   const closingData = useOutletContext()[1];
@@ -17,19 +19,9 @@ const Closing = () => {
       align="center"
       gap="32px"
     >
-      <Image src={imgUrl} alt={imgAlt} h="auto" w="327px" borderRadius="8px" />
+      <ClosingImage imgUrl={imgUrl} imgAlt={imgAlt} />
       <ClosingHeadline headline={headline} />
-      <Text
-        w="327px"
-        fontSize="design.body"
-        fontWeight="500"
-        lineHeight="design.body"
-        letterSpacing="normal"
-        textAlign="center"
-        opacity="0.5"
-      >
-        {callToAction}
-      </Text>
+      <ClosingParagraph callToAction={callToAction} />
     </Flex>
   );
 };

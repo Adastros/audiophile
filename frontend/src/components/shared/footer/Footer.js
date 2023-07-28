@@ -1,6 +1,6 @@
 import { Flex, Box } from '@chakra-ui/react';
-import Logo from './Logo';
-import FooterNav from './FooterNav';
+import Logo from '../Logo';
+import NavLinks from '../NavLinks';
 import About from './About';
 import Copyright from './Copyright';
 import SocialLinks from './SocialLinks';
@@ -14,8 +14,8 @@ const Footer = () => {
       align="center"
       gap="48px"
       textAlign="center"
-      color="brand.white"
-      backgroundColor="brand.black"
+      color="white"
+      backgroundColor="black"
     >
       <Box
         h="4px"
@@ -26,7 +26,7 @@ const Footer = () => {
         backgroundColor="brand.caramel"
       ></Box>
       <Logo />
-      <FooterNav />
+      <NavLinks />
       <About />
       <Copyright />
       <SocialLinks />

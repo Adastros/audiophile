@@ -1,5 +1,5 @@
 import { Heading } from '@chakra-ui/react';
-import { colorOneHeadingWord } from '../../utils/helper';
+import { colorOneHeadingWord } from '../../../utils/helper';
 
 const ClosingHeadline = ({ headline }) => {
   return (

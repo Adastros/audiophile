@@ -1,5 +1,5 @@
 import { VStack, Box, Heading } from '@chakra-ui/react';
-import SeeProductButton from '../../shared/SeeProductButton';
+import SeeProductButton from '../../../shared/SeeProductButton';
 
 const SecondaryProductCards = ({ secondaryCardData }) => {
   const productName = secondaryCardData.product;
@@ -36,7 +36,7 @@ const SecondaryProductCards = ({ secondaryCardData }) => {
         </Heading>
         <SeeProductButton
           buttonVariant={'seeProductWhite'}
-          buttonSize={'brandMd'}
+          buttonSize={'designMd'}
         />
       </VStack>
     </Box>

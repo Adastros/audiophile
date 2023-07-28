@@ -1,6 +1,6 @@
 import { IconButton } from '@chakra-ui/react';
-import MenuIcon from './MenuIcon';
 import { useOutletContext } from 'react-router-dom';
+import MenuIcon from './MenuIcon';
 
 const MenuIconButton = () => {
   const headerData = useOutletContext()[0];
@@ -8,14 +8,14 @@ const MenuIconButton = () => {
 
   return (
     <IconButton
+      className="iconHover"
       aria-label={hamburgerIconAriaLabel}
       icon={<MenuIcon />}
       h="15px"
       w="16px"
       minW="0"
-      p="0"
-      m="0"
-      flexShrink="0"
+      padding="0"
+      margin="0"
     />
   );
 };
