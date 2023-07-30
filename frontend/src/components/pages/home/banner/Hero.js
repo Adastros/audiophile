@@ -1,4 +1,5 @@
 import { Heading } from '@chakra-ui/react';
+import headingStyles from '../../../../theme/headingStyles';
 
 const Hero = ({ headline }) => {
   return (
@@ -7,12 +8,9 @@ const Hero = ({ headline }) => {
       w="328px"
       paddingTop="16px"
       paddingBottom="24px"
-      fontSize="design.h3"
-      fontWeight="bold"
-      lineHeight="40px"
-      letterSpacing="1.286px"
+      lineHeight={{ base: '40px', md: '58px' }}
       textAlign="center"
-      textTransform="uppercase"
+      {...headingStyles.lgHeading}
     >
       {headline}
     </Heading>

@@ -23,7 +23,7 @@ const Button = defineStyleConfig({
   },
   variants: {
     seeProductCaramel: {
-      color: 'brand.white',
+      color: 'white',
       backgroundColor: 'brand.caramel',
       border: 'none',
       _hover: {
@@ -31,20 +31,20 @@ const Button = defineStyleConfig({
       },
     },
     seeProductWhite: {
-      color: 'brand.black',
+      color: 'black',
       backgroundColor: 'transparent',
       borderWidth: '1px',
       borderStyle: 'solid',
-      borderColor: 'brand.black',
+      borderColor: 'black',
       _hover: {
-        color: 'brand.white',
-        backgroundColor: 'brand.black',
+        color: 'white',
+        backgroundColor: 'black',
         border: 'none',
       },
     },
     seeProductBlack: {
-      color: 'brand.white',
-      backgroundColor: 'brand.black',
+      color: 'white',
+      backgroundColor: 'black',
       border: 'none',
       _hover: {
         backgroundColor: 'component.davyGrey',

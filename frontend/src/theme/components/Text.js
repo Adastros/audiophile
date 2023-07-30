@@ -9,7 +9,7 @@ const Text = defineStyleConfig({
       lineHeight: 'design.overline',
       textAlign: "center",
       textTransform: 'uppercase',
-      color: 'brand.white',
+      color: 'white',
       opacity: '0.496',
     },
   },

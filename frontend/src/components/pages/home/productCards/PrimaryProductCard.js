@@ -1,5 +1,6 @@
 import { Flex, Image, Heading, Text } from '@chakra-ui/react';
 import SeeProductButton from '../../../shared/SeeProductButton';
+import headingStyles from '../../../../theme/headingStyles';
 
 const PrimaryProductCards = ({ primaryCardData }) => {
   const imgUrl = primaryCardData.image.mobile.path;
@@ -14,7 +15,7 @@ const PrimaryProductCards = ({ primaryCardData }) => {
       w="327px"
       direction="column"
       align="center"
-      color="brand.white"
+      color="white"
       borderRadius="8px"
       backgroundImage={`url(${backgroundDecorationUrl})`}
       backgroundSize="558px 558px"
@@ -34,12 +35,8 @@ const PrimaryProductCards = ({ primaryCardData }) => {
         as="h3"
         width="200px"
         marginBottom="27px"
-        fontSize="36px"
-        fontWeight="bold"
-        lineHeight="40px"
-        letterSpacing="1.286px"
         textAlign="center"
-        textTransform="uppercase"
+        {...headingStyles.lgHeading}
       >
         {productName}
       </Heading>

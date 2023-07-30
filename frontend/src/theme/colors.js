@@ -6,8 +6,6 @@ const colors = {
       antiFlashWhite: '#F1F1F1',
       seaSalt: '#FAFAFA',
       atomicTangerine: '#FBAF85',
-      white: '#FFFFFF',
-      black: '#000000',
     },
     component: {
       fireEngineRed: '#CD2C2C',
