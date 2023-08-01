@@ -7,6 +7,7 @@ import SeeProductButton from '../../../shared/SeeProductButton';
 const Banner = ({ heroData }) => {
   return (
     <Box
+      id="homepage-banner"
       h="600px"
       w="100%"
       marginTop="-96px"

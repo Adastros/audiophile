@@ -5,8 +5,8 @@ import '@fontsource/manrope/700.css';
 
 const typography = {
   fonts: {
-    heading: `Manrope, ${base.fonts?.heading}`,
-    body: `Manrope, ${base.fonts?.body}`,
+    heading: `Manrope, ${base.fonts.heading}`,
+    body: `Manrope, ${base.fonts.body}`,
   },
   letterSpacings: {
     design: {

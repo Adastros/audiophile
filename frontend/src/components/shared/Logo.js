@@ -7,7 +7,14 @@ const Logo = () => {
   const logoAlt = headerData.header.image.alt;
 
   return (
-    <Image src={logoImg} alt={logoAlt} h="25px" w="143px" flexShrink="0" />
+    <Image
+      id="logo"
+      src={logoImg}
+      alt={logoAlt}
+      h="25px"
+      w="143px"
+      flexShrink="0"
+    />
   );
 };
 

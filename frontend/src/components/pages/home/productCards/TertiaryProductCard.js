@@ -4,7 +4,12 @@ import TertiaryLinkCard from './TertiaryLinkCard';
 
 const TertiaryProductCards = ({ tertiaryCardData }) => {
   return (
-    <Flex direction="column" align="center" gap="24px">
+    <Flex
+      id="tertiary-product-cards"
+      direction="column"
+      align="center"
+      gap="24px"
+    >
       <TertiaryImageCard tertiaryImgData={tertiaryCardData.image} />
       <TertiaryLinkCard productName={tertiaryCardData.product} />
     </Flex>

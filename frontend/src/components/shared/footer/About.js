@@ -10,7 +10,7 @@ const About = () => {
       w="327px"
       fontSize="design.body"
       fontWeight="500"
-      lineHeight="design.body"  
+      lineHeight="design.body"
       textAlign="center"
     >
       {aboutText}

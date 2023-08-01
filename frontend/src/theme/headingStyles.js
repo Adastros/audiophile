@@ -1,4 +1,4 @@
-/* 
+/*
 These styles are only used for <Heading /> components
 Due to bugs in textStyle and theme styles (using variants
 for the the Heading component). Some prop styles like

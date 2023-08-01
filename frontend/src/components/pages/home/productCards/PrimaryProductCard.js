@@ -11,6 +11,7 @@ const PrimaryProductCards = ({ primaryCardData }) => {
 
   return (
     <Flex
+      id="primary-product-card"
       h="600px"
       w="327px"
       direction="column"

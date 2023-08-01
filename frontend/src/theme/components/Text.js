@@ -7,7 +7,7 @@ const Text = defineStyleConfig({
       fontWeight: 'normal',
       letterSpacing: 'design.overline',
       lineHeight: 'design.overline',
-      textAlign: "center",
+      textAlign: 'center',
       textTransform: 'uppercase',
       color: 'white',
       opacity: '0.496',

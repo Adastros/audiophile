@@ -5,7 +5,14 @@ import EarphoneThumbnail from './EarphoneThumbnail';
 
 const ProductCategories = () => {
   return (
-    <Flex px="24px" py="32px" direction="column" align="center" gap="8px">
+    <Flex
+      id="product-categories"
+      px="24px"
+      py="32px"
+      direction="column"
+      align="center"
+      gap="8px"
+    >
       <HeadphoneThumbnail />
       <SpeakerThumbnail />
       <EarphoneThumbnail />

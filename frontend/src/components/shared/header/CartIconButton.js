@@ -8,6 +8,7 @@ const CartIconButton = () => {
 
   return (
     <IconButton
+      id="cart-button"
       className="iconHover"
       aria-label={cartIconAriaLabel}
       icon={<CartIcon />}

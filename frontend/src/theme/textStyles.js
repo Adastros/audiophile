@@ -1,10 +1,10 @@
 // Due to some bugs in Chakra UI, certain css
 // properties are not applied if they are not
 // defined in Chakra UI. One way around it is to
-// name the css style directly but error messages 
-// about using it due to kebab-case of css. 
+// name the css style directly but error messages
+// about using it due to kebab-case of css.
 //
-// See 
+// See
 // https://github.com/chakra-ui/chakra-ui/discussions/3612
 // https://github.com/chakra-ui/chakra-ui/issues/3884
 //

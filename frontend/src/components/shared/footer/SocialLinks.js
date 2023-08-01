@@ -5,7 +5,7 @@ import InstagramIconLink from './InstagramIconLink';
 
 const SocialLinks = () => {
   return (
-    <Flex w="104px" align="center" justify="space-between">
+    <Flex id="social-links" w="104px" align="center" justify="space-between">
       <FacebookIconLink />
       <TwitterIconLink />
       <InstagramIconLink />

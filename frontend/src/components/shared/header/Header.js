@@ -6,6 +6,7 @@ import Logo from '../Logo';
 const Header = () => {
   return (
     <Flex
+      id="header"
       w="100%"
       align="center"
       justify="space-between"

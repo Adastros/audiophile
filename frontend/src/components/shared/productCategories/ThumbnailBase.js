@@ -4,7 +4,7 @@ import ThumbNailText from './ThumbnailText';
 import ShopLink from './ShopLink';
 
 // paddingBot is optional and only used for the earphones
-// thumbnail due to the image being set slightly higher than 
+// thumbnail due to the image being set slightly higher than
 // the others
 const ThumbnailBase = ({ imgData, text, padTop }) => {
   return (

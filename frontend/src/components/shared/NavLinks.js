@@ -4,6 +4,7 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 const NavLinks = () => {
   return (
     <Flex
+      id="nav-links"
       direction="column"
       align="center"
       gap="16px"

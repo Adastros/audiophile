@@ -7,6 +7,7 @@ const SecondaryProductCards = ({ secondaryCardData }) => {
 
   return (
     <Box
+      id="secondary-product-card"
       h="320px"
       w="327px"
       borderRadius="8px"

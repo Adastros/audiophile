@@ -8,6 +8,7 @@ const MenuIconButton = () => {
 
   return (
     <IconButton
+      id="menu-button"
       className="iconHover"
       aria-label={hamburgerIconAriaLabel}
       icon={<MenuIcon />}

@@ -8,6 +8,7 @@ import SocialLinks from './SocialLinks';
 const Footer = () => {
   return (
     <Flex
+      id="footer"
       py="48px"
       position="relative"
       direction="column"
