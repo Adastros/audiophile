@@ -19,7 +19,7 @@ const ThumbnailBase = ({ imgData, text, padTop }) => {
       <Box
         h="165px"
         w="100%"
-        zIndex="-1"
+        zIndex="0"
         position="absolute"
         top="52px"
         left="0"
