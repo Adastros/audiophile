@@ -6,7 +6,7 @@ import ShopLink from './ShopLink';
 // paddingBot is optional and only used for the earphones
 // thumbnail due to the image being set slightly higher than
 // the others
-const ThumbnailBase = ({ imgData, text, padTop }) => {
+const ThumbnailBase = ({ redirectUrl, imgData, text, padTop }) => {
   return (
     <Flex
       h="217px"
@@ -28,7 +28,7 @@ const ThumbnailBase = ({ imgData, text, padTop }) => {
       ></Box>
       <ThumbnailImg imgData={imgData} />
       <ThumbNailText text={text} />
-      <ShopLink />
+      <ShopLink redirectUrl={redirectUrl} />
     </Flex>
   );
 };

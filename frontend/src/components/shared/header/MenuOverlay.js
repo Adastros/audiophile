@@ -16,8 +16,10 @@ const MenuOverlay = ({ displayCssValue }) => {
       <Box
         maxH="calc(100vh - 89px)"
         w="100%"
+        paddingY="32px"
         overflowX="hidden"
         overflowY="scroll"
+        backgroundColor="white"
       >
         <ProductCategories />
       </Box>

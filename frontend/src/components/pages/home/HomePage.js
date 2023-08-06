@@ -1,7 +1,8 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { VStack, Box, Flex } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Header from '../../shared/header/Header';
+import LineBreak from '../../shared/LineBreak';
 import Banner from './banner/Banner';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
 import ProductCards from './productCards/ProductCards';
@@ -24,13 +25,15 @@ const HomePage = () => {
     >
       <Box backgroundColor="black">
         <Header />
-        <Box h="1px" w="100%" backgroundColor="white" opacity="0.104" />
+        <LineBreak />
         <Banner heroData={contentData.hero} />
       </Box>
-      <ProductCategories />
-      <ProductCards productCardData={contentData.productCards} />
-      <Closing />
-      <Footer />
+      <VStack w="100%" paddingTop="32px" gap="120px">
+        <ProductCategories />
+        <ProductCards productCardData={contentData.productCards} />
+        <Closing />
+        <Footer />
+      </VStack>
       <MenuOverlay displayCssValue={menuOverlayStyles.menuDisplay} />
     </Flex>
   );

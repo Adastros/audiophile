@@ -5,3 +5,8 @@ parent div is hovered over.
 .iconHover:hover path {
   fill: #d87d4a; /* caramel color */
 }
+
+.shopLink:hover p {
+  color: #d87d4a; /* caramel color */
+  opacity: 1;
+}

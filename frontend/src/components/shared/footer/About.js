@@ -12,6 +12,7 @@ const About = () => {
       fontWeight="500"
       lineHeight="design.body"
       textAlign="center"
+      opacity="0.5"
     >
       {aboutText}
     </Text>

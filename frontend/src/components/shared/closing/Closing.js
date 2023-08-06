@@ -14,8 +14,6 @@ const Closing = () => {
   return (
     <Flex
       id="closing"
-      paddingTop="32px"
-      paddingBottom="92px"
       direction="column"
       align="center"
       gap="32px"

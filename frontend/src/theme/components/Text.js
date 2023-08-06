@@ -4,13 +4,22 @@ const Text = defineStyleConfig({
   variants: {
     newProductBanner: {
       fontSize: 'design.overline',
-      fontWeight: 'normal',
+      fontWeight: '400',
       letterSpacing: 'design.overline',
-      lineHeight: 'design.overline',
+      lineHeight: 'normal',
       textAlign: 'center',
       textTransform: 'uppercase',
       color: 'white',
       opacity: '0.496',
+    },
+    newProductDefault: {
+      fontSize: 'design.overline',
+      fontWeight: '400',
+      letterSpacing: 'design.overline',
+      lineHeight: 'normal',
+      textAlign: 'center',
+      textTransform: 'uppercase',
+      color: 'brand.caramel',
     },
   },
 });

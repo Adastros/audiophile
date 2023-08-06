@@ -1,5 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
-import NewProduct from './NewProduct';
+import NewProduct from '../../../shared/NewProduct';
 import Hero from './Hero';
 import HeroSubtext from './HeroSubtext';
 import SeeProductButton from '../../../shared/SeeProductButton';

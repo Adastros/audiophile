@@ -7,7 +7,6 @@ const ProductCards = ({ productCardData }) => {
   return (
     <Flex
       id="homepage-product-cards"
-      py="96px"
       direction="column"
       align="center"
       gap="24px"

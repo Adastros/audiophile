@@ -18,6 +18,12 @@ const textStyles = {
       letterSpacing: { base: '1.071px', md: '1.286px' },
       textTransform: 'uppercase',
     },
+    productPreviewDescription: {
+      fontSize: '15px',
+      fontWeight: '500',
+      lineHeight: '25px',
+      opacity: 0.5,
+    },
   },
 };
 

@@ -7,6 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/home/HomePage';
+import HeadphonesPage from './components/pages/headphones/HeadphonesPage';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
 import './index.css';
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
         path: '/',
         element: <HomePage />,
         loader: () => getContent('homepage'),
+      },
+      {
+        path: '/headphones',
+        element: <HeadphonesPage />,
+        loader: () => getContent('headphones'),
       },
     ],
   },

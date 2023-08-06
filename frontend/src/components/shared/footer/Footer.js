@@ -9,6 +9,7 @@ const Footer = () => {
   return (
     <Flex
       id="footer"
+      w="100%"
       py="48px"
       position="relative"
       direction="column"
