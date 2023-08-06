@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import BaseProductPreview from '../../shared/productPreview/BaseProductPreview';
 
-const XX99MarkIIPreview = ({ productPreviewData }) => {
+const ZX9SpeakerPreview = ({ productPreviewData }) => {
   return (
     <Box w="100%">
       <BaseProductPreview productPreviewData={productPreviewData} />
@@ -9,4 +9,4 @@ const XX99MarkIIPreview = ({ productPreviewData }) => {
   );
 };
 
-export default XX99MarkIIPreview;
+export default ZX9SpeakerPreview;

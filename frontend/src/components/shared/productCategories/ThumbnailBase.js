@@ -3,7 +3,7 @@ import ThumbnailImg from './ThumbnailImg';
 import ThumbNailText from './ThumbnailText';
 import ShopLink from './ShopLink';
 
-// paddingBot is optional and only used for the earphones
+// paddingTop is optional and only used for the earphones
 // thumbnail due to the image being set slightly higher than
 // the others
 const ThumbnailBase = ({ redirectUrl, imgData, text, padTop }) => {

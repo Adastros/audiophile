@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import BaseProductPreview from './BaseProductPreview';
+import BaseProductPreview from '../../shared/productPreview/BaseProductPreview';
 
 const XX59Preview = ({ productPreviewData }) => {
   return (

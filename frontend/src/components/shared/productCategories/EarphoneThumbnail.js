@@ -7,6 +7,7 @@ const EarphoneThumbnail = () => {
 
   return (
     <ThumbnailBase
+      redirectUrl={'/earphones'}
       imgData={earphoneImgData}
       text={'EARPHONES'}
       padTop={'12px'}

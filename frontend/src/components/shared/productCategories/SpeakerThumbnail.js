@@ -8,7 +8,7 @@ const SpeakerThumbnail = () => {
 
   return (
     <Box paddingTop="10px">
-      <ThumbnailBase imgData={speakerImgData} text={'SPEAKERS'} />
+      <ThumbnailBase redirectUrl={'/speakers'} imgData={speakerImgData} text={'SPEAKERS'} />
     </Box>
   );
 };

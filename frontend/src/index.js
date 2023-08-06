@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/home/HomePage';
 import HeadphonesPage from './components/pages/headphones/HeadphonesPage';
+import SpeakersPage from './components/pages/speakers/SpeakersPage';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
 import './index.css';
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
         path: '/headphones',
         element: <HeadphonesPage />,
         loader: () => getContent('headphones'),
+      },
+      {
+        path: '/speakers',
+        element: <SpeakersPage />,
+        loader: () => getContent('speakers'),
       },
     ],
   },
