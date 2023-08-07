@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import HomePage from './components/pages/home/HomePage';
 import HeadphonesPage from './components/pages/headphones/HeadphonesPage';
 import SpeakersPage from './components/pages/speakers/SpeakersPage';
+import EarphonesPage from './components/pages/earphones/EarphonesPage';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
 import './index.css';
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
         path: '/speakers',
         element: <SpeakersPage />,
         loader: () => getContent('speakers'),
+      },
+      {
+        path: '/earphones',
+        element: <EarphonesPage />,
+        loader: () => getContent('earphones'),
       },
     ],
   },

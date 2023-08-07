@@ -1,6 +1,5 @@
 import { useLoaderData } from 'react-router-dom';
 import BaseProductCategoryPage from '../../shared/baseProductCategoryPage.js/BaseProductCategoryPage';
-import ProductCategoryHeading from '../../shared/productCategories/ProductCategoryHeading';
 import XX99MarkIIPreview from './XX99MarkIIPreview';
 import XX99MarkIPreview from './XX99MarkIPreview';
 import XX59Preview from './XX59ProductPreview';
@@ -8,9 +7,6 @@ import XX59Preview from './XX59ProductPreview';
 const HeadphonesPage = () => {
   const headphonePageContent = useLoaderData();
   const productCategory = headphonePageContent.productCategory;
-  const productCategoryHeading = (
-    <ProductCategoryHeading productCategory={productCategory} />
-  );
   const XX99MarkIIPreviewData = headphonePageContent.products.primary;
   const XX99MarkIPreviewData = headphonePageContent.products.secondary;
   const XX59PreviewData = headphonePageContent.products.tertiary;
@@ -32,7 +28,7 @@ const HeadphonesPage = () => {
 
   return (
     <BaseProductCategoryPage
-      productCategoryHeading={productCategoryHeading}
+      productCategory={productCategory}
       productPreviewComponents={productPreviewComponents}
     />
   );

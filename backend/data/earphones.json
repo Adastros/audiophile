@@ -1,0 +1,22 @@
+{
+  "productCategory": "EARPHONES",
+  "products": {
+    "primary": {
+      "name": "YX1 Wireless Earphones",
+      "new": true,
+      "description": "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
+      "image": {
+        "desktop": {
+          "path": "assets/product-yx1-earphones/desktop/image-category-page-preview_vehwqo"
+        },
+        "tablet": {
+          "path": "assets/product-yx1-earphones/tablet/image-category-page-preview_pphg1u"
+        },
+        "mobile": {
+          "path": "assets/product-yx1-earphones/mobile/image-category-page-preview_xkjkgm"
+        },
+        "alt": "YX1 Wireless Earphones"
+      }
+    }
+  }
+}

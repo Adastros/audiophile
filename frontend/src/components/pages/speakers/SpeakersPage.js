@@ -1,15 +1,11 @@
 import { useLoaderData } from 'react-router-dom';
 import BaseProductCategoryPage from '../../shared/baseProductCategoryPage.js/BaseProductCategoryPage';
-import ProductCategoryHeading from '../../shared/productCategories/ProductCategoryHeading';
 import ZX9SpeakerPreview from './ZX9SpeakerPreview';
 import ZX7SpeakerPreview from './ZX7SpeakerPreview';
 
 const SpeakersPage = () => {
   const headphonePageContent = useLoaderData();
   const productCategory = headphonePageContent.productCategory;
-  const productCategoryHeading = (
-    <ProductCategoryHeading productCategory={productCategory} />
-  );
   const ZX9SpeakerPreviewData = headphonePageContent.products.primary;
   const ZX7SpeakerPreviewData = headphonePageContent.products.secondary;
   const ZX9SpeakerKey = headphonePageContent.products.primary.name;
@@ -28,7 +24,7 @@ const SpeakersPage = () => {
 
   return (
     <BaseProductCategoryPage
-      productCategoryHeading={productCategoryHeading}
+      productCategory={productCategory}
       productPreviewComponents={productPreviewComponents}
     />
   );
