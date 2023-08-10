@@ -2,7 +2,7 @@ import { defineStyleConfig } from '@chakra-ui/react';
 
 const Button = defineStyleConfig({
   baseStyle: {
-    fontWeight: 'bold',
+    fontWeight: '700',
     letterSpacing: '1px',
     textTransform: 'uppercase',
     borderRadius: '0',
@@ -17,6 +17,12 @@ const Button = defineStyleConfig({
     designMd: {
       h: '48px',
       w: '160px',
+      fontSize: '13px',
+      flexShrink: '0',
+    },
+    counterButton: {
+      h: '48px',
+      w: '40px',
       fontSize: '13px',
       flexShrink: '0',
     },
@@ -53,6 +59,10 @@ const Button = defineStyleConfig({
     shop: {
       opacity: '0.5',
       border: 'none',
+    },
+    counterButton: {
+      color: 'black',
+      opacity: 0.25,
     },
   },
 });

@@ -24,6 +24,33 @@ const textStyles = {
       lineHeight: '25px',
       opacity: 0.5,
     },
+    productPrice: {
+      fontSize: '18px',
+      fontWeight: '700',
+      lineHeight: 'normal',
+      letterSpacing: '1.286px',
+      textTransform: 'uppercase',
+    },
+    feature: {
+      fontSize: '15px',
+      fontWeight: '500',
+      lineHeight: '25px',
+      letterSpacing: 'normal',
+      opacity: 0.5,
+    },
+    inTheBoxQuantity: {
+      fontSize: '15px',
+      fontWeight: '700',
+      lineHeight: '25px',
+      letterSpacing: 'normal',
+    },
+    recommend: {
+      fontSize: '24px',
+      fontWeight: '700',
+      lineHeight: 'normal',
+      letterSpacing: '1.714px',
+      textTransform: 'uppercase',
+    },
   },
 };
 

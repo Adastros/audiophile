@@ -1,0 +1,121 @@
+{
+  "name": "XX99 Mark II Headphones",
+  "new": true,
+  "description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
+  "productImage": {
+    "desktop": {
+      "path": "assets/product-xx99-mark-two-headphones/desktop/image-product_c2z0kp"
+    },
+    "tablet": {
+      "path": "assets/product-xx99-mark-two-headphones/tablet/image-product_ixi4ps"
+    },
+    "mobile": {
+      "path": "assets/product-xx99-mark-two-headphones/mobile/image-product_jy0mcj"
+    },
+    "alt": "XX99 Mark II Headphones"
+  },
+  "price": "2,999",
+  "feature": {
+    "paragraph1": "Featuring a genuine leather head strap and premium earcups, these headphones deliver superior comfort for those who like to enjoy endless listening. It includes intuitive controls designed for any situation. Whether you're taking a business call or just in your own personal space, the auto on/off and pause features ensure that you'll never miss a beat.",
+    "paragraph2": "The advanced Active Noise Cancellation with built-in equalizer allow you to experience your audio world on your terms. It lets you enjoy your audio in peace, but quickly interact with your surroundings when you need to. Combined with Bluetooth 5.0 compliant connectivity and 17 hour battery life, the XX99 Mark II headphones gives you superior sound, cutting-edge technology, and a modern design aesthetic."
+  },
+  "inTheBox": {
+    "item1": { "name": "Headphone Unit", "quantity": 1 },
+    "item2": { "name": "Replacement Earcups", "quantity": 2 },
+    "item3": { "name": "User Manual", "quantity": 1 },
+    "item4": { "name": "3.5mm 5m Audio Cable", "quantity": 1 },
+    "item5": { "name": "Travel Bag", "quantity": 1 }
+  },
+  "gallery": {
+    "image1": {
+      "desktop": {
+        "path": "assets/product-xx99-mark-two-headphones/desktop/image-gallery-1_wy4li6"
+      },
+      "tablet": {
+        "path": "assets/product-xx99-mark-two-headphones/tablet/image-gallery-1_g6fq3y"
+      },
+      "mobile": {
+        "path": "assets/product-xx99-mark-two-headphones/mobile/image-gallery-1_ypv5pl"
+      },
+      "alt": "A man wearing headphones"
+    },
+    "image2": {
+      "desktop": {
+        "path": "assets/product-xx99-mark-two-headphones/desktop/image-gallery-2_gqbwcb"
+      },
+      "tablet": {
+        "path": "assets/product-xx99-mark-two-headphones/tablet/image-gallery-2_x54t7k"
+      },
+      "mobile": {
+        "path": "assets/product-xx99-mark-two-headphones/mobile/image-gallery-2_omtwxk"
+      },
+      "alt": "An above view of a book, phone, and headphone on a table with a person's legs off the side of the table."
+    },
+    "image3": {
+      "desktop": {
+        "path": "assets/product-xx99-mark-two-headphones/desktop/image-gallery-3_y2j53a"
+      },
+      "tablet": {
+        "path": "assets/product-xx99-mark-two-headphones/tablet/image-gallery-3_nzomsi"
+      },
+      "mobile": {
+        "path": "assets/product-xx99-mark-two-headphones/mobile/image-gallery-3_qwsdtr"
+      },
+      "alt": "An upclose shot of the XX99 Mark two headphones"
+    }
+  },
+  "recommendation": {
+    "product1": {
+      "name": "XX99 Mark I",
+      "image": {
+        "desktop": {
+          "path": "assets/shared/desktop/image-xx99-mark-one-headphones_e7gihr"
+        },
+        "tablet": {
+          "path": "assets/shared/tablet/image-xx99-mark-one-headphones_eyubfr"
+        },
+        "mobile": {
+          "path": "assets/shared/mobile/image-xx99-mark-one-headphones_oimo1q"
+        },
+        "alt": "XX99 Mark I Headphone"
+      }
+    },
+    "product2": {
+      "name": "XX59",
+      "image": {
+        "desktop": {
+          "path": "assets/shared/desktop/image-xx59-headphones_fcpnqa"
+        },
+        "tablet": {
+          "path": "assets/shared/tablet/image-xx59-headphones_wesvck"
+        },
+        "mobile": {
+          "path": "assets/shared/mobile/image-xx59-headphones_gi9igv"
+        },
+        "alt": "XX59 Headphone"
+      }
+    },
+    "product3": {
+      "name": "ZX9 Speaker",
+      "image": {
+        "desktop": {
+          "path": "assets/shared/desktop/image-zx9-speaker_fblufa"
+        },
+        "tablet": {
+          "path": "assets/shared/tablet/image-zx9-speaker_uvjnyi"
+        },
+        "mobile": {
+          "path": "assets/shared/mobile/image-zx9-speaker_m3aeok"
+        },
+        "alt": "ZX9 Speaker"
+      }
+    }
+  },
+  "routes": {
+    "goBack": "/headphones",
+    "cart": "/cart",
+    "XXMarkI": "/headphones/XXMarkI",
+    "XX59": "/headphones/XX59",
+    "ZX9": "/speakers/ZX9"
+  }
+}

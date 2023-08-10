@@ -23,6 +23,21 @@ const headingStyles = {
     letterSpacing: { base: '1px', md: '1.429px' },
     textTransform: 'uppercase',
   },
+  productDetailName: {
+    fontSize: { base: '28px', lg: '40px' },
+    fontWeight: '700',
+    lineHeight: { base: 'normal', md: '32px', lg: '44px' },
+    letterSpacing: { base: '1px', lg: '1.429px' },
+    textTransform: 'uppercase',
+    textAlign: 'left',
+  },
+  productDetailSection: {
+    fontSize: { base: '24px', md: '32px', lg: '40px' },
+    fontWeight: '700',
+    lineHeight: '36px',
+    letterSpacing: { base: '0.857px', md: '1.143px' },
+    textTransform: 'uppercase',
+  },
 };
 
 export default headingStyles;
