@@ -6,6 +6,7 @@ const ProductDetailName = ({ productName }) => {
     <Heading
       as="h2"
       w={{ base: '327px', md: '339px', lg: '445px' }}
+      whiteSpace="pre"
       {...headingStyles.productDetailName}
     >
       {productName}

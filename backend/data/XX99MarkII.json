@@ -1,5 +1,5 @@
 {
-  "name": "XX99 Mark II Headphones",
+  "name": "XX99 Mark II \nHeadphones",
   "new": true,
   "description": "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
   "productImage": {
@@ -114,8 +114,8 @@
   "routes": {
     "goBack": "/headphones",
     "cart": "/cart",
-    "XXMarkI": "/headphones/XXMarkI",
-    "XX59": "/headphones/XX59",
-    "ZX9": "/speakers/ZX9"
+    "product1": "/headphones/XXMarkI",
+    "product2": "/headphones/XX59",
+    "product3": "/speakers/ZX9"
   }
 }
