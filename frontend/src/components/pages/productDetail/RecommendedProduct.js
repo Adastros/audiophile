@@ -1,7 +1,7 @@
 import { Flex, Image, Box, Text } from '@chakra-ui/react';
 import SeeProductButton from '../../shared/SeeProductButton';
 
-const RecommendedProduct = ({ product }) => {
+const RecommendedProduct = ({ product, route }) => {
   const name = product.name;
   const imageUrlDesktop = product.image.desktop.path;
   const imageUrlTablet = product.image.tablet.path;
@@ -27,6 +27,7 @@ const RecommendedProduct = ({ product }) => {
       <SeeProductButton
         buttonVariant="seeProductCaramel"
         buttonSize="designMd"
+        route={route}
       />
     </Flex>
   );

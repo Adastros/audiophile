@@ -5,6 +5,12 @@ import HeroSubtext from './HeroSubtext';
 import SeeProductButton from '../../../shared/SeeProductButton';
 
 const Banner = ({ heroData }) => {
+  const bannerImageUrl = heroData.image.mobile.path;
+  const isNew = heroData.new;
+  const heroHeadline = heroData.headline;
+  const heroSubtext = heroData.action;
+  const productDetailPageRoute = heroData.route;
+
   return (
     <Box
       id="homepage-banner"
@@ -12,7 +18,7 @@ const Banner = ({ heroData }) => {
       w="100%"
       marginTop="-96px"
       color="white"
-      backgroundImage={`url(${heroData.image.mobile.path})`}
+      backgroundImage={`url(${bannerImageUrl})`}
       backgroundColor="black"
       backgroundSize="100% 100%"
       backgroundRepeat="no-repeat"
@@ -24,12 +30,13 @@ const Banner = ({ heroData }) => {
         paddingTop="198px"
         margin="0 auto"
       >
-        <NewProduct isNew={heroData.new} textVariant={'newProductBanner'} />
-        <Hero headline={heroData.headline} />
-        <HeroSubtext action={heroData.action} />
+        <NewProduct isNew={isNew} textVariant="newProductBanner" />
+        <Hero headline={heroHeadline} />
+        <HeroSubtext action={heroSubtext} />
         <SeeProductButton
           buttonVariant="seeProductCaramel"
           buttonSize="designMd"
+          route={productDetailPageRoute}
         />
       </Flex>
     </Box>

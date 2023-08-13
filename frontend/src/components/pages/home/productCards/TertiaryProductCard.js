@@ -3,6 +3,10 @@ import TertiaryImageCard from './TertiaryImageCard';
 import TertiaryLinkCard from './TertiaryLinkCard';
 
 const TertiaryProductCards = ({ tertiaryCardData }) => {
+  const imgData = tertiaryCardData.image;
+  const productName = tertiaryCardData.product;
+  const productDetailPageRoute = tertiaryCardData.route;
+
   return (
     <Flex
       id="tertiary-product-cards"
@@ -10,8 +14,11 @@ const TertiaryProductCards = ({ tertiaryCardData }) => {
       align="center"
       gap="24px"
     >
-      <TertiaryImageCard tertiaryImgData={tertiaryCardData.image} />
-      <TertiaryLinkCard productName={tertiaryCardData.product} />
+      <TertiaryImageCard imgData={imgData} />
+      <TertiaryLinkCard
+        productName={productName}
+        route={productDetailPageRoute}
+      />
     </Flex>
   );
 };

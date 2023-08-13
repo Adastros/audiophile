@@ -111,7 +111,7 @@
       }
     }
   },
-  "routes": {
+  "route": {
     "goBack": "/headphones",
     "cart": "/cart",
     "product1": "/headphones/XXMarkI",

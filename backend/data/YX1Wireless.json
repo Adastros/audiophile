@@ -108,7 +108,7 @@
       }
     }
   },
-  "routes": {
+  "route": {
     "goBack": "/earphones",
     "cart": "/cart",
     "product1": "/headphones/XX99MarkI",

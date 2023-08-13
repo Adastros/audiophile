@@ -4,6 +4,7 @@ import SeeProductButton from '../../../shared/SeeProductButton';
 const SecondaryProductCards = ({ secondaryCardData }) => {
   const productName = secondaryCardData.product;
   const imageUrl = secondaryCardData.image.mobile.path;
+  const productDetailPageRoute = secondaryCardData.route;
 
   return (
     <Box
@@ -36,8 +37,9 @@ const SecondaryProductCards = ({ secondaryCardData }) => {
           {productName}
         </Heading>
         <SeeProductButton
-          buttonVariant={'seeProductWhite'}
-          buttonSize={'designMd'}
+          buttonVariant="seeProductWhite"
+          buttonSize="designMd"
+          route={productDetailPageRoute}
         />
       </VStack>
     </Box>

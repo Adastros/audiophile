@@ -107,11 +107,11 @@
       }
     }
   },
-  "routes": {
+  "route": {
     "goBack": "/headphones",
     "cart": "/cart",
     "product1": "/headphones/XXMarkII",
-    "product2": "/headphones/XXMarkII",
+    "product2": "/headphones/XXMarkI",
     "product3": "/speakers/ZX9"
   }
 }

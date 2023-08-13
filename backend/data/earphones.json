@@ -16,7 +16,8 @@
           "path": "assets/product-yx1-earphones/mobile/image-category-page-preview_xkjkgm"
         },
         "alt": "YX1 Wireless Earphones"
-      }
+      },
+      "route": "/earphones/YX1Wireless"
     }
   }
 }

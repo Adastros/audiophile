@@ -10,6 +10,7 @@ const BaseProductPreview = ({ productPreviewData }) => {
   const isProductNew = productPreviewData.new;
   const productName = productPreviewData.name;
   const productDescription = productPreviewData.description;
+  const productDetailPageRoute = productPreviewData.route;
 
   return (
     <VStack textAlign="center">
@@ -21,6 +22,7 @@ const BaseProductPreview = ({ productPreviewData }) => {
         <SeeProductButton
           buttonVariant="seeProductCaramel"
           buttonSize="designMd"
+          route={productDetailPageRoute}
         />
       </VStack>
     </VStack>

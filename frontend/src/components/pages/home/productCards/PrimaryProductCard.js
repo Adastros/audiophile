@@ -8,6 +8,7 @@ const PrimaryProductCards = ({ primaryCardData }) => {
   const backgroundDecorationUrl = primaryCardData.imageDecoration.circle.path;
   const productName = primaryCardData.product;
   const callToAction = primaryCardData.action;
+  const productDetailPageRoute = primaryCardData.route;
 
   return (
     <Flex
@@ -50,8 +51,9 @@ const PrimaryProductCards = ({ primaryCardData }) => {
         {callToAction}
       </Text>
       <SeeProductButton
-        buttonVariant={'seeProductBlack'}
-        buttonSize={'designMd'}
+        buttonVariant='seeProductBlack'
+        buttonSize='designMd'
+        route={productDetailPageRoute}
       />
     </Flex>
   );

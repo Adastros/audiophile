@@ -23,7 +23,7 @@ import MenuContext from '../../../utils/MenuContext';
 const ProductDetailBase = () => {
   const productDetails = useLoaderData();
   const menuOverlayStyles = useContext(MenuContext);
-  const goBackUrl = productDetails.routes.goBack;
+  const goBackUrl = productDetails.route.goBack;
   const productImgData = productDetails.productImage;
   const isNew = productDetails.new;
   const productName = productDetails.name;
@@ -33,6 +33,7 @@ const ProductDetailBase = () => {
   const items = productDetails.inTheBox;
   const galleryImages = productDetails.gallery;
   const recommendations = productDetails.recommendation;
+  const routes = productDetails.route;
 
   return (
     <Flex
@@ -71,7 +72,7 @@ const ProductDetailBase = () => {
             <InTheBox items={items} />
             <Gallery galleryImages={galleryImages} />
           </VStack>
-          <Recommendations recommendations={recommendations} />
+          <Recommendations recommendations={recommendations} routes={routes} />
           <ProductCategories />
           <Closing />
         </VStack>

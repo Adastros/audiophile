@@ -108,7 +108,7 @@
       }
     }
   },
-  "routes": {
+  "route": {
     "goBack": "/speakers",
     "cart": "/cart",
     "product1": "/speakers/ZX9",

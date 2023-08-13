@@ -1,7 +1,7 @@
 import { Flex, Heading } from '@chakra-ui/react';
 import SeeProductButton from '../../../shared/SeeProductButton';
 
-const TertiaryLinkCard = ({ productName }) => {
+const TertiaryLinkCard = ({ productName, route }) => {
   return (
     <Flex
       h="200px"
@@ -25,8 +25,9 @@ const TertiaryLinkCard = ({ productName }) => {
         {productName}
       </Heading>
       <SeeProductButton
-        buttonVariant={'seeProductWhite'}
-        buttonSize={'designMd'}
+        buttonVariant="seeProductWhite"
+        buttonSize="designMd"
+        route={route}
       />
     </Flex>
   );

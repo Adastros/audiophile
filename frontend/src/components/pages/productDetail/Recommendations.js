@@ -2,15 +2,16 @@ import { Box, Heading } from '@chakra-ui/react';
 import RecommendedProduct from './RecommendedProduct';
 import headingStyles from '../../../theme/headingStyles';
 
-const Recommendations = ({ recommendations }) => {
+const Recommendations = ({ recommendations, routes }) => {
   const listRecommendedProducts = () => {
-    return Object.keys(recommendations).map(product => {
+    return Object.keys(recommendations).map((product, i) => {
       return (
         <RecommendedProduct
           key={`recommended-${recommendations[product].name
             .split(' ')
             .join('-')}`}
           product={recommendations[product]}
+          route={routes[`product${i + 1}`]}
         />
       );
     });

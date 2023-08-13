@@ -16,7 +16,8 @@
           "path": "assets/product-zx9-speaker/mobile/image-category-page-preview_efeiql"
         },
         "alt": "ZX9 Speaker"
-      }
+      },
+      "route": "/speakers/ZX9"
     },
     "secondary": {
       "name": "ZX7 Speaker",
@@ -33,7 +34,8 @@
           "path": "assets/product-zx7-speaker/mobile/image-category-page-preview_btms63"
         },
         "alt": "ZX7 Speaker"
-      }
+      },
+      "route": "/speakers/ZX7"
     }
   }
 }
