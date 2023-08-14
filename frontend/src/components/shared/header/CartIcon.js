@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router-dom';
 
 const CartIcon = () => {
   const headerData = useOutletContext()[0];
-  const cartIconUrl = headerData.header.icon.cart.path;
+  const cartIconUrl = headerData.icon.cart.path;
 
   return (
     <Icon

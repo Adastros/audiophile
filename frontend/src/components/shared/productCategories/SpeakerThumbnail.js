@@ -4,7 +4,7 @@ import ThumbnailBase from './ThumbnailBase';
 
 const SpeakerThumbnail = () => {
   const headerData = useOutletContext()[0];
-  const speakerImgData = headerData.header.productCategories.speakers.image;
+  const speakerImgData = headerData.productCategories.speakers.image;
 
   return (
     <Box paddingTop="10px">

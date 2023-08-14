@@ -1,50 +1,52 @@
 {
-  "header": {
-    "productCategories": {
-      "headphones": {
-        "image": {
-          "shared": {
-            "path": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
-          },
-          "alt": ""
-        }
-      },
-      "speakers": {
-        "image": {
-          "shared": {
-            "path": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
-          },
-          "alt": ""
-        }
-      },
-      "earphones": {
-        "image": {
-          "shared": {
-            "path": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
-          },
-          "alt": ""
-        }
+  "productCategories": {
+    "headphones": {
+      "image": {
+        "shared": {
+          "path": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
+        },
+        "alt": ""
       }
     },
-    "icon": {
-      "hamburger": {
-        "path": "assets/shared/tablet/icon-hamburger_p9jk63",
-        "aria": { "hidden": false, "label": "Menu" }
-      },
-      "cart": {
-        "path": "assets/shared/desktop/icon-cart_sgics3",
-        "aria": { "hidden": false, "label": "Cart" }
-      },
-      "rightArrow": {
-        "path": "assets/shared/desktop/icon-arrow-right_dqhcg5",
-        "aria": { "hidden": true, "label": "" }
+    "speakers": {
+      "image": {
+        "shared": {
+          "path": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
+        },
+        "alt": ""
       }
     },
-    "image": {
-      "logo": {
-        "path": "assets/shared/desktop/logo_roko52"
-      },
-      "alt": "audiophile logo"
+    "earphones": {
+      "image": {
+        "shared": {
+          "path": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
+        },
+        "alt": ""
+      }
     }
+  },
+  "icon": {
+    "hamburger": {
+      "path": "assets/shared/tablet/icon-hamburger_p9jk63",
+      "aria": { "hidden": false, "label": "Menu" }
+    },
+    "cart": {
+      "path": "assets/shared/desktop/icon-cart_sgics3",
+      "aria": { "hidden": false, "label": "Cart" }
+    },
+    "rightArrow": {
+      "path": "assets/shared/desktop/icon-arrow-right_dqhcg5",
+      "aria": { "hidden": true, "label": "" }
+    }
+  },
+  "image": {
+    "logo": {
+      "path": "assets/shared/desktop/logo_roko52"
+    },
+    "alt": "audiophile logo"
+  },
+  "route": {
+    "home": "/",
+    "cart": "/cart"
   }
 }

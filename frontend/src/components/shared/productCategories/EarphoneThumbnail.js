@@ -3,7 +3,7 @@ import ThumbnailBase from './ThumbnailBase';
 
 const EarphoneThumbnail = () => {
   const headerData = useOutletContext()[0];
-  const earphoneImgData = headerData.header.productCategories.earphones.image;
+  const earphoneImgData = headerData.productCategories.earphones.image;
 
   return (
     <ThumbnailBase

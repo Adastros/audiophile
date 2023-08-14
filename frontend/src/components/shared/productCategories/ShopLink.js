@@ -4,7 +4,7 @@ import { Link as ReactRouterLink } from 'react-router-dom';
 
 const ShopLink = ({ redirectUrl }) => {
   const headerData = useOutletContext()[0];
-  const rightArrowIconData = headerData.header.icon.rightArrow;
+  const rightArrowIconData = headerData.icon.rightArrow;
 
   return (
     <LinkBox className="shopLink">

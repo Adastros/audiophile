@@ -7,7 +7,7 @@ import MenuHandlerContext from '../../../utils/MenuHandlerContext';
 const MenuIconButton = () => {
   const headerData = useOutletContext()[0];
   const handleMenuClick = useContext(MenuHandlerContext);
-  const hamburgerIconAriaLabel = headerData.header.icon.hamburger.aria.label;
+  const hamburgerIconAriaLabel = headerData.icon.hamburger.aria.label;
 
   return (
     <IconButton

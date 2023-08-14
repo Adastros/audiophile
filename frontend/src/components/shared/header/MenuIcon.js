@@ -4,7 +4,7 @@ import { useOutletContext } from 'react-router-dom';
 
 const MenuIcon = () => {
   const headerData = useOutletContext()[0];
-  const hamburgerIconUrl = headerData.header.icon.hamburger.path;
+  const hamburgerIconUrl = headerData.icon.hamburger.path;
 
   return (
     <Icon
