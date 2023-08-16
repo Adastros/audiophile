@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 // import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet, useLoaderData, ScrollRestoration } from 'react-router-dom';
 import MenuContext from './utils/MenuContext';
-import MenuHandlerContext from './utils/MenuHandlerContext';
+import HandlerContext from './utils/HandlerContext';
 
 function App() {
   const headerClosingFooterData = useLoaderData();
@@ -11,17 +11,28 @@ function App() {
     pagePosition: 'relative',
   });
 
-  const handleMenuClick = () => {
-    menuOverlayStyles.menuDisplay === 'none'
-      ? setMenuOverlayStyles({ menuDisplay: 'block', pagePosition: 'fixed' })
-      : setMenuOverlayStyles({ menuDisplay: 'none', pagePosition: 'relative' });
+  const handlers = {
+    handleMenuClick: () => {
+      if (menuOverlayStyles.menuDisplay === 'none') {
+        setMenuOverlayStyles({ menuDisplay: 'block', pagePosition: 'fixed' });
+      } else {
+        setMenuOverlayStyles({
+          menuDisplay: 'none',
+          pagePosition: 'relative',
+        });
+      }
+    },
+    handleShopLinkClick: () => {
+      setMenuOverlayStyles({ menuDisplay: 'none', pagePosition: 'relative' });
+    },
   };
 
   return (
     <MenuContext.Provider value={menuOverlayStyles}>
-      <MenuHandlerContext.Provider value={handleMenuClick}>
+      <HandlerContext.Provider value={handlers}>
         <Outlet context={headerClosingFooterData} />
-      </MenuHandlerContext.Provider>
+        <ScrollRestoration />
+      </HandlerContext.Provider>
     </MenuContext.Provider>
   );
 }

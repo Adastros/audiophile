@@ -114,7 +114,7 @@
   "route": {
     "goBack": "/headphones",
     "cart": "/cart",
-    "product1": "/headphones/XXMarkI",
+    "product1": "/headphones/XX99MarkI",
     "product2": "/headphones/XX59",
     "product3": "/speakers/ZX9"
   }

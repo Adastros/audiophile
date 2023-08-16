@@ -110,8 +110,8 @@
   "route": {
     "goBack": "/headphones",
     "cart": "/cart",
-    "product1": "/headphones/XXMarkII",
-    "product2": "/headphones/XXMarkI",
+    "product1": "/headphones/XX99MarkII",
+    "product2": "/headphones/XX99MarkI",
     "product3": "/speakers/ZX9"
   }
 }

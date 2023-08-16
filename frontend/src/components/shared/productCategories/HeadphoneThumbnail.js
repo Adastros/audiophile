@@ -5,7 +5,7 @@ const HeadphoneThumbnail = () => {
   const headerData = useOutletContext()[0];
   const headphoneImgData = headerData.productCategories.headphones.image;
 
-  return <ThumbnailBase redirectUrl={'/headphones'} imgData={headphoneImgData} text={'HEADPHONES'} />;
+  return <ThumbnailBase route={'/headphones'} imgData={headphoneImgData} text={'HEADPHONES'} />;
 };
 
 export default HeadphoneThumbnail;
