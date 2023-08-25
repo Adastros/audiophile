@@ -6,7 +6,7 @@ const ThumbnailImg = ({ imgData }) => {
       src={imgData.shared.path}
       alt={imgData.alt}
       h="auto"
-      w="140px"
+      w={{ base: '140px', lg: '170px' }}
       paddingBottom="4px"
       zIndex="1"
     />

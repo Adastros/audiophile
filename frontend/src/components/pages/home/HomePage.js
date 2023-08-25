@@ -1,8 +1,7 @@
-import { VStack, Box, Flex } from '@chakra-ui/react';
+import { VStack, Flex, Box } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Header from '../../shared/header/Header';
-import LineBreak from '../../shared/LineBreak';
 import Banner from './banner/Banner';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
 import ProductCards from './productCards/ProductCards';
@@ -14,6 +13,9 @@ import MenuContext from '../../../utils/MenuContext';
 const HomePage = () => {
   const contentData = useLoaderData();
   const menuOverlayStyles = useContext(MenuContext);
+  const heroData = contentData.hero;
+  const productCardData = contentData.productCards;
+  const displayCssValue = menuOverlayStyles.menuDisplay;
 
   return (
     <Flex
@@ -23,18 +25,27 @@ const HomePage = () => {
       position={menuOverlayStyles.pagePosition}
       backgroundColor="brand.seaSalt"
     >
-      <Box backgroundColor="black">
-        <Header />
-        <LineBreak />
-        <Banner heroData={contentData.hero} />
-      </Box>
-      <VStack w="100%" paddingTop="32px" gap="120px">
-        <ProductCategories />
-        <ProductCards productCardData={contentData.productCards} />
+      <Header />
+      <Banner heroData={heroData} />
+      <VStack
+        h="min-content"
+        w="100%"
+        paddingTop={{ base: '2rem', md: '6rem' }}
+        paddingBottom={{ base: '7.5rem', md: '6rem', lg: '10.5rem' }}
+        paddingX={{ base: '1.5rem', md: '2.5rem', lg: '3rem' }}
+        gap={{ base: '7.5rem', md: '6rem', lg: '10.5rem' }}
+      >
+        <Box
+          w="100%"
+          maxW={{ base: '100%', md: '43.0625rem', lg: '69.375rem' }}
+        >
+          <ProductCategories />
+        </Box>
+        <ProductCards productCardData={productCardData} />
         <Closing />
-        <Footer />
       </VStack>
-      <MenuOverlay displayCssValue={menuOverlayStyles.menuDisplay} />
+      <Footer />
+      <MenuOverlay displayCssValue={displayCssValue} />
     </Flex>
   );
 };

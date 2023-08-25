@@ -10,9 +10,11 @@ const TertiaryProductCards = ({ tertiaryCardData }) => {
   return (
     <Flex
       id="tertiary-product-cards"
-      direction="column"
+      w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}
+      maxW="69.375rem"
+      direction={{ base: 'column', md: 'row' }}
       align="center"
-      gap="24px"
+      gap={{ base: '2rem', md: '1rem', lg: '2rem' }}
     >
       <TertiaryImageCard imgData={imgData} />
       <TertiaryLinkCard

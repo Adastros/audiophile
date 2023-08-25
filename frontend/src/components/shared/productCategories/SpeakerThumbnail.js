@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import { useOutletContext } from 'react-router-dom';
 import ThumbnailBase from './ThumbnailBase';
 
@@ -7,9 +6,12 @@ const SpeakerThumbnail = () => {
   const speakerImgData = headerData.productCategories.speakers.image;
 
   return (
-    <Box paddingTop="10px">
-      <ThumbnailBase route={'/speakers'} imgData={speakerImgData} text={'SPEAKERS'} />
-    </Box>
+    <ThumbnailBase
+      route={'/speakers'}
+      imgData={speakerImgData}
+      text={'SPEAKERS'}
+      padTop="0"
+    />
   );
 };
 

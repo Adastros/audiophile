@@ -3,16 +3,12 @@ import { useOutletContext } from 'react-router-dom';
 
 const About = () => {
   const footerData = useOutletContext()[2];
-  const aboutText = footerData.footer.about;
+  const aboutText = footerData.about;
 
   return (
     <Text
-      w="327px"
-      fontSize="design.body"
-      fontWeight="500"
-      lineHeight="design.body"
-      textAlign="center"
-      opacity="0.5"
+      w={{ base: '20.4375rem', md: '43.0625rem', lg: '33.75rem' }}
+      textStyle="productPreviewDescription"
     >
       {aboutText}
     </Text>

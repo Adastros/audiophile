@@ -1,13 +1,27 @@
-import { Box, Image } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 
 const TertiaryImageCard = ({ imgData }) => {
-  const imgUrl = imgData.mobile.path;
-  const imgAlt = imgData.alt;
+  const imageUrl = {
+    desktop: imgData.desktop.path,
+    tablet: imgData.tablet.path,
+    mobile: imgData.mobile.path,
+  };
 
   return (
-    <Box h="200px" w="327px">
-      <Image src={imgUrl} alt={imgAlt} borderRadius="8px" />
-    </Box>
+    <Box
+      h={{ base: '12.5rem', md: '20rem' }}
+      w="100%"
+      borderRadius="0.5rem"
+      backgroundImage={{
+        base: `${imageUrl.mobile}`,
+        md: `${imageUrl.tablet}`,
+        lg: `${imageUrl.desktop}`,
+      }}
+      backgroundSize="cover"
+      backgroundRepeat="no-repeat"
+      backgroundPosition="center"
+      backgroundColor="brand.antiFlashWhite"
+    />
   );
 };
 

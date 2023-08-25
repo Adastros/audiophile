@@ -6,12 +6,15 @@ import EarphoneThumbnail from './EarphoneThumbnail';
 const ProductCategories = () => {
   return (
     <Flex
+      as="nav"
       id="product-categories"
       h="100%"
-      direction="column"
+      w="100%"
+      direction={{ base: 'column', md: 'row' }}
       align="center"
-      gap="8px"
+      justify={{ base: 'center', md: 'space-between' }}
       backgroundColor="inherit"
+      gap={{ base: '2rem', md: '0.625rem', lg: '1rem' }}
     >
       <HeadphoneThumbnail />
       <SpeakerThumbnail />

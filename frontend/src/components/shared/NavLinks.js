@@ -1,18 +1,20 @@
 import { Flex, Link } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-const NavLinks = () => {
+// Since this component is used in different sections, this
+// component requires flex direction and gap props to properly
+// display the links at different media query breakpoints for each
+// section it is used in.
+const NavLinks = ({ flexDir, gaps }) => {
   return (
     <Flex
+      as="nav"
       id="nav-links"
-      direction="column"
+      direction={flexDir}
       align="center"
-      gap="16px"
-      fontSize="design.subtitle"
-      fontWeight="bold"
-      lineHeight="design.body"
-      letterSpacing="design.h1"
-      textTransform="uppercase"
+      gap={gaps}
+      color="white"
+      textStyle="navLinks"
     >
       <Link as={ReactRouterLink} to="/">
         Home

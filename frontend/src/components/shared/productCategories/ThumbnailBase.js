@@ -9,21 +9,21 @@ import ShopLink from './ShopLink';
 const ThumbnailBase = ({ route, imgData, text, padTop }) => {
   return (
     <Flex
-      h="217px"
-      w="327px"
+      h="min-content"
+      w={{ base: '327px', md: '217px', lg: '350px' }}
       paddingTop={padTop}
       direction="column"
       align="center"
       position="relative"
     >
       <Box
-        h="165px"
+        h={{ base: '165px', lg: '185px' }}
         w="100%"
         zIndex="0"
         position="absolute"
-        top="52px"
+        top={{ base: '3.25rem', lg: '3.9rem' }}
         left="0"
-        borderRadius="8px"
+        borderRadius="0.5rem"
         backgroundColor="brand.antiFlashWhite"
       ></Box>
       <ThumbnailImg imgData={imgData} />

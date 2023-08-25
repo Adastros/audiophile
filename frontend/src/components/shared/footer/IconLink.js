@@ -1,16 +1,22 @@
-import { LinkOverlay, LinkBox, Icon } from '@chakra-ui/react';
+import { LinkOverlay, LinkBox } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 
-const IconLink = ({ iconPath, iconAriaLabel, routePath, isExternalUrl }) => {
+const IconLink = ({ iconPath, routePath, iconAriaLabel, isExternalUrl }) => {
   return (
-    <LinkBox className="iconHover">
+    <LinkBox w="1.5rem" className="iconHover">
       <LinkOverlay
         as={ReactRouterLink}
         to={routePath}
         isExternal={isExternalUrl}
       >
-        <Icon as={ReactSVG} src={iconPath} aria-label={iconAriaLabel}/>
+        {/* <Icon as={ReactSVG} src={iconPath} aria-label={iconAriaLabel} /> */}
+        <ReactSVG
+          src={iconPath}
+          afterInjection={svg => {
+            svg.setAttribute('aria-label', iconAriaLabel);
+          }}
+        />
       </LinkOverlay>
     </LinkBox>
   );

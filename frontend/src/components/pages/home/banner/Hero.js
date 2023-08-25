@@ -5,11 +5,11 @@ const Hero = ({ headline }) => {
   return (
     <Heading
       as="h1"
-      w="328px"
-      paddingTop="16px"
+      w="min-content"
+      paddingTop={{ base: '16px', md: '24px' }}
       paddingBottom="24px"
-      lineHeight={{ base: '40px', md: '58px' }}
-      textAlign="center"
+      textAlign={{ base: 'center', lg: 'left' }}
+      whiteSpace="pre"
       {...headingStyles.lgHeading}
     >
       {headline}

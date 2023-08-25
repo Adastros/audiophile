@@ -3,7 +3,7 @@ import IconLink from './IconLink';
 
 const TwitterIconLink = () => {
   const footerData = useOutletContext()[2];
-  const twitterIconData = footerData.footer.socialIcon.twitter;
+  const twitterIconData = footerData.socialIcon.twitter;
 
   return (
     <IconLink

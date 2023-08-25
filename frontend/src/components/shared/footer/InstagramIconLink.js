@@ -3,7 +3,7 @@ import IconLink from './IconLink';
 
 const InstagramIconLink = () => {
   const footerData = useOutletContext()[2];
-  const instagramIconData = footerData.footer.socialIcon.instagram;
+  const instagramIconData = footerData.socialIcon.instagram;
 
   return (
     <IconLink

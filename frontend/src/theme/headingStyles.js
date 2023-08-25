@@ -38,6 +38,13 @@ const headingStyles = {
     letterSpacing: { base: '0.857px', md: '1.143px' },
     textTransform: 'uppercase',
   },
+  secondaryProduct: {
+    fontSize: '28px',
+    fontWeight: '700',
+    lineHeight: 'normal',
+    letterSpacing: '2px',
+    textTransform: 'uppercase',
+  },
 };
 
 export default headingStyles;

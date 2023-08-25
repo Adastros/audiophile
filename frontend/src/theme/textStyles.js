@@ -51,6 +51,13 @@ const textStyles = {
       letterSpacing: '1.714px',
       textTransform: 'uppercase',
     },
+    navLinks: {
+      fontSize: '13px',
+      fontWeight: '700',
+      lineHeight: '25px',
+      letterSpacing: '2px',
+      textTransform: 'uppercase',
+    },
   },
 };
 

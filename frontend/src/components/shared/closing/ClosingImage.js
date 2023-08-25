@@ -1,8 +1,15 @@
-import { Image } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Picture from '../Picture';
 
-const ClosingImage = ({ imgUrl, imgAlt }) => {
+const ClosingImage = ({ imgData }) => {
   return (
-    <Image src={imgUrl} alt={imgAlt} h="auto" w="327px" borderRadius="8px" />
+    <Box
+      h="auto"
+      w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}
+      borderRadius="0.5rem"
+    >
+      <Picture imgData={imgData} />
+    </Box>
   );
 };
 

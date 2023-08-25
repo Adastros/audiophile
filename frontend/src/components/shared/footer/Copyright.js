@@ -3,15 +3,10 @@ import { useOutletContext } from 'react-router-dom';
 
 const Copyright = () => {
   const footerData = useOutletContext()[2];
-  const copyrightText = footerData.footer.copyright;
+  const copyrightText = footerData.copyright;
 
   return (
-    <Text
-      fontSize="design.body"
-      fontWeight="bold"
-      lineHeight="design.body"
-      opacity="0.5"
-    >
+    <Text opacity="0.5" textStyle="inTheBoxQuantity">
       {copyrightText}
     </Text>
   );

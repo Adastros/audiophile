@@ -10,7 +10,7 @@ const EarphoneThumbnail = () => {
       route={'/earphones'}
       imgData={earphoneImgData}
       text={'EARPHONES'}
-      padTop={'12px'}
+      padTop={{ base: '0.75rem', md: '0.5rem' }}
     />
   );
 };

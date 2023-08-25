@@ -3,7 +3,7 @@ import IconLink from './IconLink';
 
 const FacebookIconLink = () => {
   const footerData = useOutletContext()[2];
-  const facebookIconData = footerData.footer.socialIcon.facebook;
+  const facebookIconData = footerData.socialIcon.facebook;
 
   return (
     <IconLink
