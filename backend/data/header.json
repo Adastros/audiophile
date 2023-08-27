@@ -6,7 +6,8 @@
           "path": "assets/shared/desktop/image-category-thumbnail-headphones_ldecfe.png"
         },
         "alt": ""
-      }
+      },
+      "route": "/headphones"
     },
     "speakers": {
       "image": {
@@ -14,7 +15,8 @@
           "path": "assets/shared/desktop/image-category-thumbnail-speakers_betfdy.png"
         },
         "alt": ""
-      }
+      },
+      "route": "/speakers"
     },
     "earphones": {
       "image": {
@@ -22,7 +24,8 @@
           "path": "assets/shared/desktop/image-category-thumbnail-earphones_zhvdtp.png"
         },
         "alt": ""
-      }
+      },
+      "route": "/earphones"
     }
   },
   "icon": {

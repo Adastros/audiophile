@@ -1,14 +1,26 @@
 import { Flex } from '@chakra-ui/react';
-import FacebookIconLink from './FacebookIconLink';
-import TwitterIconLink from './TwitterIconLink';
-import InstagramIconLink from './InstagramIconLink';
+import IconLink from './IconLink';
 
-const SocialLinks = () => {
+const SocialLinks = ({ socialIcons }) => {
+  const socialIconComponents = () => {
+    return Object.keys(socialIcons).map(key => {
+      const iconData = socialIcons[key];
+
+      return (
+        <IconLink
+          key={`${key}SocialIcon`}
+          iconPath={iconData.path}
+          iconAriaLabel={iconData.aria.label}
+          routePath={iconData.externalUrl}
+          isExternalUrl={true}
+        />
+      );
+    });
+  };
+
   return (
     <Flex id="social-links" w="104px" align="center" justify="space-between">
-      <FacebookIconLink />
-      <TwitterIconLink />
-      <InstagramIconLink />
+      {socialIconComponents()}
     </Flex>
   );
 };

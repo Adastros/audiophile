@@ -10,7 +10,6 @@ const IconLink = ({ iconPath, routePath, iconAriaLabel, isExternalUrl }) => {
         to={routePath}
         isExternal={isExternalUrl}
       >
-        {/* <Icon as={ReactSVG} src={iconPath} aria-label={iconAriaLabel} /> */}
         <ReactSVG
           src={iconPath}
           afterInjection={svg => {

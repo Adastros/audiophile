@@ -1,26 +1,18 @@
 import { LinkBox, LinkOverlay, Flex, Image, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import { Link as ReactRouterLink } from 'react-router-dom';
+import SharedHeaderContext from '../../../utils/SharedHeaderContext';
 import HandlerContext from '../../../utils/HandlerContext';
 
 const ShopLink = ({ route }) => {
-  const headerData = useOutletContext()[0];
+  const rightArrowIconData = useContext(SharedHeaderContext).rightArrowIconData;
   const handleShopLinkClick = useContext(HandlerContext).handleShopLinkClick;
-  const rightArrowIconData = headerData.icon.rightArrow;
 
   return (
     <LinkBox className="shopLink" onClick={handleShopLinkClick}>
       <LinkOverlay as={ReactRouterLink} to={route}>
         <Flex zIndex="1" align="center" justify="center" gap="0.5rem">
-          <Text
-            fontSize="design.subtitle"
-            fontWeight="bold"
-            lineHeight="normal"
-            letterSpacing="design.subtitle"
-            textTransform="uppercase"
-            opacity="0.5"
-          >
+          <Text opacity="0.5" textStyle="shopLink">
             SHOP
           </Text>
           <Image

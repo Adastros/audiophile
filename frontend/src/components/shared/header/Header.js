@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 import CartIconButton from './CartIconButton';
 import Logo from '../Logo';
 
-const Header = () => {
+const Header = ({ headerData, logoData }) => {
   return (
     <Flex
       id="header"
@@ -32,16 +32,16 @@ const Header = () => {
           top={{ base: 'calc(50% - 15px)', lg: '0' }}
           left={{ base: 'calc(50% - 75px)', md: '3.75rem', lg: '0' }}
         >
-          <Logo />
+          <Logo logoData={logoData}/>
         </Flex>
         <Box
           position={{ base: 'relative', lg: 'absolute' }}
           top={{ base: '0', lg: 'calc(50% - 12.5px)' }}
           left={{ base: '0', lg: 'calc(50% - 216px)' }}
         >
-          <Navigation />
+          <Navigation headerData={headerData} />
         </Box>
-        <CartIconButton />
+        <CartIconButton headerData={headerData} />
       </Flex>
     </Flex>
   );

@@ -1,20 +1,19 @@
 import { IconButton } from '@chakra-ui/react';
 import { useContext } from 'react';
-import { useOutletContext } from 'react-router-dom';
 import MenuIcon from './MenuIcon';
 import HandlerContext from '../../../utils/HandlerContext';
 
-const MenuIconButton = () => {
-  const headerData = useOutletContext()[0];
+const MenuIconButton = ({ headerData }) => {
   const handleMenuClick = useContext(HandlerContext).handleMenuClick;
   const hamburgerIconAriaLabel = headerData.icon.hamburger.aria.label;
+  const hamburgerIconUrl = headerData.icon.hamburger.path;
 
   return (
     <IconButton
       id="menu-button"
       className="iconHover"
       aria-label={hamburgerIconAriaLabel}
-      icon={<MenuIcon />}
+      icon={<MenuIcon hamburgerIconUrl={hamburgerIconUrl} />}
       h="15px"
       w="16px"
       minW="0"

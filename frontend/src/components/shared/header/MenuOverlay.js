@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import ProductCategories from '../productCategories/ProductCategories';
 
-const MenuOverlay = ({ displayCssValue }) => {
+const MenuOverlay = ({ menuDisplay }) => {
   return (
     <Box
       h="100%"
@@ -10,7 +10,7 @@ const MenuOverlay = ({ displayCssValue }) => {
       position="absolute"
       top="5.5625rem"
       left="0"
-      display={displayCssValue}
+      display={menuDisplay}
       sx={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
     >
       <Box

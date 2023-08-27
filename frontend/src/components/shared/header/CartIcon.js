@@ -1,11 +1,7 @@
 import { Icon } from '@chakra-ui/react';
 import { ReactSVG } from 'react-svg';
-import { useOutletContext } from 'react-router-dom';
 
-const CartIcon = () => {
-  const headerData = useOutletContext()[0];
-  const cartIconUrl = headerData.icon.cart.path;
-
+const CartIcon = ({ cartIconUrl }) => {
   return (
     <Icon
       as={ReactSVG}

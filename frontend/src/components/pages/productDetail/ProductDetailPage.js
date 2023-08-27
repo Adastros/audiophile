@@ -1,7 +1,5 @@
-import { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { Flex, VStack, HStack, Box } from '@chakra-ui/react';
-import Header from '../../shared/header/Header';
+import { VStack, HStack, Box } from '@chakra-ui/react';
 import GoBackLink from './GoBackLink';
 import ImageDetail from './ImageDetail';
 import NewProduct from '../../shared/NewProduct';
@@ -15,14 +13,9 @@ import InTheBox from './InTheBox';
 import Gallery from './Gallery';
 import Recommendations from './Recommendations';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
-import Closing from '../../shared/closing/Closing';
-import Footer from '../../shared/footer/Footer';
-import MenuOverlay from '../../shared/header/MenuOverlay';
-import MenuContext from '../../../utils/MenuContext';
 
 const ProductDetailBase = () => {
   const productDetails = useLoaderData();
-  const menuOverlayStyles = useContext(MenuContext);
   const goBackUrl = productDetails.route.goBack;
   const productImgData = productDetails.productImage;
   const isNew = productDetails.new;
@@ -36,14 +29,7 @@ const ProductDetailBase = () => {
   const routes = productDetails.route;
 
   return (
-    <Flex
-      w="100%"
-      direction="column"
-      align="center"
-      backgroundColor="brand.seaSalt"
-      position={menuOverlayStyles.pagePosition}
-    >
-      <Header />
+    <>
       <Box marginBottom="120px" paddingX="24px">
         <Box w={{ base: '327px' }} marginTop="16px" marginBottom="24px;">
           <GoBackLink goBackUrl={goBackUrl} />
@@ -74,12 +60,9 @@ const ProductDetailBase = () => {
           </VStack>
           <Recommendations recommendations={recommendations} routes={routes} />
           <ProductCategories />
-          <Closing />
         </VStack>
       </Box>
-      <Footer />
-      <MenuOverlay displayCssValue={menuOverlayStyles.menuDisplay} />
-    </Flex>
+    </>
   );
 };
 

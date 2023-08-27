@@ -1,12 +1,11 @@
 import { LinkBox, LinkOverlay, IconButton } from '@chakra-ui/react';
-import { useOutletContext } from 'react-router-dom';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import CartIcon from './CartIcon';
 
-const CartIconButton = () => {
-  const headerData = useOutletContext()[0];
+const CartIconButton = ({ headerData }) => {
   const cartIconAriaLabel = headerData.icon.cart.aria.label;
   const cartRoute = headerData.route.cart;
+  const cartIconUrl = headerData.icon.cart.path;
 
   return (
     <LinkBox>
@@ -15,7 +14,7 @@ const CartIconButton = () => {
           id="cart-button"
           className="iconHover"
           aria-label={cartIconAriaLabel}
-          icon={<CartIcon />}
+          icon={<CartIcon cartIconUrl={cartIconUrl} />}
           h="20px"
           w="23px"
           minW="0"

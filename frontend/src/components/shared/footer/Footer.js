@@ -5,13 +5,17 @@ import About from './About';
 import Copyright from './Copyright';
 import SocialLinks from './SocialLinks';
 
-const Footer = () => {
+const Footer = ({ footerData, logoData }) => {
+  const aboutText = footerData.about;
+  const copyrightText = footerData.copyright;
+  const socialIcons = footerData.socialIcon;
   const flexDir = { base: 'column', md: 'row' };
   const gaps = { base: '1rem', md: '2.125rem' };
 
   return (
     <Flex
       id="footer"
+      w="100%"
       paddingTop={{ base: '3rem' }}
       paddingBottom={{ base: '2.375rem' }}
       paddingX={{ base: '0', md: '2.5rem' }}
@@ -44,10 +48,10 @@ const Footer = () => {
           justify="space-between"
           gap={{ base: '3rem', md: '2rem' }}
         >
-          <Logo />
+          <Logo logoData={logoData} />
           <NavLinks flexDir={flexDir} gaps={gaps} />
         </Flex>
-        <About />
+        <About aboutText={aboutText} />
         <Flex
           w="100%"
           marginTop={{ base: '0', md: '3rem' }}
@@ -57,9 +61,9 @@ const Footer = () => {
           justify="space-between"
           gap={{ base: '3rem', md: '0' }}
         >
-          <Copyright />
+          <Copyright copyrightText={copyrightText} />
           <Box position="relative" top={{ base: '0', lg: '-7rem' }}>
-            <SocialLinks />
+            <SocialLinks socialIcons={socialIcons} />
           </Box>
         </Flex>
       </Flex>

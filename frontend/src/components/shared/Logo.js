@@ -1,20 +1,14 @@
 import { LinkBox, LinkOverlay, Image } from '@chakra-ui/react';
-import { useOutletContext } from 'react-router-dom';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-const Logo = () => {
-  const headerData = useOutletContext()[0];
-  const logoImg = headerData.image.logo.path;
-  const logoAlt = headerData.image.alt;
-  const homeRoute = headerData.route.home;
-
+const Logo = ({ logoData }) => {
   return (
     <LinkBox>
-      <LinkOverlay as={ReactRouterLink} to={homeRoute}>
+      <LinkOverlay as={ReactRouterLink} to={logoData.homeRoute}>
         <Image
           id="logo"
-          src={logoImg}
-          alt={logoAlt}
+          src={logoData.logoImg}
+          alt={logoData.logoAlt}
           h="25px"
           w="143px"
           flexShrink="0"

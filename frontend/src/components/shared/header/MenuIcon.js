@@ -1,11 +1,7 @@
 import { Icon } from '@chakra-ui/react';
 import { ReactSVG } from 'react-svg';
-import { useOutletContext } from 'react-router-dom';
 
-const MenuIcon = () => {
-  const headerData = useOutletContext()[0];
-  const hamburgerIconUrl = headerData.icon.hamburger.path;
-
+const MenuIcon = ({ hamburgerIconUrl }) => {
   return (
     <Icon
       as={ReactSVG}

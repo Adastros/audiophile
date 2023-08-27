@@ -1,37 +1,26 @@
-import { useContext } from 'react';
-import { Flex, VStack } from '@chakra-ui/react';
-import Header from '../../shared/header/Header';
+import { VStack } from '@chakra-ui/react';
 import ProductCategoryHeading from '../productCategories/ProductCategoryHeading';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
-import Closing from '../../shared/closing/Closing';
-import Footer from '../../shared/footer/Footer';
-import MenuOverlay from '../../shared/header/MenuOverlay';
-import MenuContext from '../../../utils/MenuContext';
 
 const BaseProductCategoryPage = ({
   productCategory,
   productPreviewComponents,
 }) => {
-  const menuOverlayStyles = useContext(MenuContext);
-
   return (
-    <Flex
-      h="100%"
-      w="100%"
-      direction="column"
-      align="center"
-      position={menuOverlayStyles.pagePosition}
-    >
-      <Header />
+    <>
       <ProductCategoryHeading productCategory={productCategory} />
-      <VStack w="100%" paddingTop="64px" gap="120px">
+      <VStack
+        h="min-content"
+        w="100%"
+        paddingTop={{ base: '2rem', md: '6rem' }}
+        paddingBottom={{ base: '7.5rem', md: '6rem', lg: '10.5rem' }}
+        paddingX={{ base: '1.5rem', md: '2.5rem', lg: '3rem' }}
+        gap={{ base: '7.5rem', md: '6rem', lg: '10.5rem' }}
+      >
         {productPreviewComponents}
         <ProductCategories />
-        <Closing />
-        <Footer />
       </VStack>
-      <MenuOverlay displayCssValue={menuOverlayStyles.menuDisplay} />
-    </Flex>
+    </>
   );
 };
 

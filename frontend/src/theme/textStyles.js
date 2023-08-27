@@ -58,6 +58,13 @@ const textStyles = {
       letterSpacing: '2px',
       textTransform: 'uppercase',
     },
+    shopLink: {
+      fontSize: '13px',
+      fontWeight: '700',
+      lineHeight: '25px',
+      letterSpacing: '1px',
+      textTransform: 'uppercase',
+    },
   },
 };
 
