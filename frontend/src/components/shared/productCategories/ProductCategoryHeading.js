@@ -11,7 +11,7 @@ const ProductCategoryHeading = ({ productCategory }) => {
     <Heading
       as="h1"
       w="100%"
-      paddingY="32px"
+      paddingY="2rem"
       color="white"
       backgroundColor="black"
       textAlign="center"

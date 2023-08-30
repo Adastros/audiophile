@@ -11,10 +11,13 @@ const Header = ({ headerData, logoData }) => {
       paddingX={{ base: '0', md: '2.5rem', lg: '3rem' }}
       zIndex="1"
       position="relative"
+      align="center"
+      justify="center"
       backgroundColor="black"
     >
       <Flex
         w="100%"
+        maxW="69.375rem"
         paddingX={{ base: '2.5rem', md: '0px' }}
         paddingY="32px"
         position="relative"
@@ -32,7 +35,7 @@ const Header = ({ headerData, logoData }) => {
           top={{ base: 'calc(50% - 15px)', lg: '0' }}
           left={{ base: 'calc(50% - 75px)', md: '3.75rem', lg: '0' }}
         >
-          <Logo logoData={logoData}/>
+          <Logo logoData={logoData} />
         </Flex>
         <Box
           position={{ base: 'relative', lg: 'absolute' }}

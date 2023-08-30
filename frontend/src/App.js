@@ -47,7 +47,6 @@ function App() {
         <VStack
           h="100%"
           w="100%"
-          direction="column"
           gap="0"
           position={menuOverlayStyles.pagePosition}
           backgroundColor="brand.seaSalt"

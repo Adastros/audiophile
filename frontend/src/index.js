@@ -7,9 +7,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/home/HomePage';
-import HeadphonesPage from './components/pages/headphones/HeadphonesPage';
-import SpeakersPage from './components/pages/speakers/SpeakersPage';
-import EarphonesPage from './components/pages/earphones/EarphonesPage';
+import BaseProductCategoryPage from './components/shared/baseProductCategoryPage.js/BaseProductCategoryPage';
 import ProductDetailPage from './components/pages/productDetail/ProductDetailPage';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
@@ -39,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/headphones',
-        element: <HeadphonesPage />,
+        element: <BaseProductCategoryPage />,
         loader: () => getContent('headphones'),
       },
       {
@@ -62,7 +60,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/speakers',
-        element: <SpeakersPage />,
+        element: <BaseProductCategoryPage />,
         loader: () => getContent('speakers'),
       },
       {
@@ -81,7 +79,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/earphones',
-        element: <EarphonesPage />,
+        element: <BaseProductCategoryPage />,
         loader: () => getContent('earphones'),
       },
       {
