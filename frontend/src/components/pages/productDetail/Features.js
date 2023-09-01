@@ -6,10 +6,10 @@ const Features = ({ featureText }) => {
   const paragraph2 = featureText.paragraph2;
 
   return (
-    <Box w={{ base: '327px', md: '689px', lg: '635px' }}>
+    <Box w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}>
       <Heading
         as="h2"
-        marginBottom="24px"
+        marginBottom={{ base: '1.5rem', md: '2rem' }}
         {...headingStyles.productDetailSection}
       >
         FEATURES

@@ -32,7 +32,7 @@ const headingStyles = {
     textAlign: 'left',
   },
   productDetailSection: {
-    fontSize: { base: '24px', md: '32px', lg: '40px' },
+    fontSize: { base: '24px', md: '32px' },
     fontWeight: '700',
     lineHeight: '36px',
     letterSpacing: { base: '0.857px', md: '1.143px' },

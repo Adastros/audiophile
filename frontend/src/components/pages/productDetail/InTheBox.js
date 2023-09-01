@@ -9,7 +9,7 @@ const InTheBox = ({ items }) => {
           key={items[item].name}
           align="center"
           justify="flex-start"
-          gap="24px"
+          gap="1.5rem"
         >
           <Text
             color="brand.caramel"
@@ -27,13 +27,13 @@ const InTheBox = ({ items }) => {
       align="flex-start"
     >
       <Heading
-        w={{ base: '327px', md: 'row', lg: '350px' }}
+        w={{ base: '20.4375rem', md: '21.1875rem', lg: '21.875rem' }}
         marginBottom="24px"
         {...headingStyles.productDetailSection}
       >
         IN THE BOX
       </Heading>
-      <VStack align="flex-start" gap="8px">
+      <VStack align="flex-start" gap="0.5rem">
         {listItemsInBox()}
       </VStack>
     </Flex>

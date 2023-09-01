@@ -1,35 +1,33 @@
-import { Flex, Image, Box, Text } from '@chakra-ui/react';
+import { VStack, Box, Text } from '@chakra-ui/react';
+import Picture from '../../shared/Picture';
 import SeeProductButton from '../../shared/SeeProductButton';
 
 const RecommendedProduct = ({ product, route }) => {
   const name = product.name;
-  const imageUrlDesktop = product.image.desktop.path;
-  const imageUrlTablet = product.image.tablet.path;
-  const imageUrlMobile = product.image.mobile.path;
-  const imageAlt = product.image.alt;
+  const imgData = product.image;
 
   return (
-    <Flex
-      marginBottom="56px"
-      direction="column"
-      align="center"
-      gap="32px"
-      position="relative"
-    >
-      <Box zIndex="1" backgroundColor="brand.antiFlashWhite">
-        <picture>
-          <source media="(768px <= width < 992px)" srcSet={imageUrlTablet} />
-          <source media="(width >= 992px)" srcSet={imageUrlDesktop} />
-          <Image src={imageUrlMobile} alt={imageAlt} />
-        </picture>
-      </Box>
-      <Text textStyle="recommend">{name}</Text>
-      <SeeProductButton
-        buttonVariant="seeProductCaramel"
-        buttonSize="designMd"
-        route={route}
-      />
-    </Flex>
+    <>
+      <VStack
+        w={{ base: '20.4375rem', md: '13.9375rem', lg: '100%' }}
+        gap="2rem"
+      >
+        <Box
+          marginBottom={{ base: '0', md: '0.5rem' }}
+          zIndex="1"
+          borderRadius="0.5rem"
+          backgroundColor="brand.antiFlashWhite"
+        >
+          <Picture imgData={imgData} />
+        </Box>
+        <Text textStyle="recommend">{name}</Text>
+        <SeeProductButton
+          buttonVariant="seeProductCaramel"
+          buttonSize="designMd"
+          route={route}
+        />
+      </VStack>
+    </>
   );
 };
 

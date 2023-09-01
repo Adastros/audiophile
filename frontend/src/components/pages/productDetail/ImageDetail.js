@@ -1,24 +1,20 @@
-import { Image, Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
+import Picture from '../../shared/Picture';
 
-const ImageDetail = ({ productImgData }) => {
-  const imgUrlDesktop = productImgData.desktop.path;
-  const imgUrlTablet = productImgData.tablet.path;
-  const imgUrlMobile = productImgData.mobile.path;
-  const imgAlt = productImgData.alt;
-
+const ImageDetail = ({ imgData }) => {
   return (
-    <Box
-      h={{ base: '327px', md: '480px', lg: '560px' }}
-      w={{ base: '327px', md: '281px', lg: '540px' }}
-      marginBottom="8px"
+    <Flex
+      h={{ base: '20.4375rem', md: '30rem', lg: '35rem' }}
+      w="100%"
+      maxW={{ base: '20.4375rem', md: '17.5625rem', lg: '33.75rem' }}
+      marginBottom={{ base: '0.5rem', md: '0' }}
+      align='center'
+      justify='center'
+      borderRadius='0.5rem'
       backgroundColor="brand.antiFlashWhite"
     >
-      <picture>
-        <source media="(768px <= width < 992px)" srcSet={imgUrlTablet} />
-        <source media="(width >= 992px)" srcSet={imgUrlDesktop} />
-        <Image src={imgUrlMobile} alt={imgAlt} />
-      </picture>
-    </Box>
+      <Picture imgData={imgData} />
+    </Flex>
   );
 };
 
