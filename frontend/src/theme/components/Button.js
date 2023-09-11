@@ -21,10 +21,15 @@ const Button = defineStyleConfig({
       flexShrink: '0',
     },
     counterButton: {
-      h: '48px',
-      w: '40px',
-      fontSize: '13px',
+      h: '100%',
+      w: '2.5rem',
+      fontSize: '0.8125rem',
       flexShrink: '0',
+    },
+    checkout: {
+      h: '3rem',
+      w: '100%',
+      fontSize: '0.8125rem',
     },
   },
   variants: {

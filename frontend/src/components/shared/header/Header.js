@@ -3,17 +3,18 @@ import Navigation from './Navigation';
 import CartIconButton from './CartIconButton';
 import Logo from '../Logo';
 
-const Header = ({ headerData, logoData }) => {
+const Header = ({ headerData, logoData, onCartModalOpen }) => {
   return (
     <Flex
       id="header"
-      w="100%"
+      w="100% "
       paddingX={{ base: '0', md: '2.5rem', lg: '3rem' }}
       zIndex="1"
       position="relative"
       align="center"
       justify="center"
       backgroundColor="black"
+      overflowX={'hidden'}
     >
       <Flex
         w="100%"
@@ -44,7 +45,10 @@ const Header = ({ headerData, logoData }) => {
         >
           <Navigation headerData={headerData} />
         </Box>
-        <CartIconButton headerData={headerData} />
+        <CartIconButton
+          headerData={headerData}
+          onCartModalOpen={onCartModalOpen}
+        />
       </Flex>
     </Flex>
   );

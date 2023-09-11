@@ -6,6 +6,7 @@ import Button from './components/Button';
 import Input from './components/Input';
 import Text from './components/Text';
 import Link from './components/Link';
+import { modalTheme } from './modalTheme';
 
 const websiteTheme = extendTheme({
   ...colors,
@@ -16,6 +17,7 @@ const websiteTheme = extendTheme({
     Input,
     Text,
     Link,
+    Modal: modalTheme
   },
 });
 

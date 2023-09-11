@@ -45,6 +45,13 @@ const headingStyles = {
     letterSpacing: '2px',
     textTransform: 'uppercase',
   },
+  cart: {
+    fontSize: '1.125rem',
+    fontWeight: '700',
+    lineHeight: 'normal',
+    letterSpacing: '1.286px',
+    textTransform: 'uppercase',
+  },
 };
 
 export default headingStyles;

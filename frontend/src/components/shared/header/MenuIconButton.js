@@ -14,12 +14,12 @@ const MenuIconButton = ({ headerData }) => {
       className="iconHover"
       aria-label={hamburgerIconAriaLabel}
       icon={<MenuIcon hamburgerIconUrl={hamburgerIconUrl} />}
-      h="15px"
-      w="16px"
-      minW="0"
-      padding="0"
-      margin="0"
       onClick={handleMenuClick}
+      h="0.9375rem"
+      w="1rem"
+      minW="0"
+      margin="0"
+      padding="0"
     />
   );
 };
