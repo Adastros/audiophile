@@ -1,7 +1,7 @@
 import { Text } from '@chakra-ui/react';
 
-const CartItemName = ({ productName }) => {
-  return <Text textStyle="inTheBoxQuantity">{productName}</Text>;
+const CartItemName = ({ displayName }) => {
+  return <Text textStyle="inTheBoxQuantity">{displayName}</Text>;
 };
 
 export default CartItemName;

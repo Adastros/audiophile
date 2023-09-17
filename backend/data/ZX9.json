@@ -114,5 +114,6 @@
     "product1": "/speakers/ZX7",
     "product2": "/headphones/XX99MarkI",
     "product3": "/headphones/XX59"
-  }
+  },
+  "cartKey": "zx9"
 }

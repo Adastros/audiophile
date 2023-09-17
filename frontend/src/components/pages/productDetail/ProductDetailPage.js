@@ -26,6 +26,7 @@ const ProductDetailBase = () => {
   const galleryImages = productDetails.gallery;
   const recommendations = productDetails.recommendation;
   const routes = productDetails.route;
+  const cartKey = productDetails.cartKey;
 
   return (
     <>
@@ -67,7 +68,7 @@ const ProductDetailBase = () => {
                     productDescription={productDescription}
                   />
                   <ProductPrice price={price} />
-                  <ProductQuantitySelection />
+                  <ProductQuantitySelection cartKey={cartKey} />
                 </VStack>
               </Flex>
               <Flex

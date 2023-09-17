@@ -3,12 +3,15 @@ import React, { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from './serviceWorker';
 import HomePage from './components/pages/home/HomePage';
 import BaseProductCategoryPage from './components/shared/baseProductCategoryPage.js/BaseProductCategoryPage';
 import ProductDetailPage from './components/pages/productDetail/ProductDetailPage';
+import cartReducer from './reducers/cartReducer';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
 import './index.css';
@@ -100,12 +103,20 @@ const router = createBrowserRouter([
   },
 ]);
 
+const store = configureStore({
+  reducer: {
+    cart: cartReducer,
+  },
+});
+
 root.render(
   <StrictMode>
     {/* <ColorModeScript /> */}
     <ChakraProvider theme={websiteTheme}>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router}></RouterProvider>
+        <Provider store={store}>
+          <RouterProvider router={router}></RouterProvider>
+        </Provider>
       </QueryClientProvider>
     </ChakraProvider>
   </StrictMode>

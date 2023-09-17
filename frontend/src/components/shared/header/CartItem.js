@@ -1,18 +1,52 @@
+import { useDispatch } from 'react-redux';
 import { HStack, VStack } from '@chakra-ui/react';
 import CartItemImage from './CartItemImage';
 import CartItemName from './CartItemName';
 import CartItemPrice from './CartItemPrice';
 import QuantityCounter from '../QuantityCounter';
+import {
+  incrementQuantity,
+  decrementQuantity,
+} from '../../../reducers/cartReducer';
 
-const CartItem = ({ productImage, productName, price, cartQuantity }) => {
+const CartItem = ({
+  cartItemKey,
+  productImage,
+  displayName,
+  price,
+  quantity,
+}) => {
+  const dispatch = useDispatch();
+
+  const handlePlusButtonClick = () => {
+    dispatch(
+      incrementQuantity({
+        key: cartItemKey,
+      })
+    );
+  };
+
+  const handleMinusButtonClick = () => {
+    dispatch(
+      decrementQuantity({
+        key: cartItemKey,
+      })
+    );
+  };
+
   return (
     <HStack h="4rem" w="100%" gap="1rem">
       <CartItemImage productImage={productImage} />
-      <VStack w="100%" align="flex-start" gap="0">
-        <CartItemName productName={productName} />
+      <VStack flex="1" align="flex-start" gap="0">
+        <CartItemName displayName={displayName} />
         <CartItemPrice price={price} />
       </VStack>
-      <QuantityCounter isCart={true} initialQuantity={cartQuantity} />
+      <QuantityCounter
+        isCart={true}
+        quantity={quantity}
+        handlePlusButtonClick={handlePlusButtonClick}
+        handleMinusButtonClick={handleMinusButtonClick}
+      />
     </HStack>
   );
 };

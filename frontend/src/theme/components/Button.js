@@ -20,9 +20,14 @@ const Button = defineStyleConfig({
       fontSize: '13px',
       flexShrink: '0',
     },
-    counterButton: {
+    counterButtonProductDetail: {
       h: '100%',
       w: '2.5rem',
+      fontSize: '0.8125rem',
+      flexShrink: '0',
+    },
+    counterButtonCart: {
+      h: '100%',
       fontSize: '0.8125rem',
       flexShrink: '0',
     },

@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import {
   Modal,
   ModalOverlay,
@@ -13,15 +14,61 @@ import PriceTotal from './PriceTotal';
 import CheckoutButton from './CheckoutButton';
 
 const CartModal = ({ isCartModalOpen, onCartModalClose, headerData }) => {
+  const cart = useSelector(state => state.cart);
   const route = headerData.route.cart;
-  const dummyInt = 3;
-  const dummyTotalPrice = '1,000';
-  const productName1 = 'XX99 Mark II';
-  const productName2 = 'ZX9';
-  const productName3 = 'YX1';
-  const key1 = 'xx99mkii';
-  const key2 = 'zx9';
-  const key3 = 'yx1';
+  const totalCartItems = Object.values(cart).reduce((a, b) => a + b, 0);
+
+  const cartItems = () => {
+    return Object.keys(cart).map(cartItemKey => {
+      let quantity = cart[cartItemKey];
+
+      if (quantity) {
+        const productImage = headerData.image[cartItemKey];
+        const productPrice = headerData.cart[cartItemKey].price;
+        const displayName = headerData.cart[cartItemKey].displayName;
+
+        return (
+          <CartItem
+            key={`${cartItemKey}CartItem`}
+            cartItemKey={cartItemKey}
+            productImage={productImage}
+            displayName={displayName}
+            price={productPrice}
+            quantity={quantity}
+          />
+        );
+      }
+    });
+  };
+
+  const cartTotalPrice = () => {
+    const totalPrice = Object.entries(cart).reduce((sum, cartItem) => {
+      const cartItemKey = cartItem[0];
+      const cartItemQuantity = cartItem[1];
+
+      if (cartItemQuantity) {
+        const productPrice = headerData.cart[cartItemKey].price;
+
+        sum += cartItemQuantity * productPrice;
+      }
+
+      return sum;
+    }, 0);
+
+    return totalPrice.toLocaleString();
+  };
+
+  // Padding right is added when the modal body overflows to space the cart items from
+  // the scrollbar.
+  const modalBodyPadding = () => {
+    const modalBody = document.querySelector('#modal-body');
+
+    if (modalBody) {
+      if (modalBody.scrollHeight > modalBody.offsetHeight) {
+        return '1rem 0.75rem 1rem 0';
+      }
+    }
+  };
 
   return (
     <Modal
@@ -33,31 +80,14 @@ const CartModal = ({ isCartModalOpen, onCartModalClose, headerData }) => {
       <ModalOverlay />
       <ModalContent>
         <Flex align="center" justify="space-between">
-          <ModalHeader>{`CART (${dummyInt})`}</ModalHeader>
+          <ModalHeader>{`CART (${totalCartItems})`}</ModalHeader>
           <ClearCart />
         </Flex>
-        <ModalBody id="modal-body">
-          <CartItem
-            productImage={headerData.image[key1]}
-            productName={productName1}
-            price={headerData.cart[key1].price}
-            cartQuantity={1}
-          />
-          <CartItem
-            productImage={headerData.image[key2]}
-            productName={productName2}
-            price={headerData.cart[key2].price}
-            cartQuantity={2}
-          />
-          <CartItem
-            productImage={headerData.image[key3]}
-            productName={productName3}
-            price={headerData.cart[key3].price}
-            cartQuantity={3}
-          />
+        <ModalBody id="modal-body" padding={modalBodyPadding()}>
+          {cartItems()}
         </ModalBody>
         <ModalFooter>
-          <PriceTotal totalPrice={dummyTotalPrice} />
+          <PriceTotal totalPrice={cartTotalPrice()} />
           <CheckoutButton
             buttonVariant="seeProductCaramel"
             buttonSize="checkout"

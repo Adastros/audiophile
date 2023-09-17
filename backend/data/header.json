@@ -78,21 +78,27 @@
   },
   "cart": {
     "xx99mkii": {
+      "displayName": "XX99 Mark II",
       "price": 2999
     },
     "xx99mki": {
+      "displayName": "XX99 Mark I",
       "price": 1750
     },
     "xx59": {
+      "displayName": "XX59",
       "price": 899
     },
     "zx9": {
+      "displayName": "ZX9",
       "price": 4500
     },
     "zx7": {
+      "displayName": "ZX7",
       "price": 3500
     },
     "yx1": {
+      "displayName": "YX1",
       "price": 599
     }
   }
