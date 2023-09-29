@@ -1,17 +1,19 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { VStack } from '@chakra-ui/react';
 import ProductCategoryHeading from '../productCategories/ProductCategoryHeading';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
 import BaseProductPreview from '../productPreview/BaseProductPreview';
+import Closing from '../closing/Closing';
 
 const BaseProductCategoryPage = () => {
   const headphonePageContent = useLoaderData();
+  const closingData = useOutletContext().closingData;
   const productCategory = headphonePageContent.productCategory;
   const products = headphonePageContent.products;
 
   const productPreviews = () => {
     return Object.keys(products).map((product, i) => {
-      let isEven = i % 2 === 0;   // determines if a product preview is flexed row-reversed
+      let isEven = i % 2 === 0; // determines if a product preview is flexed row-reversed
       let productKey = `${products[product].name
         .split(' ')
         .join('')}ProductPreview`;
@@ -40,6 +42,7 @@ const BaseProductCategoryPage = () => {
         {productPreviews()}
         <ProductCategories />
       </VStack>
+      <Closing closingData={closingData} />
     </>
   );
 };

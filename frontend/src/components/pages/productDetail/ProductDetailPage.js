@@ -1,6 +1,6 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { Flex, VStack, Box } from '@chakra-ui/react';
-import GoBackLink from './GoBackLink';
+import GoBackLink from '../../shared/GoBackLink';
 import ImageDetail from './ImageDetail';
 import NewProduct from '../../shared/NewProduct';
 import ProductDetailName from './ProductDetailName';
@@ -12,9 +12,11 @@ import InTheBox from './InTheBox';
 import Gallery from './Gallery';
 import Recommendations from './Recommendations';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
+import Closing from '../../shared/closing/Closing';
 
 const ProductDetailBase = () => {
   const productDetails = useLoaderData();
+  const closingData = useOutletContext().closingData;
   const goBackUrl = productDetails.route.goBack;
   const imgData = productDetails.productImage;
   const isNew = productDetails.new;
@@ -89,6 +91,7 @@ const ProductDetailBase = () => {
           </VStack>
         </VStack>
       </VStack>
+      <Closing closingData={closingData} />
     </>
   );
 };

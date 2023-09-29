@@ -9,7 +9,7 @@ const ProductQuantitySelection = ({ cartKey }) => {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
-  const handleButtonCLick = () => {
+  const handleButtonClick = () => {
     dispatch(
       addToCart({
         key: cartKey,
@@ -35,7 +35,7 @@ const ProductQuantitySelection = ({ cartKey }) => {
         handleMinusButtonClick={handleMinusButtonClick}
       />
       <AddToCartButton
-        handleButtonCLick={handleButtonCLick}
+        handleButtonClick={handleButtonClick}
         buttonVariant="seeProductCaramel"
         buttonSize="designMd"
       />

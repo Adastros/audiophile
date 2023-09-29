@@ -1,0 +1,18 @@
+{
+  "message": "The 'Cash on Delivery' option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.",
+  "icon": {
+    "cashOnDelivery": {
+      "path": "assets/checkout/icon-cash-on-delivery_v943ln",
+      "aria": {
+        "hidden": false,
+        "label": "Exchange of cash for boxed product."
+      }
+    },
+    "orderConfirmation": {
+      "path": "assets/checkout/icon-order-confirmation_ooc3xo",
+
+      "aria": { "hidden": true, "label": "" }
+    }
+  },
+  "route": ""
+}

@@ -11,6 +11,7 @@ import reportWebVitals from './reportWebVitals';
 import HomePage from './components/pages/home/HomePage';
 import BaseProductCategoryPage from './components/shared/baseProductCategoryPage.js/BaseProductCategoryPage';
 import ProductDetailPage from './components/pages/productDetail/ProductDetailPage';
+import CheckoutPage from './components/checkout/CheckoutPage';
 import cartReducer from './reducers/cartReducer';
 import { getContent } from './utils/helper';
 import websiteTheme from './theme';
@@ -98,6 +99,11 @@ const router = createBrowserRouter([
 
           return getContent(params.productName);
         },
+      },
+      {
+        path: '/checkout',
+        element: <CheckoutPage />,
+        loader: () => getContent('checkout'),
       },
     ],
   },

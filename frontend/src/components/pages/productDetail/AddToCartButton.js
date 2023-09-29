@@ -1,9 +1,9 @@
 import { Button } from '@chakra-ui/react';
 
-const AddToCartButton = ({ buttonVariant, buttonSize, handleButtonCLick }) => {
+const AddToCartButton = ({ buttonVariant, buttonSize, handleButtonClick }) => {
   return (
     <Button
-      onClick={handleButtonCLick}
+      onClick={handleButtonClick}
       variant={buttonVariant}
       size={buttonSize}
     >

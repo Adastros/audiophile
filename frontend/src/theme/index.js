@@ -3,10 +3,14 @@ import colors from '../theme/colors';
 import typography from './typography';
 import textStyles from './textStyles';
 import Button from './components/Button';
-import Input from './components/Input';
 import Text from './components/Text';
 import Link from './components/Link';
+import FormLabel from './components/FormLabel';
 import { modalTheme } from './modalTheme';
+import { inputTheme } from './inputTheme';
+import { numberInputTheme } from './numberInputTheme';
+import { radioTheme } from './radioThemes';
+import { formErrorMessageTheme } from './formErrorMessageTheme';
 
 const websiteTheme = extendTheme({
   ...colors,
@@ -14,10 +18,14 @@ const websiteTheme = extendTheme({
   ...textStyles,
   components: {
     Button,
-    Input,
+    Input: inputTheme,
+    NumberInput: numberInputTheme,
     Text,
     Link,
-    Modal: modalTheme
+    Modal: modalTheme,
+    FormLabel,
+    FormError: formErrorMessageTheme,
+    Radio: radioTheme,
   },
 });
 

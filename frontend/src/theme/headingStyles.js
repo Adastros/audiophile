@@ -52,6 +52,21 @@ const headingStyles = {
     letterSpacing: '1.286px',
     textTransform: 'uppercase',
   },
+  checkoutSection: {
+    fontSize: '0.8125rem',
+    fontWeight: '700',
+    lineHeight: 'normal',
+    letterSpacing: '1.286px',
+    textTransform: 'uppercase',
+    color: 'brand.caramel',
+  },
+  checkoutHeading: {
+    fontSize: { base: '28px', md: '32px' },
+    fontWeight: '700',
+    lineHeight: '36px',
+    letterSpacing: { base: '1px', md: '1.143px' },
+    textTransform: 'uppercase',
+  }
 };
 
 export default headingStyles;
