@@ -1,13 +1,13 @@
 import { Button } from '@chakra-ui/react';
 
-const PayButton = () => {
+const PayButton = ({ onOrderConfirmationModalOpen }) => {
   return (
     <Button
-      //   onClick={handleButtonCLick}
       form="checkout-form"
       type="submit"
       variant="seeProductCaramel"
       size="checkout"
+      onClick={onOrderConfirmationModalOpen}
     >
       CONTINUE & PAY
     </Button>

@@ -24,6 +24,13 @@ const textStyles = {
       lineHeight: '25px',
       opacity: 0.5,
     },
+    orderConfirmGrandTotalPrice: {
+      fontSize: '1.125rem',
+      fontWeight: '700',
+      lineHeight: 'normal',
+      letterSpacing: 'normal',
+      textTransform: 'uppercase',
+    },
     productPrice: {
       fontSize: '18px',
       fontWeight: '700',
@@ -70,6 +77,13 @@ const textStyles = {
       fontWeight: '700',
       lineHeight: '25px',
       letterSpacing: '1px',
+    },
+    orderConfirmMoreItems: {
+      fontSize: '0.75rem',
+      fontWeight: '700',
+      lineHeight: 'normal',
+      letterSpacing: '-0.013375rem',
+      opacity: '0.5',
     },
   },
 };

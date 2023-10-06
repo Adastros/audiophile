@@ -6,6 +6,7 @@ import CheckoutSummary from './CheckoutSummary';
 
 const CheckoutPage = () => {
   const headerData = useOutletContext().headerData;
+  const setGrandTotal = useOutletContext().setGrandTotal;
   const checkoutData = useLoaderData();
 
   return (
@@ -32,7 +33,10 @@ const CheckoutPage = () => {
           gap={{ base: '2rem', lg: '1.875rem' }}
         >
           <CheckoutForm checkoutData={checkoutData} />
-          <CheckoutSummary headerData={headerData} />
+          <CheckoutSummary
+            headerData={headerData}
+            setGrandTotal={setGrandTotal}
+          />
         </Flex>
       </VStack>
     </Box>

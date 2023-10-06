@@ -1,12 +1,12 @@
 import { Image } from '@chakra-ui/react';
 
-const CartItemImage = ({ productImage }) => {
+const CartItemImage = ({ productImage, size }) => {
   return (
     <Image
       src={productImage.path}
       alt={productImage.alt}
-      h="4rem"
-      w="4rem"
+      h={size.height}
+      w={size.width}
       borderRadius="0.5rem"
       backgroundColor="brand.antiFlashWhite"
     />

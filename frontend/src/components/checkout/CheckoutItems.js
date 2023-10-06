@@ -4,10 +4,16 @@ import CartItemName from '../shared/header/CartItemName';
 import CartItemPrice from '../shared/header/CartItemPrice';
 import CheckoutItemQuantity from './CheckoutItemQuantity';
 
-const CheckoutItems = ({ productImage, displayName, price, quantity }) => {
+const CheckoutItems = ({
+  productImage,
+  displayName,
+  price,
+  quantity,
+  itemImageSize,
+}) => {
   return (
     <HStack w="100%" gap="1rem">
-      <CartItemImage productImage={productImage} />
+      <CartItemImage productImage={productImage} size={itemImageSize} />
       <VStack w="100%" align="flex-start" gap="0">
         <HStack w="100%" justify="space-between" gap="0">
           <CartItemName displayName={displayName} />

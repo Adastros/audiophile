@@ -7,11 +7,6 @@
         "hidden": false,
         "label": "Exchange of cash for boxed product."
       }
-    },
-    "orderConfirmation": {
-      "path": "assets/checkout/icon-order-confirmation_ooc3xo",
-
-      "aria": { "hidden": true, "label": "" }
     }
   },
   "route": ""

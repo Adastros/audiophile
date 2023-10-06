@@ -40,6 +40,10 @@
     "rightArrow": {
       "path": "assets/shared/desktop/icon-arrow-right_dqhcg5",
       "aria": { "hidden": true, "label": "" }
+    },
+    "check": {
+      "path": "assets/checkout/icon-order-confirmation_ooc3xo",
+      "aria": { "hidden": true, "label": "" }
     }
   },
   "image": {

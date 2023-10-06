@@ -6,6 +6,7 @@ import Button from './components/Button';
 import Text from './components/Text';
 import Link from './components/Link';
 import FormLabel from './components/FormLabel';
+import { accordionTheme } from './accordionTheme';
 import { modalTheme } from './modalTheme';
 import { inputTheme } from './inputTheme';
 import { numberInputTheme } from './numberInputTheme';
@@ -17,6 +18,7 @@ const websiteTheme = extendTheme({
   ...typography,
   ...textStyles,
   components: {
+    Accordion: accordionTheme,
     Button,
     Input: inputTheme,
     NumberInput: numberInputTheme,

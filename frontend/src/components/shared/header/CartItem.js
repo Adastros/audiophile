@@ -17,6 +17,7 @@ const CartItem = ({
   quantity,
 }) => {
   const dispatch = useDispatch();
+  const cartImageSize = { height: '4rem', width: '4rem' };
 
   const handlePlusButtonClick = () => {
     dispatch(
@@ -36,7 +37,7 @@ const CartItem = ({
 
   return (
     <HStack h="4rem" w="100%" gap="1rem">
-      <CartItemImage productImage={productImage} />
+      <CartItemImage productImage={productImage} size={cartImageSize} />
       <VStack flex="1" align="flex-start" gap="0">
         <CartItemName displayName={displayName} />
         <CartItemPrice price={price} />

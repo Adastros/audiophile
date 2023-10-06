@@ -66,7 +66,14 @@ const headingStyles = {
     lineHeight: '36px',
     letterSpacing: { base: '1px', md: '1.143px' },
     textTransform: 'uppercase',
-  }
+  },
+  orderConfirmation: {
+    fontSize: { base: '1.5rem', md: '2rem' },
+    fontWeight: '700',
+    lineHeight: { base: '1.75rem', md: '2.25rem' },
+    letterSpacing: { base: '0.0535625rem', md: '0.0714375rem' },
+    textTransform: 'uppercase',
+  },
 };
 
 export default headingStyles;

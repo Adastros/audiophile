@@ -1,11 +1,15 @@
+import { useOutletContext } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { VStack, Heading } from '@chakra-ui/react';
 import CheckoutItems from './CheckoutItems';
-import CheckoutCostSummary from './CheckoutPriceSummary';
+import CheckoutPriceSummary from './CheckoutPriceSummary';
 import headingStyles from '../../theme/headingStyles';
 
-const CheckoutSummary = ({ headerData }) => {
+const CheckoutSummary = ({ headerData, setGrandTotal }) => {
   const cart = useSelector(state => state.cart);
+  const onOrderConfirmationModalOpen =
+    useOutletContext().onOrderConfirmationModalOpen;
+  const itemImageSize = { height: '4rem', width: '4rem' };
 
   const checkoutItems = () => {
     return Object.keys(cart).map(checkoutItemKey => {
@@ -24,6 +28,7 @@ const CheckoutSummary = ({ headerData }) => {
             displayName={displayName}
             price={productPrice}
             quantity={quantity}
+            itemImageSize={itemImageSize}
           />
         );
       }
@@ -51,8 +56,10 @@ const CheckoutSummary = ({ headerData }) => {
 
   const calcGrandTotal = () => {
     const shippingCost = 50; // Shipping is flat $50
+    const grandTotal = calcCartTotalCost() + calcVatCost() + shippingCost;
 
-    return calcCartTotalCost() + calcVatCost() + shippingCost;
+    setGrandTotal(grandTotal);
+    return grandTotal;
   };
 
   const totalPriceStr = calcCartTotalCost().toLocaleString();
@@ -80,10 +87,11 @@ const CheckoutSummary = ({ headerData }) => {
       <VStack w="100%" gap="1.5rem">
         {checkoutItems()}
       </VStack>
-      <CheckoutCostSummary
+      <CheckoutPriceSummary
         totalPrice={totalPriceStr}
         vatCost={vatCostStr}
         grandTotal={grandTotalStr}
+        onOrderConfirmationModalOpen={onOrderConfirmationModalOpen}
       />
     </VStack>
   );

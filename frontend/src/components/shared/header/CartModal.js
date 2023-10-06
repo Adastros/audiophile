@@ -13,7 +13,7 @@ import CartItem from './CartItem';
 import PriceTotal from './PriceTotal';
 import CheckoutButton from './CheckoutButton';
 
-const CartModal = ({ isCartModalOpen, onCartModalClose, headerData }) => {
+const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
   const cart = useSelector(state => state.cart);
   const route = headerData.route.cart;
   const totalCartItems = Object.values(cart).reduce((a, b) => a + b, 0);
