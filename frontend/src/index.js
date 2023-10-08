@@ -121,7 +121,7 @@ root.render(
     <ChakraProvider theme={websiteTheme}>
       <QueryClientProvider client={queryClient}>
         <Provider store={store}>
-          <RouterProvider router={router}></RouterProvider>
+          <RouterProvider router={router} />
         </Provider>
       </QueryClientProvider>
     </ChakraProvider>

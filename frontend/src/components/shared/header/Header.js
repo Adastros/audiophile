@@ -1,9 +1,9 @@
-import { Flex, Box } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import Navigation from './Navigation';
 import CartIconButton from './CartIconButton';
 import Logo from '../Logo';
 
-const Header = ({ headerData, logoData, onCartModalOpen }) => {
+const Header = ({ headerData, logoData, onCartModalOpen, menuModal }) => {
   return (
     <Flex
       id="header"
@@ -36,18 +36,13 @@ const Header = ({ headerData, logoData, onCartModalOpen }) => {
           top={{ base: 'calc(50% - 15px)', lg: '0' }}
           left={{ base: 'calc(50% - 75px)', md: '3.75rem', lg: '0' }}
         >
-          <Logo logoData={logoData} />
+          <Logo logoData={logoData} menuModal={menuModal}/>
         </Flex>
-        <Box
-          position={{ base: 'relative', lg: 'absolute' }}
-          top={{ base: '0', lg: 'calc(50% - 12.5px)' }}
-          left={{ base: '0', lg: 'calc(50% - 216px)' }}
-        >
-          <Navigation headerData={headerData} />
-        </Box>
+        <Navigation headerData={headerData} menuModal={menuModal} />
         <CartIconButton
           headerData={headerData}
           onCartModalOpen={onCartModalOpen}
+          menuModal={menuModal}
         />
       </Flex>
     </Flex>

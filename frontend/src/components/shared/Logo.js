@@ -1,9 +1,13 @@
 import { LinkBox, LinkOverlay, Image } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 
-const Logo = ({ logoData }) => {
+const Logo = ({ logoData, menuModal }) => {
+  const handleLogoClick = () => {
+    if (menuModal) menuModal.onMenuModalClose();
+  };
+
   return (
-    <LinkBox>
+    <LinkBox onClick={handleLogoClick}>
       <LinkOverlay as={ReactRouterLink} to={logoData.homeRoute}>
         <Image
           id="logo"

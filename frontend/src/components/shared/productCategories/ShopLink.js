@@ -2,11 +2,13 @@ import { LinkBox, LinkOverlay, Flex, Image, Text } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import SharedHeaderContext from '../../../utils/SharedHeaderContext';
-import HandlerContext from '../../../utils/HandlerContext';
 
-const ShopLink = ({ route }) => {
+const ShopLink = ({ route, menuModal }) => {
   const rightArrowIconData = useContext(SharedHeaderContext).rightArrowIconData;
-  const handleShopLinkClick = useContext(HandlerContext).handleShopLinkClick;
+
+  const handleShopLinkClick = () => {
+    if (menuModal) menuModal.onMenuModalClose();
+  };
 
   return (
     <LinkBox className="shopLink" onClick={handleShopLinkClick}>

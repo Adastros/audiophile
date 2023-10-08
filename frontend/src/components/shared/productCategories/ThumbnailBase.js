@@ -6,7 +6,7 @@ import ShopLink from './ShopLink';
 // paddingTop is optional and only used for the earphones
 // thumbnail due to the image being set slightly higher than
 // the others
-const ThumbnailBase = ({ route, imgData, text, padTop }) => {
+const ThumbnailBase = ({ route, imgData, text, padTop, menuModal }) => {
   return (
     <Flex
       h="min-content"
@@ -28,7 +28,7 @@ const ThumbnailBase = ({ route, imgData, text, padTop }) => {
       ></Box>
       <ThumbnailImg imgData={imgData} />
       <ThumbNailText text={text} />
-      <ShopLink route={route} />
+      <ShopLink route={route} menuModal={menuModal} />
     </Flex>
   );
 };

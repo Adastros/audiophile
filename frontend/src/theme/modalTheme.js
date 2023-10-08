@@ -5,6 +5,32 @@ import headingStyles from './headingStyles';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(modalAnatomy.keys);
 
+const menu = definePartsStyle({
+  overlay: { top: '5.5625rem', overflow: 'hidden', opacity: '0.4' },
+  dialogContainer: {
+    w: '100%',
+    top: '5.5625rem',
+    margin: '0',
+    padding: '0',
+  },
+  dialog: {
+    maxW: '100%',
+    w: '100%',
+    margin: '0',
+    padding: '0',
+    borderRadius: { base: '0 0 0.5rem 0.5rem' },
+    backgroundColor: 'white',
+  },
+  body: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: { base: '1rem', md: '3rem' },
+    paddingBottom: { base: '2.25rem', md: '4.1875rem' },
+    paddingX: { base: '0', md: '2.5rem' },
+  },
+});
+
 const cart = definePartsStyle({
   header: { paddingX: '0', whiteSpace: 'nowrap', ...headingStyles.cart },
   overlay: { overflow: 'hidden' },
@@ -69,5 +95,5 @@ const orderConfirmation = definePartsStyle({
 });
 
 export const modalTheme = defineMultiStyleConfig({
-  variants: { cart, orderConfirmation },
+  variants: { menu, cart, orderConfirmation },
 });

@@ -3,7 +3,7 @@ import { Flex } from '@chakra-ui/react';
 import ThumbnailBase from './ThumbnailBase';
 import SharedHeaderContext from '../../../utils/SharedHeaderContext';
 
-const ProductCategories = () => {
+const ProductCategories = ({ menuModal }) => {
   const productCategories = useContext(SharedHeaderContext).productCategories;
   const earphonePadTop = { base: '0.75rem', md: '0.5rem' };
 
@@ -19,6 +19,7 @@ const ProductCategories = () => {
           imgData={imgData}
           text={key}
           padTop={key === 'earphones' ? earphonePadTop : '0'}
+          menuModal={menuModal}
         />
       );
     });

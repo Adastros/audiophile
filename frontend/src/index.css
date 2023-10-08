@@ -1,4 +1,12 @@
 /* 
+This is needed to prevent react-remove-scroll-bar from 
+adding padding-right: 15px to the body when switching 
+from the menu modal to the cart modal. 
+*/
+body {
+  padding-right: 0 !important;
+}
+/* 
 Only used to change the color of icons when the 
 parent div is hovered over.
 */

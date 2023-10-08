@@ -3,12 +3,11 @@ import React, { useState } from 'react';
 import { Outlet, useLoaderData, ScrollRestoration } from 'react-router-dom';
 import { VStack, useDisclosure } from '@chakra-ui/react';
 import Header from './components/shared/header/Header';
-import MenuOverlay from './components/shared/header/MenuOverlay';
+import MenuModal from './components/shared/header/MenuModal';
 import CartModal from './components/shared/header/CartModal';
 import OrderConfirmationModal from './components/orderConfirmationModal/OrderConfirmationModal';
 import Footer from './components/shared/footer/Footer';
 import SharedHeaderContext from './utils/SharedHeaderContext';
-import HandlerContext from './utils/HandlerContext';
 
 function App() {
   const [grandTotal, setGrandTotal] = useState(0);
@@ -29,10 +28,17 @@ function App() {
     onClose: onOrderConfirmationModalClose,
   } = useDisclosure();
 
-  const [menuOverlayStyles, setMenuOverlayStyles] = useState({
-    menuDisplay: 'none',
-    pagePosition: 'relative',
-  });
+  const {
+    isOpen: isMenuModalOpen,
+    onOpen: onMenuModalOpen,
+    onClose: onMenuModalClose,
+  } = useDisclosure();
+
+  const menuModal = {
+    isMenuModalOpen,
+    onMenuModalOpen,
+    onMenuModalClose,
+  };
 
   const logoData = {
     logoImg: headerClosingFooterData[0].image.logo.path,
@@ -52,54 +58,31 @@ function App() {
     onOrderConfirmationModalOpen: onOrderConfirmationModalOpen,
   };
 
-  const handlers = {
-    handleMenuClick: () => {
-      if (menuOverlayStyles.menuDisplay === 'none') {
-        setMenuOverlayStyles({ menuDisplay: 'block', pagePosition: 'fixed' });
-      } else {
-        setMenuOverlayStyles({
-          menuDisplay: 'none',
-          pagePosition: 'relative',
-        });
-      }
-    },
-    handleShopLinkClick: () => {
-      setMenuOverlayStyles({ menuDisplay: 'none', pagePosition: 'relative' });
-    },
-  };
-
   return (
     <SharedHeaderContext.Provider value={sharedHeaderData}>
-      <HandlerContext.Provider value={handlers}>
-        <VStack
-          h="100%"
-          w="100%"
-          gap="0"
-          position={menuOverlayStyles.pagePosition}
-          backgroundColor="brand.seaSalt"
-        >
-          <MenuOverlay menuDisplay={menuOverlayStyles.menuDisplay} />
-          <CartModal
-            headerData={headerData}
-            isCartModalOpen={isCartModalOpen}
-            onCartModalClose={onCartModalClose}
-          />
-          <OrderConfirmationModal
-            headerData={headerData}
-            grandTotal={grandTotal}
-            isOrderConfirmationModalOpen={isOrderConfirmationModalOpen}
-            onOrderConfirmationModalClose={onOrderConfirmationModalClose}
-          />
-          <Header
-            headerData={headerData}
-            logoData={logoData}
-            onCartModalOpen={onCartModalOpen}
-          />
-          <Outlet context={outletContext} />
-          <Footer footerData={footerData} logoData={logoData} />
-        </VStack>
-        <ScrollRestoration />
-      </HandlerContext.Provider>
+      <VStack h="100%" w="100%" gap="0" backgroundColor="brand.seaSalt">
+        <MenuModal menuModal={menuModal} />
+        <CartModal
+          headerData={headerData}
+          isCartModalOpen={isCartModalOpen}
+          onCartModalClose={onCartModalClose}
+        />
+        <OrderConfirmationModal
+          headerData={headerData}
+          grandTotal={grandTotal}
+          isOrderConfirmationModalOpen={isOrderConfirmationModalOpen}
+          onOrderConfirmationModalClose={onOrderConfirmationModalClose}
+        />
+        <Header
+          headerData={headerData}
+          logoData={logoData}
+          onCartModalOpen={onCartModalOpen}
+          menuModal={menuModal}
+        />
+        <Outlet context={outletContext} />
+        <Footer footerData={footerData} logoData={logoData} />
+      </VStack>
+      <ScrollRestoration />
     </SharedHeaderContext.Provider>
   );
 }
