@@ -9,8 +9,8 @@ const PaymentMethods = ({
   checkoutData,
   value,
   errors,
-  onPaymentRadioClick,
   register,
+  onPaymentRadioClick,
 }) => {
   const isMethodCash = value === 'cash';
 
@@ -22,25 +22,28 @@ const PaymentMethods = ({
       <VStack w="100%" align="flex-start" gap={{ base: '2rem', md: '1.5rem' }}>
         <PaymentMethodRadio
           value={value}
+          register={register}
           onPaymentRadioClick={onPaymentRadioClick}
         />
-        <Flex
-          w="100%"
-          direction={{ base: 'column', md: 'row' }}
-          wrap="nowrap"
-          gap={{ base: '1.5rem', md: '1rem' }}
-          display={isMethodCash ? 'none' : 'flex'}
-        >
-          <EMoneyNumberInput errors={errors} register={register} />
-          <EMoneyPinInput errors={errors} register={register} />
-        </Flex>
-        <Box
-          w="100%"
-          marginTop={{ base: '0', md: '0.375rem' }}
-          display={isMethodCash ? 'flex' : 'none'}
-        >
-          <CashOnDeliveryMessage checkoutData={checkoutData} />
-        </Box>
+        {isMethodCash ? (
+          <Box
+            w="100%"
+            marginTop={{ base: '0', md: '0.375rem' }}
+            display={isMethodCash ? 'flex' : 'none'}
+          >
+            <CashOnDeliveryMessage checkoutData={checkoutData} />
+          </Box>
+        ) : (
+          <Flex
+            w="100%"
+            direction={{ base: 'column', md: 'row' }}
+            wrap="nowrap"
+            gap={{ base: '1.5rem', md: '1rem' }}
+          >
+            <EMoneyNumberInput errors={errors} register={register} />
+            <EMoneyPinInput errors={errors} register={register} />
+          </Flex>
+        )}
       </VStack>
     </VStack>
   );

@@ -1,18 +1,18 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { VStack, Heading } from '@chakra-ui/react';
 import BillingDetails from './BillingDetails';
 import ShippingInfo from './ShippingInfo';
 import PaymentMethods from './PaymentMethods';
 import headingStyles from '../../theme/headingStyles';
 
-const CheckoutForm = ({ checkoutData }) => {
+const CheckoutForm = ({
+  checkoutData,
+  errors,
+  register,
+  handleSubmit,
+  resetField,
+}) => {
   const [value, setValue] = useState('eMoney');
-  const {
-    register, // registers input component to react-hook-form
-    handleSubmit,
-    formState: { errors }, // Get the error state of the form. Ca assess the name attribute of the input and error message
-  } = useForm();
 
   const onSubmit = (data, e) => {
     e.preventDefault;
@@ -20,6 +20,10 @@ const CheckoutForm = ({ checkoutData }) => {
   };
 
   const onPaymentRadioClick = newValue => {
+    if (value === 'cash') {
+      resetField('eMoneyNumber');
+      resetField('eMoneyPin');
+    }
     setValue(newValue);
   };
 
@@ -54,8 +58,8 @@ const CheckoutForm = ({ checkoutData }) => {
           checkoutData={checkoutData}
           value={value}
           errors={errors}
-          onPaymentRadioClick={onPaymentRadioClick}
           register={register}
+          onPaymentRadioClick={onPaymentRadioClick}
         />
       </VStack>
     </VStack>

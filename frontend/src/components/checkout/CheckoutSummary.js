@@ -3,16 +3,19 @@ import { useSelector } from 'react-redux';
 import { VStack, Heading } from '@chakra-ui/react';
 import CheckoutItems from './CheckoutItems';
 import CheckoutPriceSummary from './CheckoutPriceSummary';
+import PayButton from './PayButton';
 import headingStyles from '../../theme/headingStyles';
 
-const CheckoutSummary = ({ headerData, setGrandTotal }) => {
+const CheckoutSummary = ({ headerData, setGrandTotal, isValid }) => {
   const cart = useSelector(state => state.cart);
   const onOrderConfirmationModalOpen =
     useOutletContext().onOrderConfirmationModalOpen;
   const itemImageSize = { height: '4rem', width: '4rem' };
 
   const checkoutItems = () => {
-    return Object.keys(cart).map(checkoutItemKey => {
+    let items = [];
+
+    Object.keys(cart).forEach(checkoutItemKey => {
       let quantity = cart[checkoutItemKey];
 
       if (quantity) {
@@ -20,7 +23,7 @@ const CheckoutSummary = ({ headerData, setGrandTotal }) => {
         const productPrice = headerData.cart[checkoutItemKey].price;
         const displayName = headerData.cart[checkoutItemKey].displayName;
 
-        return (
+        items.push(
           <CheckoutItems
             key={`${checkoutItemKey}CheckoutItem`}
             checkoutItemKey={checkoutItemKey}
@@ -33,9 +36,13 @@ const CheckoutSummary = ({ headerData, setGrandTotal }) => {
         );
       }
     });
+
+    return items;
   };
 
   const calcCartTotalCost = () => {
+    if (!checkoutItems().length) return 0;
+
     return Object.entries(cart).reduce((sum, cartItem) => {
       const cartItemKey = cartItem[0];
       const cartItemQuantity = cartItem[1];
@@ -91,6 +98,11 @@ const CheckoutSummary = ({ headerData, setGrandTotal }) => {
         totalPrice={totalPriceStr}
         vatCost={vatCostStr}
         grandTotal={grandTotalStr}
+        onOrderConfirmationModalOpen={onOrderConfirmationModalOpen}
+      />
+      <PayButton
+        isValid={isValid}
+        numOfCartItems={checkoutItems().length}
         onOrderConfirmationModalOpen={onOrderConfirmationModalOpen}
       />
     </VStack>

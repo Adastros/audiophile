@@ -7,7 +7,7 @@ import {
   Flex,
 } from '@chakra-ui/react';
 
-const PaymentMethodRadio = ({ value, onPaymentRadioClick }) => {
+const PaymentMethodRadio = ({ value, register, onPaymentRadioClick }) => {
   return (
     <FormControl as="fieldset">
       <Flex w="100%" direction={{ base: 'column', md: 'row' }} gap="1rem">
@@ -21,10 +21,10 @@ const PaymentMethodRadio = ({ value, onPaymentRadioClick }) => {
           onChange={onPaymentRadioClick}
         >
           <VStack align="flex-start" gap="1rem">
-            <Radio value="eMoney" variant="checkout">
+            <Radio value="eMoney" variant="checkout" {...register('radio')}>
               e-Money
             </Radio>
-            <Radio value="cash" variant="checkout">
+            <Radio value="cash" variant="checkout" {...register('radio')}>
               Cash on Delivery
             </Radio>
           </VStack>

@@ -1,5 +1,6 @@
 import { useOutletContext, useLoaderData } from 'react-router-dom';
 import { Flex, VStack, Box } from '@chakra-ui/react';
+import { useForm } from 'react-hook-form';
 import GoBackLink from '../shared/GoBackLink';
 import CheckoutForm from './CheckoutForm';
 import CheckoutSummary from './CheckoutSummary';
@@ -8,6 +9,25 @@ const CheckoutPage = () => {
   const headerData = useOutletContext().headerData;
   const setGrandTotal = useOutletContext().setGrandTotal;
   const checkoutData = useLoaderData();
+  const {
+    register, // registers input component to react-hook-form
+    handleSubmit,
+    resetField, // manually reset a specific input field's value, error, and state
+    formState: { errors, isValid },
+  } = useForm({
+    shouldUnregister: true, // Unregisters inputs that were unmounted (removed from DOM)
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      address: '',
+      zipCode: '',
+      city: '',
+      country: '',
+      eMoneyNumber: '',
+      eMoneyPin: '',
+    },
+  });
 
   return (
     <Box
@@ -32,10 +52,17 @@ const CheckoutPage = () => {
           justify="center"
           gap={{ base: '2rem', lg: '1.875rem' }}
         >
-          <CheckoutForm checkoutData={checkoutData} />
+          <CheckoutForm
+            checkoutData={checkoutData}
+            errors={errors}
+            register={register}
+            handleSubmit={handleSubmit}
+            resetField={resetField}
+          />
           <CheckoutSummary
             headerData={headerData}
             setGrandTotal={setGrandTotal}
+            isValid={isValid}
           />
         </Flex>
       </VStack>

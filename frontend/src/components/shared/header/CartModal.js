@@ -91,6 +91,7 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
           <CheckoutButton
             buttonVariant="seeProductCaramel"
             buttonSize="checkout"
+            totalCartItems={totalCartItems}
             route={route}
           />
         </ModalFooter>
