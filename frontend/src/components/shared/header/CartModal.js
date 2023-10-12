@@ -93,6 +93,7 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
             buttonSize="checkout"
             totalCartItems={totalCartItems}
             route={route}
+            onCartModalClose={onCartModalClose}
           />
         </ModalFooter>
       </ModalContent>

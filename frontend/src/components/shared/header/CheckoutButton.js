@@ -6,11 +6,12 @@ const CheckoutButton = ({
   buttonSize,
   totalCartItems,
   route,
+  onCartModalClose,
 }) => {
   const isEmpty = !totalCartItems ? false : true;
 
   return (
-    <LinkBox w="100%">
+    <LinkBox w="100%" onClick={onCartModalClose}>
       <LinkOverlay as={ReactRouterLink} to={route}>
         <Button
           variant={buttonVariant}
