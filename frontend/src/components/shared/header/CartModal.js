@@ -7,6 +7,7 @@ import {
   ModalFooter,
   ModalBody,
   Flex,
+  Box,
 } from '@chakra-ui/react';
 import ClearCart from './ClearCart';
 import CartItem from './CartItem';
@@ -70,6 +71,12 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
     }
   };
 
+  // Prevents events from bubbling (moving up to parent containers)
+  // to <ModalContent> and causing onCartModalClose to execute.
+  const onModalContentChildClick = e => {
+    e.stopPropagation();
+  };
+
   return (
     <Modal
       isOpen={isCartModalOpen}
@@ -78,24 +85,42 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
       variant="cart"
     >
       <ModalOverlay />
-      <ModalContent>
-        <Flex align="center" justify="space-between">
-          <ModalHeader>{`CART (${totalCartItems})`}</ModalHeader>
-          <ClearCart />
-        </Flex>
-        <ModalBody id="modal-body" padding={modalBodyPadding()}>
-          {cartItems()}
-        </ModalBody>
-        <ModalFooter>
-          <PriceTotal totalPrice={cartTotalPrice()} />
-          <CheckoutButton
-            buttonVariant="seeProductCaramel"
-            buttonSize="checkout"
-            totalCartItems={totalCartItems}
-            route={route}
-            onCartModalClose={onCartModalClose}
-          />
-        </ModalFooter>
+      <ModalContent onClick={onCartModalClose}>
+        <Box
+          maxH="30.625rem"
+          w={{ base: '20.4375rem', md: '23.5625rem' }}
+          marginTop="7.2rem"
+          padding="1rem 1.75rem"
+          borderRadius="0.5rem"
+          backgroundColor="white"
+          onClick={onModalContentChildClick}
+        >
+          <Flex
+            align="center"
+            justify="space-between"
+            onClick={onModalContentChildClick}
+          >
+            <ModalHeader>{`CART (${totalCartItems})`}</ModalHeader>
+            <ClearCart />
+          </Flex>
+          <ModalBody
+            id="modal-body"
+            padding={modalBodyPadding()}
+            onClick={onModalContentChildClick}
+          >
+            {cartItems()}
+          </ModalBody>
+          <ModalFooter onClick={onModalContentChildClick}>
+            <PriceTotal totalPrice={cartTotalPrice()} />
+            <CheckoutButton
+              buttonVariant="seeProductCaramel"
+              buttonSize="checkout"
+              totalCartItems={totalCartItems}
+              route={route}
+              onCartModalClose={onCartModalClose}
+            />
+          </ModalFooter>
+        </Box>
       </ModalContent>
     </Modal>
   );
