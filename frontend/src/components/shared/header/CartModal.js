@@ -59,18 +59,6 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
     return totalPrice.toLocaleString();
   };
 
-  // Padding right is added when the modal body overflows to space the cart items from
-  // the scrollbar.
-  const modalBodyPadding = () => {
-    const modalBody = document.querySelector('#modal-body');
-
-    if (modalBody) {
-      if (modalBody.scrollHeight > modalBody.offsetHeight) {
-        return '1rem 0.75rem 1rem 0';
-      }
-    }
-  };
-
   // Prevents events from bubbling (moving up to parent containers)
   // to <ModalContent> and causing onCartModalClose to execute.
   const onModalContentChildClick = e => {
@@ -87,12 +75,16 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
       <ModalOverlay />
       <ModalContent onClick={onCartModalClose}>
         <Box
-          maxH="30.625rem"
+          maxH="30.5rem"
           w={{ base: '20.4375rem', md: '23.5625rem' }}
           marginTop="7.2rem"
-          padding="1rem 1.75rem"
+          padding={{
+            base: '1rem 1.75rem 1rem 1.75rem',
+            md: '1rem 2rem 1rem 2rem',
+          }}
           borderRadius="0.5rem"
           backgroundColor="white"
+          overflow="hidden"
           onClick={onModalContentChildClick}
         >
           <Flex
@@ -103,11 +95,7 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
             <ModalHeader>{`CART (${totalCartItems})`}</ModalHeader>
             <ClearCart />
           </Flex>
-          <ModalBody
-            id="modal-body"
-            padding={modalBodyPadding()}
-            onClick={onModalContentChildClick}
-          >
+          <ModalBody id="modal-body" onClick={onModalContentChildClick}>
             {cartItems()}
           </ModalBody>
           <ModalFooter onClick={onModalContentChildClick}>

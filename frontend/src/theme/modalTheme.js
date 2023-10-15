@@ -50,11 +50,14 @@ const cart = definePartsStyle({
     background: 'none',
   },
   body: {
+    maxH: '280px',
+    marginY: '1rem',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: '1.5rem',
-    padding: '1rem 0',
+    padding: '0',
+    overflowY: 'auto',
   },
   footer: {
     w: '100%',
