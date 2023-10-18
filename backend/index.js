@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const assetRouter = require("./controllers/assetController");
 const pageRouter = require("./controllers/pageController");
+const checkoutFormRouter = require("./controllers/checkoutFormController");
 // const mongoose = require("mongoose");
 const morgan = require("morgan"); // middleware used to monitor http requests to backend
 
@@ -16,6 +17,7 @@ morgan.token("body", (req) => {
 // app.use(express.static("build"));
 app.use(cors());
 app.use(express.json()); // Parses requests with json type
+app.use(express.urlencoded({ extended: true })); // Parses request with application/x-www-form-urlencoded type
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :body")
 );
@@ -23,6 +25,7 @@ app.use(
 // Routes
 app.use("/api/assets", assetRouter);
 app.use("/api/page", pageRouter);
+app.use("/api/checkout-form", checkoutFormRouter);
 
 const PORT = process.env.LOCAL_PORT;
 app.listen(PORT, () => {

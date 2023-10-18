@@ -38,7 +38,7 @@ const NameInput = ({ errors, register }) => {
           },
           maxLength: {
             value: 100,
-            message: 'Max character limit is 100',
+            message: 'Enter a valid name',
           },
         })}
       />

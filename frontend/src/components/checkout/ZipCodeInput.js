@@ -33,7 +33,7 @@ const ZipCodeInput = ({ errors, register }) => {
             },
             maxLength: {
               value: 10,
-              message: 'Please enter a valid zip code',
+              message: 'Enter a valid zip code',
             },
           })}
         />

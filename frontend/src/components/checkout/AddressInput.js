@@ -31,11 +31,11 @@ const AddressInput = ({ errors, register }) => {
           },
           maxLength: {
             value: 100,
-            message: 'Max character limit is 100',
+            message: 'Enter a valid address',
           },
           minLength: {
-            value: '3',
-            message: 'Please enter a valid address',
+            value: 3,
+            message: 'Enter a valid address',
           },
         })}
       />

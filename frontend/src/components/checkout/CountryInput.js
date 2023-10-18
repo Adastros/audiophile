@@ -29,6 +29,10 @@ const CountryInput = ({ errors, register }) => {
             value: true,
             message: 'Required field',
           },
+          maxLength: {
+            value: 60,
+            message: 'Enter a valid country name',
+          },
         })}
       />
     </FormControl>

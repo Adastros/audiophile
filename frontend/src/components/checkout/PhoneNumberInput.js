@@ -39,8 +39,8 @@ const PhoneNumberInput = ({ errors, register }) => {
             message: 'Required field',
           },
           maxLength: {
-            value: 100,
-            message: 'Max character limit is 100',
+            value: 13,
+            message: 'Enter valid a phone number',
           },
           minLength: {
             value: 11,

@@ -4,6 +4,7 @@ import BillingDetails from './BillingDetails';
 import ShippingInfo from './ShippingInfo';
 import PaymentMethods from './PaymentMethods';
 import headingStyles from '../../theme/headingStyles';
+import { postCheckoutForm } from '../../utils/requests';
 
 const CheckoutForm = ({
   checkoutData,
@@ -14,9 +15,9 @@ const CheckoutForm = ({
 }) => {
   const [value, setValue] = useState('eMoney');
 
-  const onSubmit = (data, e) => {
-    e.preventDefault;
-    console.log('Submit', data);
+  const onSubmit = data => {
+    postCheckoutForm(data);
+    // console.log('Submit', data);
   };
 
   const onPaymentRadioClick = newValue => {
@@ -42,8 +43,6 @@ const CheckoutForm = ({
       <VStack
         as="form"
         id="checkout-form"
-        action=""
-        encType="text/plain"
         method="post"
         target="_self"
         w="100%"
