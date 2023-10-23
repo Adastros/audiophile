@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { VStack, Heading } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
 import BillingDetails from './BillingDetails';
 import ShippingInfo from './ShippingInfo';
 import PaymentMethods from './PaymentMethods';
 import headingStyles from '../../theme/headingStyles';
-import { postCheckoutForm } from '../../utils/requests';
+import { postData } from '../../utils/requests';
 
 const CheckoutForm = ({
   checkoutData,
@@ -14,10 +15,18 @@ const CheckoutForm = ({
   resetField,
 }) => {
   const [value, setValue] = useState('eMoney');
+  const cart = useSelector(state => state.cart);
 
   const onSubmit = data => {
-    postCheckoutForm(data);
-    // console.log('Submit', data);
+    // Filters for purchased items to add to request
+    const purchasedItems = Object.fromEntries(
+      Object.entries(cart).filter(item => {
+        if (item[1]) return true;
+      })
+    );
+    const formAndCartData = { ...data, items: purchasedItems };
+
+    postData(formAndCartData);
   };
 
   const onPaymentRadioClick = newValue => {

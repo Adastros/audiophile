@@ -8,7 +8,6 @@ const PayButton = ({
   const handleButtonClick = () => {
     // If user removes all items from cart during checkout,
     // prevent the user from completing their purchase.
-    console.log(numOfCartItems);
     if (numOfCartItems) {
       if (isValid) onOrderConfirmationModalOpen();
     }

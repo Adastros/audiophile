@@ -29,7 +29,7 @@ mongoose
 // app.use(express.static("build"));
 app.use(cors());
 app.use(express.json()); // Parses requests with json type
-app.use(express.urlencoded({ extended: true })); // Parses request with application/x-www-form-urlencoded type
+// app.use(express.urlencoded({ extended: true })); // Parses request with application/x-www-form-urlencoded type
 app.use(
   morgan(":method :url :status :res[content-length] - :response-time ms :body")
 );

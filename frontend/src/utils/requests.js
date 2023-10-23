@@ -7,14 +7,8 @@ const getPageContent = async contentToRequest => {
   return response.data;
 };
 
-const postCheckoutForm = async data => {
-  const response = await axios.post(`${baseUrl}/checkout-form`, data, {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-    },
-  });
-
-  console.log(response.data);
+const postData = data => {
+  axios.post(`${baseUrl}/checkout-form`, data);
 };
 
-export { getPageContent, postCheckoutForm };
+export { getPageContent, postData };

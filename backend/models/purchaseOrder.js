@@ -11,6 +11,14 @@ const purchaseOrderSchema = new mongoose.Schema({
   radio: String,
   eMoneyNumber: Number,
   eMoneyPin: Number,
+  items: {
+    xx99mkii: Number,
+    xx99mki: Number,
+    xx59: Number,
+    zx9: Number,
+    zx7: Number,
+    yx1: Number,
+  },
 });
 
 // transform data of blog document before responding to a request

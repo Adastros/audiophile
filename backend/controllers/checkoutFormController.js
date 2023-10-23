@@ -112,8 +112,44 @@ const validatorSanitizeArr = [
       .not()
       .exists(),
   ]),
+  body("items").exists().isObject(),
+  body("items.xx99mkii")
+    .optional()
+    .notEmpty()
+    .isInt({ allow_leading_zeroes: false, min: 0, max: 99, gt: 0, lt: 100 })
+    .trim()
+    .escape(),
+  body("items.xx99mki")
+    .optional()
+    .notEmpty()
+    .isInt({ allow_leading_zeroes: false, min: 0, max: 99, gt: 0, lt: 100 })
+    .trim()
+    .escape(),
+  body("items.xx59")
+    .optional()
+    .notEmpty()
+    .isInt({ allow_leading_zeroes: false, min: 0, max: 99, gt: 0, lt: 100 })
+    .trim()
+    .escape(),
+  body("items.zx9")
+    .optional()
+    .notEmpty()
+    .isInt({ allow_leading_zeroes: false, min: 0, max: 99, gt: 0, lt: 100 })
+    .trim()
+    .escape(),
+  body("items.zx7")
+    .optional()
+    .notEmpty()
+    .isInt({ allow_leading_zeroes: false, min: 0, max: 99, gt: 0, lt: 100 })
+    .trim()
+    .escape(),
+  body("items.yx1")
+    .optional()
+    .notEmpty()
+    .isInt({ allow_leading_zeroes: false, min: 0, max: 99, gt: 0, lt: 100 })
+    .trim()
+    .escape(),
 ];
-
 checkoutFormRouter.post(
   "/",
   validatorSanitizeArr,
