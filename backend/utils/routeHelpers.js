@@ -1,6 +1,7 @@
 const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
 const path = require("path");
+const price = require("../data/productPrice.json");
 
 // Flattens a multi-level, nested object into a single-level object
 const flattenObj = (obj) => {
@@ -84,9 +85,50 @@ const readLocalFile = (fileName) => {
   });
 };
 
+const calcTotalCost = (items) => {
+  return Object.entries(items).reduce((sum, item) => {
+    const itemKey = item[0];
+    const itemQuantity = item[1];
+
+    if (itemQuantity) {
+      const productPrice = price[itemKey];
+
+      sum += itemQuantity * productPrice;
+    }
+
+    return sum;
+  }, 0);
+};
+
+const calcVatCost = (total) => {
+  return total * 0.2; // VAT is flat 20%
+};
+
+const calcGrandTotal = (total, vat, shipping) => {
+  return total + vat + shipping;
+};
+
+const getCostBreakdown = (items) => {
+  const total = calcTotalCost(items);
+  const vat = calcVatCost(total);
+  const shipping = 50; // Flat shipping fee
+  const grandTotal = calcGrandTotal(total, vat, shipping);
+
+  return {
+    total,
+    shipping,
+    vat,
+    grandTotal,
+  };
+};
+
 module.exports = {
   flattenObj,
   unflattenObj,
   cloudinaryUrlConverter,
   readLocalFile,
+  calcTotalCost,
+  calcVatCost,
+  calcGrandTotal,
+  getCostBreakdown,
 };

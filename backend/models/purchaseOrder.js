@@ -19,6 +19,12 @@ const purchaseOrderSchema = new mongoose.Schema({
     zx7: Number,
     yx1: Number,
   },
+  costs: {
+    total: Number,
+    shipping: Number,
+    vat: Number,
+    grandTotal: Number,
+  },
 });
 
 // transform data of blog document before responding to a request
