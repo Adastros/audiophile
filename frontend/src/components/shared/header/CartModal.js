@@ -7,7 +7,6 @@ import {
   ModalFooter,
   ModalBody,
   Flex,
-  Box,
 } from '@chakra-ui/react';
 import ClearCart from './ClearCart';
 import CartItem from './CartItem';
@@ -74,14 +73,15 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
     >
       <ModalOverlay />
       <ModalContent onClick={onCartModalClose}>
-        <Box
-          maxH="30.5rem"
+        <Flex
+          h="30.625rem"
           w={{ base: '20.4375rem', md: '23.5625rem' }}
           marginTop="7.2rem"
           padding={{
             base: '1rem 1.75rem 1rem 1.75rem',
             md: '1rem 2rem 1rem 2rem',
           }}
+          direction="column"
           borderRadius="0.5rem"
           backgroundColor="white"
           overflow="hidden"
@@ -108,7 +108,7 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
               onCartModalClose={onCartModalClose}
             />
           </ModalFooter>
-        </Box>
+        </Flex>
       </ModalContent>
     </Modal>
   );
