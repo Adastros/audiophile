@@ -1,11 +1,16 @@
 import { Link } from '@chakra-ui/react';
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-const GoBackLink = ({ goBackUrl }) => {
+const GoBackLink = () => {
+  const navigate = useNavigate();
+
+  const onLinkClick = () => {
+    navigate(-1);
+  };
+
   return (
     <Link
-      as={ReactRouterLink}
-      to={goBackUrl}
+      onClick={onLinkClick}
       alignSelf="flex-start"
       fontSize="15px"
       fontWeight="500"

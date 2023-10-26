@@ -17,7 +17,6 @@ import Closing from '../../shared/closing/Closing';
 const ProductDetailBase = () => {
   const productDetails = useLoaderData();
   const closingData = useOutletContext().closingData;
-  const goBackUrl = productDetails.route.goBack;
   const imgData = productDetails.productImage;
   const isNew = productDetails.new;
   const productName = productDetails.name;
@@ -47,7 +46,7 @@ const ProductDetailBase = () => {
             marginBottom={{ base: '1.5rem', lg: '3.5rem' }}
             alignSelf="flex-start"
           >
-            <GoBackLink goBackUrl={goBackUrl} />
+            <GoBackLink />
           </Box>
           <VStack w="100%" gap={{ base: '7.5rem', lg: '10rem' }}>
             <VStack

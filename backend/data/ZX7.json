@@ -109,7 +109,6 @@
     }
   },
   "route": {
-    "goBack": "/speakers",
     "cart": "/cart",
     "product1": "/speakers/ZX9",
     "product2": "/headphones/XX99MarkI",

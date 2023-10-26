@@ -111,7 +111,6 @@
     }
   },
   "route": {
-    "goBack": "/headphones",
     "cart": "/cart",
     "product1": "/headphones/XX99MarkII",
     "product2": "/headphones/XX59",
