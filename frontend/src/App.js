@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Outlet, useLoaderData, ScrollRestoration } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { VStack, useDisclosure } from '@chakra-ui/react';
 import Header from './components/shared/header/Header';
 import MenuModal from './components/shared/header/MenuModal';
@@ -8,13 +9,17 @@ import CartModal from './components/shared/header/CartModal';
 import OrderConfirmationModal from './components/orderConfirmationModal/OrderConfirmationModal';
 import Footer from './components/shared/footer/Footer';
 import SharedHeaderContext from './utils/SharedHeaderContext';
+import { calcTotalCost, calcVatCost, calcGrandTotal } from './utils/helper';
 
 function App() {
-  const [grandTotal, setGrandTotal] = useState(0);
   const headerClosingFooterData = useLoaderData();
+  const cart = useSelector(state => state.cart);
   const headerData = headerClosingFooterData[0];
   const closingData = headerClosingFooterData[1];
   const footerData = headerClosingFooterData[2];
+  const totalCost = calcTotalCost(cart, headerData.cart);
+  const vatCost = calcVatCost(totalCost);
+  const grandTotal = calcGrandTotal(totalCost, vatCost);
 
   const {
     isOpen: isCartModalOpen,
@@ -52,10 +57,12 @@ function App() {
   };
 
   const outletContext = {
-    headerData: headerData,
-    closingData: closingData,
-    setGrandTotal: setGrandTotal,
-    onOrderConfirmationModalOpen: onOrderConfirmationModalOpen,
+    headerData,
+    closingData,
+    totalCost,
+    vatCost,
+    grandTotal,
+    onOrderConfirmationModalOpen,
   };
 
   return (

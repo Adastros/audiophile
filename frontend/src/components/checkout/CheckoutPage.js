@@ -7,7 +7,7 @@ import CheckoutSummary from './CheckoutSummary';
 
 const CheckoutPage = () => {
   const headerData = useOutletContext().headerData;
-  const setGrandTotal = useOutletContext().setGrandTotal;
+  const outletContext = useOutletContext();
   const checkoutData = useLoaderData();
   const {
     register, // registers input component to react-hook-form
@@ -61,7 +61,7 @@ const CheckoutPage = () => {
           />
           <CheckoutSummary
             headerData={headerData}
-            setGrandTotal={setGrandTotal}
+            outletContext={outletContext}
             isValid={isValid}
           />
         </Flex>
