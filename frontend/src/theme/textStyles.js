@@ -85,6 +85,14 @@ const textStyles = {
       letterSpacing: '-0.013375rem',
       opacity: '0.5',
     },
+    errorStatus: {
+      fontSize: { base: '0.9375rem', md: '1.5rem', lg: '2.25rem' },
+      fontWeight: '700',
+      lineHeight: { base: '0.9375rem', md: '1.5rem', lg: '2.25rem' },
+      letterSpacing: { base: '0.0625rem', md: '0.10625rem', lg: '0.071875rem' },
+      whiteSpace: { base: 'normal', md: 'pre' },
+      textTransform: 'uppercase',
+    },
   },
 };
 

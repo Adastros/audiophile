@@ -1,5 +1,4 @@
 import React from 'react';
-// import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Outlet, useLoaderData, ScrollRestoration } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { VStack, useDisclosure } from '@chakra-ui/react';
@@ -67,7 +66,7 @@ function App() {
 
   return (
     <SharedHeaderContext.Provider value={sharedHeaderData}>
-      <VStack h="100%" w="100%" gap="0" backgroundColor="brand.seaSalt">
+      <VStack minH="100vh" w="100%" gap="0" backgroundColor="brand.seaSalt">
         <MenuModal menuModal={menuModal} />
         <CartModal
           headerData={headerData}

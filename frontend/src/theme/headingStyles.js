@@ -74,6 +74,13 @@ const headingStyles = {
     letterSpacing: { base: '0.0535625rem', md: '0.0714375rem' },
     textTransform: 'uppercase',
   },
+  errorStatus: {
+    fontSize: { base: '2rem', md: '2.5rem', lg: '3.5rem' },
+    fontWeight: '700',
+    lineHeight: { base: '2.25rem', md: '2.75rem', lg: '3.625rem' },
+    letterSpacing: { base: '0.071875rem', md: '0.125rem' },
+    textTransform: 'uppercase',
+  },
 };
 
 export default headingStyles;
