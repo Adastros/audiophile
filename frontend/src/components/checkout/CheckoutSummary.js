@@ -19,9 +19,9 @@ const CheckoutSummary = ({ headerData, outletContext, isValid }) => {
     keyStr
   );
   const numOfCartItems = summaryProductList.length;
-  const totalPriceStr = numToLocaleStr(outletContext.totalCost);
-  const vatCostStr = numToLocaleStr(outletContext.vatCost);
-  const grandTotalStr = numToLocaleStr(outletContext.grandTotal);
+  const totalPriceStr = numToLocaleStr(outletContext.totalCost, 2);
+  const vatCostStr = numToLocaleStr(outletContext.vatCost, 2);
+  const grandTotalStr = numToLocaleStr(outletContext.grandTotal, 2);
 
   return (
     <VStack

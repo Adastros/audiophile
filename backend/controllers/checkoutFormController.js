@@ -3,13 +3,13 @@ const { validationResult, matchedData } = require("express-validator");
 const purchaseOrder = require("../models/purchaseOrder");
 const logger = require("../utils/logger");
 const helper = require("../utils/routeHelpers");
+const sendEmail = require("../utils/emailHelper.js").default;
 const validatorSanitizeArr = require("../utils/validatorChains");
 
 checkoutFormRouter.post(
   "/",
   validatorSanitizeArr,
   async (request, response) => {
-    const formData = request.body;
     const result = validationResult(request);
     const errors = result.array();
 
@@ -24,11 +24,15 @@ checkoutFormRouter.post(
       costs: costBreakDown,
     });
 
-    newPurchaseOrder.save().then(() => {
-      logger.info(`${JSON.stringify(data)} successfully added to MongoDB.`);
-      return response.status(200).json(formData);
+    newPurchaseOrder.save().then(async () => {
+      logger.info(
+        `${JSON.stringify(newPurchaseOrder)} successfully added to MongoDB.`
+      );
+      logger.info("Prepping email");
+      const emailResponse = await sendEmail(newPurchaseOrder);
+      logger.info("email sent!");
+      return response.status(200).json(emailResponse);
     });
-    // .catch((error) => next(error));
   }
 );
 

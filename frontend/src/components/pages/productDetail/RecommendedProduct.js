@@ -2,7 +2,7 @@ import { VStack, Box, Text } from '@chakra-ui/react';
 import Picture from '../../shared/Picture';
 import SeeProductButton from '../../shared/SeeProductButton';
 
-const RecommendedProduct = ({ product, route }) => {
+const RecommendedProduct = ({ product, route, setQuantity }) => {
   const name = product.name;
   const imgData = product.image;
 
@@ -25,6 +25,7 @@ const RecommendedProduct = ({ product, route }) => {
           buttonVariant="seeProductCaramel"
           buttonSize="designMd"
           route={route}
+          setQuantity={setQuantity}
         />
       </VStack>
     </>
