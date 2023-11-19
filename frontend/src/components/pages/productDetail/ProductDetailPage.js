@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { Flex, VStack, Box } from '@chakra-ui/react';
 import GoBackLink from '../../shared/GoBackLink';
@@ -15,6 +16,7 @@ import ProductCategories from '../../shared/productCategories/ProductCategories'
 import Closing from '../../shared/closing/Closing';
 
 const ProductDetailBase = () => {
+  const [quantity, setQuantity] = useState(1);
   const productDetails = useLoaderData();
   const closingData = useOutletContext().closingData;
   const imgData = productDetails.productImage;
@@ -69,7 +71,11 @@ const ProductDetailBase = () => {
                     productDescription={productDescription}
                   />
                   <ProductPrice price={price} />
-                  <ProductQuantitySelection cartKey={cartKey} />
+                  <ProductQuantitySelection
+                    cartKey={cartKey}
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                  />
                 </VStack>
               </Flex>
               <Flex
@@ -85,6 +91,7 @@ const ProductDetailBase = () => {
             <Recommendations
               recommendations={recommendations}
               routes={routes}
+              setQuantity={setQuantity}
             />
             <ProductCategories />
           </VStack>

@@ -1,12 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
 import { HStack } from '@chakra-ui/react';
 import QuantityCounter from '../../shared/QuantityCounter';
 import AddToCartButton from './AddToCartButton';
 import { addToCart } from '../../../reducers/cartReducer';
 
-const ProductQuantitySelection = ({ cartKey }) => {
-  const [quantity, setQuantity] = useState(1);
+const ProductQuantitySelection = ({ cartKey, quantity, setQuantity }) => {
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {
