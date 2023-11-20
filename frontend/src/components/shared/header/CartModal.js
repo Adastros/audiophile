@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   Modal,
   ModalOverlay,
@@ -12,16 +13,23 @@ import ClearCart from './ClearCart';
 import CartItem from './CartItem';
 import PriceTotal from './PriceTotal';
 import CheckoutButton from './CheckoutButton';
+import CartDemoButton from './CartDemoButton';
+import { addToCart } from '../../../reducers/cartReducer';
+import { awaitModalBody, padModalBody } from '../../../utils/helper';
 
 const CartModal = ({
   headerData,
+  demoData,
+  totalPrice,
   isCartModalOpen,
   onCartModalClose,
   totalCartItems,
-  isCartEmpty
+  isCartEmpty,
 }) => {
   const cart = useSelector(state => state.cart);
+  const dispatch = useDispatch();
   const route = headerData.route.cart;
+  const cartDemoData = demoData.cart;
 
   const cartItems = () => {
     return Object.keys(cart).map(cartItemKey => {
@@ -46,27 +54,27 @@ const CartModal = ({
     });
   };
 
-  const cartTotalPrice = () => {
-    const totalPrice = Object.entries(cart).reduce((sum, cartItem) => {
-      const cartItemKey = cartItem[0];
-      const cartItemQuantity = cartItem[1];
-
-      if (cartItemQuantity) {
-        const productPrice = headerData.cart[cartItemKey].price;
-
-        sum += cartItemQuantity * productPrice;
-      }
-
-      return sum;
-    }, 0);
-
-    return totalPrice.toLocaleString();
-  };
-
   // Prevents events from bubbling (moving up to parent containers)
   // to <ModalContent> and causing onCartModalClose to execute.
   const onModalContentChildClick = e => {
     e.stopPropagation();
+  };
+
+  const handleCartDemoButtonClick = async () => {
+    Object.entries(cartDemoData).forEach(item => {
+      const key = item[0];
+      const quantity = item[1];
+
+      dispatch(
+        addToCart({
+          key: key,
+          quantity: quantity,
+        })
+      );
+    });
+
+    const modalBody = await awaitModalBody();
+    padModalBody(modalBody);
   };
 
   return (
@@ -79,8 +87,8 @@ const CartModal = ({
       <ModalOverlay />
       <ModalContent onClick={onCartModalClose}>
         <Flex
-          h="30.625rem"
-          w={{ base: '20.4375rem', md: '23.5625rem' }}
+          h="35.125rem"
+          w={{ base: '21.5rem', md: '23.5625rem' }}
           marginTop="7.2rem"
           padding={{
             base: '1rem 1.75rem 1rem 1.75rem',
@@ -104,7 +112,11 @@ const CartModal = ({
             {cartItems()}
           </ModalBody>
           <ModalFooter onClick={onModalContentChildClick}>
-            <PriceTotal totalPrice={cartTotalPrice()} />
+            <PriceTotal totalPrice={totalPrice} />
+            <CartDemoButton
+              handleCartDemoButtonClick={handleCartDemoButtonClick}
+              awaitModalBody={awaitModalBody}
+            />
             <CheckoutButton
               buttonVariant="seeProductCaramel"
               buttonSize="checkout"

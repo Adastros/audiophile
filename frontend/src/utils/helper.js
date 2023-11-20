@@ -61,6 +61,35 @@ const numToLocaleStr = (num, minFractionDigits) => {
   });
 };
 
+// Waits for the modal body to exist in DOM.
+const awaitModalBody = async () => {
+  return new Promise(resolve => {
+    if (document.querySelector('#modal-body')) {
+      return resolve(document.querySelector('#modal-body'));
+    }
+
+    const observer = new MutationObserver(() => {
+      if (document.querySelector('#modal-body')) {
+        resolve(document.querySelector('#modal-body'));
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      subtree: true,
+      childList: true,
+    });
+  });
+};
+
+const padModalBody = modalBody => {
+  if (modalBody) {
+    if (modalBody.scrollHeight > modalBody.offsetHeight) {
+      modalBody.style.padding = '0 0.65rem 0 0';
+    }
+  }
+};
+
 export {
   getContent,
   productList,
@@ -68,4 +97,6 @@ export {
   calcVatCost,
   calcGrandTotal,
   numToLocaleStr,
+  awaitModalBody,
+  padModalBody,
 };

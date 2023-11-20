@@ -8,11 +8,13 @@ import CheckoutSummary from './CheckoutSummary';
 const CheckoutPage = () => {
   const headerData = useOutletContext().headerData;
   const outletContext = useOutletContext();
+  const checkoutFormDemoData = useOutletContext().demoData.form;
   const checkoutData = useLoaderData();
   const {
     register, // registers input component to react-hook-form
     handleSubmit,
     resetField, // manually reset a specific input field's value, error, and state
+    setValue, // set values for fields
     formState: { errors, isValid },
   } = useForm({
     shouldUnregister: true, // Unregisters inputs that were unmounted (removed from DOM)
@@ -24,10 +26,20 @@ const CheckoutPage = () => {
       zipCode: '',
       city: '',
       country: '',
+      radio: 'eMoney',
       eMoneyNumber: '',
       eMoneyPin: '',
     },
   });
+
+  const handleCheckoutDemoButtonClick = () => {
+    Object.entries(checkoutFormDemoData).forEach(field => {
+      const registerName = field[0];
+      const value = field[1];
+
+      setValue(registerName, value, { shouldValidate: true });
+    });
+  };
 
   return (
     <Box
@@ -63,6 +75,7 @@ const CheckoutPage = () => {
             headerData={headerData}
             outletContext={outletContext}
             isValid={isValid}
+            handleCheckoutDemoButtonClick={handleCheckoutDemoButtonClick}
           />
         </Flex>
       </VStack>

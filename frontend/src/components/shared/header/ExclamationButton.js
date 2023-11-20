@@ -1,10 +1,16 @@
 import { Button, Image } from '@chakra-ui/react';
+import { awaitModalBody, padModalBody } from '../../../utils/helper';
 
 const ExclamationButton = ({
   exclamationIconUrl,
   isCartEmpty,
   onCartModalOpen,
 }) => {
+  const handleButtonClick = async () => {
+    const modalBody = await awaitModalBody();
+    padModalBody(modalBody);
+  };
+
   return (
     <Button
       h="1rem"
@@ -19,6 +25,7 @@ const ExclamationButton = ({
       borderRadius="50%"
       backgroundColor="white"
       _hover={{ opacity: '0.75' }}
+      onClick={handleButtonClick}
     >
       <Image
         src={exclamationIconUrl}

@@ -2,8 +2,7 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  NumberInput,
-  NumberInputField,
+  Input,
   HStack,
 } from '@chakra-ui/react';
 
@@ -20,24 +19,24 @@ const ZipCodeInput = ({ errors, register }) => {
           {errors.zipCode && errors.zipCode.message}
         </FormErrorMessage>
       </HStack>
-      <NumberInput variant="checkout">
-        <NumberInputField
-          id="zip-code"
-          autoComplete="postal-code"
-          placeholder="10001"
-          errorBorderColor="#CD2C2C"
-          {...register('zipCode', {
-            required: {
-              value: true,
-              message: 'Required field',
-            },
-            maxLength: {
-              value: 10,
-              message: 'Enter a valid zip code',
-            },
-          })}
-        />
-      </NumberInput>
+      <Input
+        id="zip-code"
+        type="number"
+        placeholder="10001"
+        variant="checkout"
+        errorBorderColor="#CD2C2C"
+        {...register('zipCode', {
+          required: {
+            value: true,
+            message: 'Required field',
+          },
+          maxLength: {
+            value: 10,
+            message: 'Enter a valid zip code',
+          },
+          valueAsNumber: true,
+        })}
+      />
     </FormControl>
   );
 };

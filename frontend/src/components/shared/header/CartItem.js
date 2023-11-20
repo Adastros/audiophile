@@ -36,7 +36,7 @@ const CartItem = ({
   };
 
   return (
-    <HStack h="4rem" w="100%" gap="1rem">
+    <HStack h="4rem" w="100%" gap={{ base: '0.75rem', md: '1rem' }}>
       <CartItemImage productImage={productImage} size={cartImageSize} />
       <VStack flex="1" align="flex-start" gap="0">
         <CartItemName displayName={displayName} />

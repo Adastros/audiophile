@@ -2,8 +2,7 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  NumberInput,
-  NumberInputField,
+  Input,
   HStack,
 } from '@chakra-ui/react';
 
@@ -20,26 +19,27 @@ const EMoneyNumberInput = ({ errors, register }) => {
           {errors.eMoneyNumber && errors.eMoneyNumber.message}
         </FormErrorMessage>
       </HStack>
-      <NumberInput variant="checkout">
-        <NumberInputField
-          id="eMoneyNumber"
-          placeholder="238521993"
-          {...register('eMoneyNumber', {
-            required: {
-              value: true,
-              message: 'Required field',
-            },
-            maxLength: {
-              value: 9,
-              message: 'Enter a valid e-Money number',
-            },
-            minLength: {
-              value: 9,
-              message: 'Enter a valid e-Money number',
-            },
-          })}
-        />
-      </NumberInput>
+      <Input
+        id="eMoneyNumber"
+        type="number"
+        placeholder="238521993"
+        variant="checkout"
+        errorBorderColor="#CD2C2C"
+        {...register('eMoneyNumber', {
+          required: {
+            value: true,
+            message: 'Required field',
+          },
+          maxLength: {
+            value: 9,
+            message: 'Enter a valid e-Money number',
+          },
+          minLength: {
+            value: 9,
+            message: 'Enter a valid e-Money number',
+          },
+        })}
+      />
     </FormControl>
   );
 };

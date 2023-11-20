@@ -3,10 +3,16 @@ import { useSelector } from 'react-redux';
 import { VStack, Heading } from '@chakra-ui/react';
 import CheckoutPriceSummary from './CheckoutPriceSummary';
 import PayButton from './PayButton';
+import CheckoutDemoButton from './CheckoutDemoButton';
 import headingStyles from '../../theme/headingStyles';
 import { productList, numToLocaleStr } from '../../utils/helper';
 
-const CheckoutSummary = ({ headerData, outletContext, isValid }) => {
+const CheckoutSummary = ({
+  headerData,
+  outletContext,
+  isValid,
+  handleCheckoutDemoButtonClick,
+}) => {
   const cart = useSelector(state => state.cart);
   const onOrderConfirmationModalOpen =
     useOutletContext().onOrderConfirmationModalOpen;
@@ -19,7 +25,7 @@ const CheckoutSummary = ({ headerData, outletContext, isValid }) => {
     keyStr
   );
   const numOfCartItems = summaryProductList.length;
-  const totalPriceStr = numToLocaleStr(outletContext.totalCost, 2);
+  const totalPriceStr = numToLocaleStr(outletContext.totalPrice, 2);
   const vatCostStr = numToLocaleStr(outletContext.vatCost, 2);
   const grandTotalStr = numToLocaleStr(outletContext.grandTotal, 2);
 
@@ -45,6 +51,9 @@ const CheckoutSummary = ({ headerData, outletContext, isValid }) => {
         vatCost={vatCostStr}
         grandTotal={grandTotalStr}
         onOrderConfirmationModalOpen={onOrderConfirmationModalOpen}
+      />
+      <CheckoutDemoButton
+        handleCheckoutDemoButtonClick={handleCheckoutDemoButtonClick}
       />
       <PayButton
         isValid={isValid}

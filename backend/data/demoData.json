@@ -1,0 +1,18 @@
+{
+  "cart": {
+    "xx99mkii": 1,
+    "zx7": 2,
+    "yx1": 1
+  },
+  "form": {
+    "name": "John Doe",
+    "email": "johnDoe@gmail.com",
+    "phone": "+1234567890",
+    "address": "123 Sesame Street",
+    "zipCode": 426875,
+    "city": "Lakeside",
+    "country": "USA",
+    "eMoneyNumber": 789456123,
+    "eMoneyPin": 4567
+  }
+}

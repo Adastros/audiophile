@@ -11,14 +11,15 @@ import SharedHeaderContext from './utils/SharedHeaderContext';
 import { calcTotalCost, calcVatCost, calcGrandTotal } from './utils/helper';
 
 function App() {
-  const headerClosingFooterData = useLoaderData();
+  const headerClosingFooterDemoData = useLoaderData();
   const cart = useSelector(state => state.cart);
-  const headerData = headerClosingFooterData[0];
-  const closingData = headerClosingFooterData[1];
-  const footerData = headerClosingFooterData[2];
-  const totalCost = calcTotalCost(cart, headerData.cart);
-  const vatCost = calcVatCost(totalCost);
-  const grandTotal = calcGrandTotal(totalCost, vatCost);
+  const headerData = headerClosingFooterDemoData[0];
+  const closingData = headerClosingFooterDemoData[1];
+  const footerData = headerClosingFooterDemoData[2];
+  const demoData = headerClosingFooterDemoData[3];
+  const totalPrice = calcTotalCost(cart, headerData.cart);
+  const vatCost = calcVatCost(totalPrice);
+  const grandTotal = calcGrandTotal(totalPrice, vatCost);
   const totalCartItems = Object.values(cart).reduce((a, b) => a + b, 0);
   const isCartEmpty = !totalCartItems ? false : true;
 
@@ -47,20 +48,21 @@ function App() {
   };
 
   const logoData = {
-    logoImg: headerClosingFooterData[0].image.logo.path,
-    logoAlt: headerClosingFooterData[0].image.logo.alt,
-    logoHomeRoute: headerClosingFooterData[0].route.home,
+    logoImg: headerClosingFooterDemoData[0].image.logo.path,
+    logoAlt: headerClosingFooterDemoData[0].image.logo.alt,
+    logoHomeRoute: headerClosingFooterDemoData[0].route.home,
   };
 
   const sharedHeaderData = {
-    productCategories: headerClosingFooterData[0].productCategories,
-    rightArrowIconData: headerClosingFooterData[0].icon.rightArrow,
+    productCategories: headerClosingFooterDemoData[0].productCategories,
+    rightArrowIconData: headerClosingFooterDemoData[0].icon.rightArrow,
   };
 
   const outletContext = {
     headerData,
     closingData,
-    totalCost,
+    demoData,
+    totalPrice,
     vatCost,
     grandTotal,
     onOrderConfirmationModalOpen,
@@ -72,6 +74,8 @@ function App() {
         <MenuModal menuModal={menuModal} />
         <CartModal
           headerData={headerData}
+          demoData={demoData}
+          totalPrice={totalPrice}
           isCartModalOpen={isCartModalOpen}
           totalCartItems={totalCartItems}
           isCartEmpty={isCartEmpty}

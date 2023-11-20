@@ -17,6 +17,7 @@ const router = createBrowserRouter([
         getContent('header'),
         getContent('closing'),
         getContent('footer'),
+        getContent('demoData'),
       ]);
     },
     children: [

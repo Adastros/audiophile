@@ -39,7 +39,7 @@ const cart = definePartsStyle({
   },
   dialog: {
     maxH: '100%',
-    maxW: { base: '20.4375rem', md: '100%', lg: '69.375rem' },
+    maxW: { base: '21.5rem', md: '100%', lg: '69.375rem' },
     h: '100%',
     w: '100%',
     alignItems: 'flex-end',
@@ -62,7 +62,7 @@ const cart = definePartsStyle({
     paddingX: '0',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem',
+    gap: '0.5rem',
   },
 });
 
