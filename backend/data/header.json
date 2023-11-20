@@ -44,6 +44,10 @@
     "check": {
       "path": "assets/checkout/icon-order-confirmation_ooc3xo",
       "aria": { "hidden": true, "label": "" }
+    },
+    "exclamation": {
+      "path": "assets/shared/desktop/exclamation-point-2",
+      "aria": { "hidden": true, "label": "" }
     }
   },
   "image": {

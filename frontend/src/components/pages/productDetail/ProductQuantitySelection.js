@@ -1,19 +1,30 @@
 import { useDispatch } from 'react-redux';
-import { HStack } from '@chakra-ui/react';
+import { HStack, useToast } from '@chakra-ui/react';
 import QuantityCounter from '../../shared/QuantityCounter';
 import AddToCartButton from './AddToCartButton';
 import { addToCart } from '../../../reducers/cartReducer';
 
 const ProductQuantitySelection = ({ cartKey, quantity, setQuantity }) => {
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const handleButtonClick = () => {
+    const newToast = toast({
+      title: 'Item added to cart.',
+      duration: '5000',
+      status: 'success',
+      isClosable: true,
+      variant: 'addToCartToast',
+    });
+
     dispatch(
       addToCart({
         key: cartKey,
         quantity: quantity,
       })
     );
+
+    return newToast;
   };
 
   const handlePlusButtonClick = () => {

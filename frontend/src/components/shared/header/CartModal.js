@@ -13,10 +13,15 @@ import CartItem from './CartItem';
 import PriceTotal from './PriceTotal';
 import CheckoutButton from './CheckoutButton';
 
-const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
+const CartModal = ({
+  headerData,
+  isCartModalOpen,
+  onCartModalClose,
+  totalCartItems,
+  isCartEmpty
+}) => {
   const cart = useSelector(state => state.cart);
   const route = headerData.route.cart;
-  const totalCartItems = Object.values(cart).reduce((a, b) => a + b, 0);
 
   const cartItems = () => {
     return Object.keys(cart).map(cartItemKey => {
@@ -103,7 +108,7 @@ const CartModal = ({ headerData, isCartModalOpen, onCartModalClose }) => {
             <CheckoutButton
               buttonVariant="seeProductCaramel"
               buttonSize="checkout"
-              totalCartItems={totalCartItems}
+              isCartEmpty={isCartEmpty}
               route={route}
               onCartModalClose={onCartModalClose}
             />

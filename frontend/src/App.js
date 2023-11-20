@@ -19,6 +19,8 @@ function App() {
   const totalCost = calcTotalCost(cart, headerData.cart);
   const vatCost = calcVatCost(totalCost);
   const grandTotal = calcGrandTotal(totalCost, vatCost);
+  const totalCartItems = Object.values(cart).reduce((a, b) => a + b, 0);
+  const isCartEmpty = !totalCartItems ? false : true;
 
   const {
     isOpen: isCartModalOpen,
@@ -71,6 +73,8 @@ function App() {
         <CartModal
           headerData={headerData}
           isCartModalOpen={isCartModalOpen}
+          totalCartItems={totalCartItems}
+          isCartEmpty={isCartEmpty}
           onCartModalClose={onCartModalClose}
         />
         <OrderConfirmationModal
@@ -82,8 +86,9 @@ function App() {
         <Header
           headerData={headerData}
           logoData={logoData}
-          onCartModalOpen={onCartModalOpen}
           menuModal={menuModal}
+          isCartEmpty={isCartEmpty}
+          onCartModalOpen={onCartModalOpen}
         />
         <Outlet context={outletContext} />
         <Footer footerData={footerData} logoData={logoData} />

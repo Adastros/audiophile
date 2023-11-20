@@ -12,6 +12,7 @@ import { inputTheme } from './inputTheme';
 import { numberInputTheme } from './numberInputTheme';
 import { radioTheme } from './radioThemes';
 import { formErrorMessageTheme } from './formErrorMessageTheme';
+import { alertTheme } from './Alert';
 
 const websiteTheme = extendTheme({
   ...colors,
@@ -19,6 +20,7 @@ const websiteTheme = extendTheme({
   ...textStyles,
   components: {
     Accordion: accordionTheme,
+    Alert: alertTheme,
     Button,
     Input: inputTheme,
     NumberInput: numberInputTheme,
