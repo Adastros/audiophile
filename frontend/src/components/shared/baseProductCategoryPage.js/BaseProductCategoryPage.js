@@ -1,5 +1,6 @@
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { VStack } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet';
 import ProductCategoryHeading from '../productCategories/ProductCategoryHeading';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
 import BaseProductPreview from '../productPreview/BaseProductPreview';
@@ -9,6 +10,8 @@ const BaseProductCategoryPage = () => {
   const headphonePageContent = useLoaderData();
   const closingData = useOutletContext().closingData;
   const productCategory = headphonePageContent.productCategory;
+  const title =
+    productCategory.charAt(0) + productCategory.slice(1).toLowerCase();
   const products = headphonePageContent.products;
 
   const productPreviews = () => {
@@ -30,6 +33,9 @@ const BaseProductCategoryPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{`audiophile | ${title}`}</title>
+      </Helmet>
       <ProductCategoryHeading productCategory={productCategory} />
       <VStack
         h="min-content"

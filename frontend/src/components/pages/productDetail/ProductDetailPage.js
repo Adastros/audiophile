@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { Flex, VStack, Box } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet';
 import GoBackLink from '../../shared/GoBackLink';
 import ImageDetail from './ImageDetail';
 import NewProduct from '../../shared/NewProduct';
@@ -33,6 +34,9 @@ const ProductDetailBase = () => {
 
   return (
     <>
+      <Helmet>
+        <title>{`audiophile | ${productName}`}</title>
+      </Helmet>
       <VStack
         w="100%"
         marginBottom={{ base: '7.5rem', lg: '10.5rem' }}

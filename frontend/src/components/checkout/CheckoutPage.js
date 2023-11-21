@@ -1,5 +1,6 @@
 import { useOutletContext, useLoaderData } from 'react-router-dom';
 import { Flex, VStack, Box } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet';
 import { useForm } from 'react-hook-form';
 import GoBackLink from '../shared/GoBackLink';
 import CheckoutForm from './CheckoutForm';
@@ -48,6 +49,9 @@ const CheckoutPage = () => {
       paddingX={{ base: '0', lg: '1.5rem' }}
       backgroundColor="brand.antiFlashWhite"
     >
+      <Helmet>
+        <title>audiophile | Checkout</title>
+      </Helmet>
       <VStack
         w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}
         maxW="69.375rem"

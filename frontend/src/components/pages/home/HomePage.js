@@ -1,5 +1,6 @@
 import { VStack } from '@chakra-ui/react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import Banner from './banner/Banner';
 import ProductCategories from '../../shared/productCategories/ProductCategories';
 import ProductCards from './productCards/ProductCards';
@@ -13,6 +14,9 @@ const HomePage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>audiophile | Home</title>
+      </Helmet>
       <Banner heroData={heroData} />
       <VStack
         h="min-content"

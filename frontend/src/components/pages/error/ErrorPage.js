@@ -1,4 +1,5 @@
 import { VStack, Heading, Text, Box, Center } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet';
 import BackToHomeButton from '../../orderConfirmationModal/BackToHomeButton';
 import headingStyles from '../../../theme/headingStyles';
 
@@ -9,6 +10,9 @@ const ErrorPage = () => {
 
   return (
     <Center flex="1" w="100%" paddingX={{ base: '0', lg: '3rem' }}>
+      <Helmet>
+        <title>audiophile | Error</title>
+      </Helmet>
       <VStack
         w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}
         maxW="69.375rem"
