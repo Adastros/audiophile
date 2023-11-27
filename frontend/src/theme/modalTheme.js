@@ -18,6 +18,7 @@ const menu = definePartsStyle({
     w: '100%',
     margin: '0',
     padding: '0',
+    overflow: 'auto',
     borderRadius: { base: '0 0 0.5rem 0.5rem' },
     backgroundColor: 'white',
   },
@@ -28,6 +29,7 @@ const menu = definePartsStyle({
     paddingTop: { base: '1rem', md: '3rem' },
     paddingBottom: { base: '2.25rem', md: '4.1875rem' },
     paddingX: { base: '0', md: '2.5rem' },
+    overflow: 'visible',
   },
 });
 

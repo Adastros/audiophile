@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3003/api';
+const baseUrl = '/api';
 
 const getPageContent = async contentToRequest => {
   const response = await axios.get(`${baseUrl}/page/${contentToRequest}`);

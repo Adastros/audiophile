@@ -9,12 +9,12 @@ const checkoutFormRouter = require("./controllers/checkoutFormController");
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
-const morgan = require("morgan"); // middleware used to monitor http requests to backend
+// const morgan = require("morgan"); // middleware used to monitor http requests to backend
 
 // configures morgan to display info about http requests when testing
-morgan.token("body", (req) => {
-  return JSON.stringify(req.body);
-});
+// morgan.token("body", (req) => {
+//   return JSON.stringify(req.body);
+// });
 
 mongoose
   .connect(config.MONGODB_URI)
@@ -26,13 +26,12 @@ mongoose
   });
 
 // Middleware
-// app.use(express.static("build"));
+app.use(express.static("static_build"));
 app.use(cors());
 app.use(express.json()); // Parses requests with json type
-// app.use(express.urlencoded({ extended: true })); // Parses request with application/x-www-form-urlencoded type
-app.use(
-  morgan(":method :url :status :res[content-length] - :response-time ms :body")
-);
+// app.use(
+//   morgan(":method :url :status :res[content-length] - :response-time ms :body")
+// );
 
 // Routes
 app.use("/api/assets", assetRouter);

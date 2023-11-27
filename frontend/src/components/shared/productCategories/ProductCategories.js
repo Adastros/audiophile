@@ -32,6 +32,7 @@ const ProductCategories = ({ menuModal }) => {
       h="100%"
       w="100%"
       maxW={{ base: '100%', md: '43.0625rem', lg: '69.375rem' }}
+      position="relative"
       direction={{ base: 'column', md: 'row' }}
       align="center"
       justify={{ base: 'center', md: 'space-between' }}
