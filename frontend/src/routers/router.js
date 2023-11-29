@@ -1,10 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
-import ErrorPage from '../components/pages/error/ErrorPage';
-import HomePage from '../components/pages/home/HomePage';
-import BaseProductCategoryPage from '../components/shared/baseProductCategoryPage.js/BaseProductCategoryPage';
-import ProductDetailPage from '../components/pages/productDetail/ProductDetailPage';
-import CheckoutPage from '../components/checkout/CheckoutPage';
+import ErrorPage from '../pages/ErrorPage';
+import HomePage from '../pages/HomePage';
+import BaseProductCategoryPage from '../pages/BaseProductCategoryPage';
+import ProductDetailPage from '../pages/ProductDetailPage';
+import CheckoutPage from '../pages/CheckoutPage';
 import { getContent } from '../utils/helper';
 
 const router = createBrowserRouter([

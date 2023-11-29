@@ -2,11 +2,11 @@ import React from 'react';
 import { Outlet, useLoaderData, ScrollRestoration } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { VStack, useDisclosure } from '@chakra-ui/react';
-import Header from './components/shared/header/Header';
-import MenuModal from './components/shared/header/MenuModal';
-import CartModal from './components/shared/header/CartModal';
+import Header from './components/header/Header';
+import MenuModal from './components/header/MenuModal';
+import CartModal from './components/header/CartModal';
 import OrderConfirmationModal from './components/orderConfirmationModal/OrderConfirmationModal';
-import Footer from './components/shared/footer/Footer';
+import Footer from './components/footer/Footer';
 import SharedHeaderContext from './utils/SharedHeaderContext';
 import { calcTotalCost, calcVatCost, calcGrandTotal } from './utils/helper';
 
