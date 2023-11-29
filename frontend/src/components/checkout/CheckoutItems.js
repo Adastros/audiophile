@@ -1,7 +1,7 @@
 import { HStack, VStack } from '@chakra-ui/react';
-import CartItemImage from '../header/CartItemImage';
-import CartItemName from '../header/CartItemName';
-import CartItemPrice from '../header/CartItemPrice';
+import CartItemImage from '../cartModal/CartItemImage';
+import CartItemName from '../cartModal/CartItemName';
+import CartItemPrice from '../cartModal/CartItemPrice';
 import CheckoutItemQuantity from './CheckoutItemQuantity';
 
 const CheckoutItems = ({

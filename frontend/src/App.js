@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { VStack, useDisclosure } from '@chakra-ui/react';
 import Header from './components/header/Header';
 import MenuModal from './components/header/MenuModal';
-import CartModal from './components/header/CartModal';
+import CartModal from './components/cartModal/CartModal';
 import OrderConfirmationModal from './components/orderConfirmationModal/OrderConfirmationModal';
 import Footer from './components/footer/Footer';
 import SharedHeaderContext from './utils/SharedHeaderContext';

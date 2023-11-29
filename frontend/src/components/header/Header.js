@@ -1,6 +1,6 @@
 import { Flex, Box } from '@chakra-ui/react';
 import Navigation from './Navigation';
-import CartIconButton from './CartIconButton';
+import CartIconButton from '../cartModal/CartIconButton';
 import ExclamationButton from './ExclamationButton';
 import Logo from '../Logo';
 
