@@ -50,7 +50,7 @@ function App() {
   const logoData = {
     logoImg: headerClosingFooterDemoData[0].image.logo.path,
     logoAlt: headerClosingFooterDemoData[0].image.logo.alt,
-    logoHomeRoute: headerClosingFooterDemoData[0].route.home,
+    homeRoute: headerClosingFooterDemoData[0].route.home,
   };
 
   const sharedHeaderData = {

@@ -6,6 +6,7 @@ const cors = require("cors");
 const assetRouter = require("./controllers/assetController");
 const pageRouter = require("./controllers/pageController");
 const checkoutFormRouter = require("./controllers/checkoutFormController");
+const serverSideRouter = require("./controllers/routeController");
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 const mongoose = require("mongoose");
@@ -37,6 +38,7 @@ app.use(express.json()); // Parses requests with json type
 app.use("/api/assets", assetRouter);
 app.use("/api/page", pageRouter);
 app.use("/api/checkout-form", checkoutFormRouter);
+app.use("/*", serverSideRouter);
 
 // Error handling
 app.use(middleware.unknownEndpoint);
