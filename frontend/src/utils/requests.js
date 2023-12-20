@@ -11,4 +11,44 @@ const postData = data => {
   axios.post(`${baseUrl}/checkout-form`, data);
 };
 
-export { getPageContent, postData };
+const getCartData = async () => {
+  const cartId = localStorage.getItem('cartId');
+  const response = await axios.post(`${baseUrl}/cart/session`, {
+    cartId,
+  });
+
+  return response.data;
+};
+
+const increaseItemQuantity = (cartId, cartItem, quantity) => {
+  const cartData = {
+    cartId,
+    cartItem,
+    quantity,
+  };
+
+  axios.post(`${baseUrl}/cart/increase-item-quantity`, cartData);
+};
+
+const decreaseItemQuantity = (cartId, cartItem, quantity) => {
+  const cartData = {
+    cartId,
+    cartItem,
+    quantity,
+  };
+
+  axios.post(`${baseUrl}/cart/decrease-item-quantity`, cartData);
+};
+
+const clearDatabaseCart = cartId => {
+  axios.post(`${baseUrl}/cart/clear-cart`, { cartId });
+};
+
+export {
+  getPageContent,
+  postData,
+  getCartData,
+  increaseItemQuantity,
+  decreaseItemQuantity,
+  clearDatabaseCart,
+};

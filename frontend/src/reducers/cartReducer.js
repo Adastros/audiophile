@@ -28,7 +28,7 @@ const cartSlice = createSlice({
       const productKey = action.payload.key;
       const quantity = state[productKey];
 
-      if (quantity < 100) {
+      if (quantity < 99) {
         return { ...state, [productKey]: state[productKey] + 1 };
       }
     },

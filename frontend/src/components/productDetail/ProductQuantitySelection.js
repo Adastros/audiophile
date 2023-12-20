@@ -3,12 +3,15 @@ import { HStack, useToast } from '@chakra-ui/react';
 import QuantityCounter from '../QuantityCounter';
 import AddToCartButton from './AddToCartButton';
 import { addToCart } from '../../reducers/cartReducer';
+import { increaseItemQuantity } from '../../utils/requests';
 
 const ProductQuantitySelection = ({ cartKey, quantity, setQuantity }) => {
   const dispatch = useDispatch();
   const toast = useToast();
 
   const handleButtonClick = () => {
+    const cartId = localStorage.getItem('cartId');
+
     const newToast = toast({
       title: 'Item added to cart.',
       duration: '5000',
@@ -16,6 +19,8 @@ const ProductQuantitySelection = ({ cartKey, quantity, setQuantity }) => {
       isClosable: true,
       variant: 'addToCartToast',
     });
+
+    increaseItemQuantity(cartId, cartKey, quantity);
 
     dispatch(
       addToCart({

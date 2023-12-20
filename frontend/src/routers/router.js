@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import App from '../App';
 import ErrorPage from '../pages/ErrorPage';
 import HomePage from '../pages/HomePage';
-import BaseProductCategoryPage from '../pages/BaseProductCategoryPage';
+import ProductCategoryPage from '../pages/ProductCategoryPage';
 import ProductDetailPage from '../pages/ProductDetailPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import { getContent } from '../utils/helper';
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/headphones',
-            element: <BaseProductCategoryPage />,
+            element: <ProductCategoryPage />,
             loader: () => getContent('headphones'),
           },
           {
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/speakers',
-            element: <BaseProductCategoryPage />,
+            element: <ProductCategoryPage />,
             loader: () => getContent('speakers'),
           },
           {
@@ -76,7 +76,7 @@ const router = createBrowserRouter([
           },
           {
             path: '/earphones',
-            element: <BaseProductCategoryPage />,
+            element: <ProductCategoryPage />,
             loader: () => getContent('earphones'),
           },
           {

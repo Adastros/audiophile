@@ -16,7 +16,7 @@ import Recommendations from '../components/productDetail/Recommendations';
 import ProductCategories from '../components/productCategories/ProductCategories';
 import Closing from '../components/closing/Closing';
 
-const ProductDetailBase = () => {
+const ProductDetailPage = () => {
   const [quantity, setQuantity] = useState(1);
   const productDetails = useLoaderData();
   const closingData = useOutletContext().closingData;
@@ -106,4 +106,4 @@ const ProductDetailBase = () => {
   );
 };
 
-export default ProductDetailBase;
+export default ProductDetailPage;

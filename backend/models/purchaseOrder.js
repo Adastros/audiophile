@@ -27,7 +27,7 @@ const purchaseOrderSchema = new mongoose.Schema({
   },
 });
 
-// transform data of blog document before responding to a request
+// transform data of purchaseOrder document before responding to a request
 purchaseOrderSchema.set("toJSON", {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();

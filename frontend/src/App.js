@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, useLoaderData, ScrollRestoration } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { VStack, useDisclosure } from '@chakra-ui/react';
@@ -8,15 +8,40 @@ import CartModal from './components/cartModal/CartModal';
 import OrderConfirmationModal from './components/orderConfirmationModal/OrderConfirmationModal';
 import Footer from './components/footer/Footer';
 import SharedHeaderContext from './utils/SharedHeaderContext';
-import { calcTotalCost, calcVatCost, calcGrandTotal } from './utils/helper';
+import {
+  calcTotalCost,
+  calcVatCost,
+  calcGrandTotal,
+  addItemsToCart,
+} from './utils/helper';
+import { getCartData } from './utils/requests';
 
 function App() {
-  const headerClosingFooterDemoData = useLoaderData();
+  // Fetch initial data from server
+  const initialPageData = useLoaderData();
+
+  // Redux Cart State
   const cart = useSelector(state => state.cart);
-  const headerData = headerClosingFooterDemoData[0];
-  const closingData = headerClosingFooterDemoData[1];
-  const footerData = headerClosingFooterDemoData[2];
-  const demoData = headerClosingFooterDemoData[3];
+
+  // Loads cart data on page load.
+  // If a browser doesn't have a cartId in localStorage, add the new ID.
+  // Otherwise, update user's cart on first website visit or refresh if
+  // they had items in it in a previous session.
+  useEffect(async () => {
+    const cartData = await getCartData();
+
+    if (!localStorage.getItem('cartId')) {
+      localStorage.setItem('cartId', cartData.cartId);
+    } else {
+      addItemsToCart(cartData.cart);
+    }
+  }, []);
+
+  // Data and method assignment
+  const headerData = initialPageData[0];
+  const closingData = initialPageData[1];
+  const footerData = initialPageData[2];
+  const demoData = initialPageData[3];
   const totalPrice = calcTotalCost(cart, headerData.cart);
   const vatCost = calcVatCost(totalPrice);
   const grandTotal = calcGrandTotal(totalPrice, vatCost);
@@ -48,14 +73,14 @@ function App() {
   };
 
   const logoData = {
-    logoImg: headerClosingFooterDemoData[0].image.logo.path,
-    logoAlt: headerClosingFooterDemoData[0].image.logo.alt,
-    homeRoute: headerClosingFooterDemoData[0].route.home,
+    logoImg: initialPageData[0].image.logo.path,
+    logoAlt: initialPageData[0].image.logo.alt,
+    homeRoute: initialPageData[0].route.home,
   };
 
   const sharedHeaderData = {
-    productCategories: headerClosingFooterDemoData[0].productCategories,
-    rightArrowIconData: headerClosingFooterDemoData[0].icon.rightArrow,
+    productCategories: initialPageData[0].productCategories,
+    rightArrowIconData: initialPageData[0].icon.rightArrow,
   };
 
   const outletContext = {

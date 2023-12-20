@@ -4,23 +4,16 @@ import * as ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
 // import reportWebVitals from './reportWebVitals';
 // import * as serviceWorker from './serviceWorker';
+import store from './utils/store';
 import router from './routers/router';
-import cartReducer from './reducers/cartReducer';
 import websiteTheme from './theme';
 import './index.css';
 
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 const queryClient = new QueryClient();
-
-const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-  },
-});
 
 root.render(
   <StrictMode>

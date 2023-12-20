@@ -1,8 +1,12 @@
-import { getPageContent } from './requests';
+import store from './store';
 import CheckoutItems from '../components/checkout/CheckoutItems';
+import { getPageContent } from './requests';
+import { addToCart } from '../reducers/cartReducer';
+import { increaseItemQuantity } from './requests';
 
 const getContent = async fileName => await getPageContent(fileName);
 
+// Creates a list of checkout items in the summary card.
 const productList = (headerData, cart, itemImageSize, keyStr) => {
   let items = [];
 
@@ -82,12 +86,35 @@ const awaitModalBody = async () => {
   });
 };
 
+// Pads the cart modal body content if the scroll bar is visible.
 const padModalBody = modalBody => {
   if (modalBody) {
     if (modalBody.scrollHeight > modalBody.offsetHeight) {
       modalBody.style.padding = '0 0.65rem 0 0';
     }
   }
+};
+
+// Programmatically add items to Redux cart state
+// if the cart data is already available (e.g.
+// demo cart or previous user cart data).
+const addItemsToCart = (cart, cartId) => {
+  Object.entries(cart).forEach(item => {
+    const key = item[0];
+    const quantity = item[1];
+
+    if (quantity === 0) return;
+
+    // If cartId provided, update the user's cart in the database.
+    if (cartId) increaseItemQuantity(cartId, key, quantity);
+
+    store.dispatch(
+      addToCart({
+        key: key,
+        quantity: quantity,
+      })
+    );
+  });
 };
 
 export {
@@ -99,4 +126,5 @@ export {
   numToLocaleStr,
   awaitModalBody,
   padModalBody,
+  addItemsToCart,
 };

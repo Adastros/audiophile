@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import {
   Modal,
   ModalOverlay,
@@ -14,8 +13,8 @@ import CartItem from './CartItem';
 import PriceTotal from './PriceTotal';
 import CheckoutButton from './CheckoutButton';
 import CartDemoButton from './CartDemoButton';
-import { addToCart } from '../../reducers/cartReducer';
 import { awaitModalBody, padModalBody } from '../../utils/helper';
+import { addItemsToCart } from '../../utils/helper';
 
 const CartModal = ({
   headerData,
@@ -27,9 +26,8 @@ const CartModal = ({
   isCartEmpty,
 }) => {
   const cart = useSelector(state => state.cart);
-  const dispatch = useDispatch();
   const route = headerData.route.cart;
-  const cartDemoData = demoData.cart;
+  const demoCart = demoData.cart;
 
   const cartItems = () => {
     return Object.keys(cart).map(cartItemKey => {
@@ -61,17 +59,8 @@ const CartModal = ({
   };
 
   const handleCartDemoButtonClick = async () => {
-    Object.entries(cartDemoData).forEach(item => {
-      const key = item[0];
-      const quantity = item[1];
-
-      dispatch(
-        addToCart({
-          key: key,
-          quantity: quantity,
-        })
-      );
-    });
+    const cartId = localStorage.getItem('cartId');
+    addItemsToCart(demoCart, cartId);
 
     const modalBody = await awaitModalBody();
     padModalBody(modalBody);
