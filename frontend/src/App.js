@@ -14,7 +14,7 @@ import {
   calcGrandTotal,
   addItemsToCart,
 } from './utils/helper';
-import { getCartData } from './utils/requests';
+import { getNewCartId, getCartData } from './utils/requests';
 
 function App() {
   // Fetch initial data from server
@@ -25,6 +25,8 @@ function App() {
 
   // Loads cart data on page load.
   // If a browser doesn't have a cartId in localStorage, add the new ID.
+  // If previous cart data indicates a purchase was completed, assign a
+  // new cart ID.
   // Otherwise, update user's cart on first website visit or refresh if
   // they had items in it in a previous session.
   useEffect(async () => {
@@ -32,6 +34,9 @@ function App() {
 
     if (!localStorage.getItem('cartId')) {
       localStorage.setItem('cartId', cartData.cartId);
+    } else if (cartData.purchaseComplete) {
+      const newCartId = getNewCartId();
+      localStorage.setItem('cartId', newCartId);
     } else {
       addItemsToCart(cartData.cart);
     }

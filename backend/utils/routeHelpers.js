@@ -2,6 +2,12 @@ const cloudinary = require("cloudinary").v2;
 const fs = require("fs");
 const path = require("path");
 const price = require("../data/productPrice.json");
+const cart = require("../models/cart");
+
+const emptyCart = {
+  purchaseComplete: "false",
+  cart: { xx99mkii: 0, xx99mki: 0, xx59: 0, zx9: 0, zx7: 0, yx1: 0 },
+};
 
 // Flattens a multi-level, nested object into a single-level object
 const flattenObj = (obj) => {
@@ -122,7 +128,14 @@ const getCostBreakdown = (items) => {
   };
 };
 
+const createNewCart = async () => {
+  const newCart = new cart(emptyCart);
+  const newCartDocument = await newCart.save();
+  return newCartDocument._id;
+};
+
 module.exports = {
+  emptyCart,
   flattenObj,
   unflattenObj,
   cloudinaryUrlConverter,
@@ -131,4 +144,5 @@ module.exports = {
   calcVatCost,
   calcGrandTotal,
   getCostBreakdown,
+  createNewCart,
 };

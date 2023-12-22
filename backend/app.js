@@ -28,7 +28,7 @@ mongoose
   });
 
 // Middleware
-app.use(express.static("static_build"));
+app.use(express.static("build"));
 app.use(cors());
 app.use(express.json()); // Parses requests with json type
 // app.use(

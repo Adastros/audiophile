@@ -1,10 +1,11 @@
 const cartRouter = require("express").Router();
 const cart = require("../models/cart");
+const { emptyCart, createNewCart } = require("../utils/routeHelpers");
 
-const emptyCart = {
-  purchaseComplete: "false",
-  cart: { xx99mkii: 0, xx99mki: 0, xx59: 0, zx9: 0, zx7: 0, yx1: 0 },
-};
+cartRouter.get("/new-cart", async (request, response) => {
+  const newCartId = await createNewCart();
+  return response.status(200).send({ cartId: newCartId });
+});
 
 cartRouter.post("/session", async (request, response) => {
   const cartId = request.body.cartId;
@@ -12,13 +13,10 @@ cartRouter.post("/session", async (request, response) => {
   // If cartId doesn't exist, create new entry in cart collection.
   // Return new cartId to client to store in localStorage.
   if (!cartId) {
-    const newGuestCart = new cart(emptyCart);
-    newGuestCart.save().then((data) => {
-      const newCartId = data._id;
-      response.status(200).send({ cartId: newCartId });
-    });
-    return;
+    const newCartId = await createNewCart();
+    return response.status(200).send({ cartId: newCartId });
   }
+  
   // If cartId is given with request, check if cartId exists in cart
   // collection. If the ID exists, grab the guest cart information.
   // Return the cart information without Mongoose's version key.
@@ -64,6 +62,16 @@ cartRouter.post("/clear-cart", async (request, response) => {
   const cartDocument = await cart.findById(cartId);
 
   cartDocument.cart = emptyCart.cart;
+  cartDocument.save();
+
+  return response.status(200).end();
+});
+
+cartRouter.post("/purchase-complete", async (request, response) => {
+  const cartId = request.body.cartId;
+  const cartDocument = await cart.findById(cartId);
+
+  cartDocument.purchaseComplete = true;
   cartDocument.save();
 
   return response.status(200).end();

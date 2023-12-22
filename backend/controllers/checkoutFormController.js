@@ -1,7 +1,6 @@
 const checkoutFormRouter = require("express").Router();
 const { validationResult, matchedData } = require("express-validator");
 const purchaseOrder = require("../models/purchaseOrder");
-const logger = require("../utils/logger");
 const helper = require("../utils/routeHelpers");
 const sendEmail = require("../utils/emailHelper.js").default;
 const validatorSanitizeArr = require("../utils/validatorChains");
@@ -25,12 +24,7 @@ checkoutFormRouter.post(
     });
 
     newPurchaseOrder.save().then(async () => {
-      logger.info(
-        `${JSON.stringify(newPurchaseOrder)} successfully added to MongoDB.`
-      );
-      logger.info("Prepping email");
       const emailResponse = await sendEmail(newPurchaseOrder);
-      logger.info("email sent!");
       return response.status(200).json(emailResponse);
     });
   }

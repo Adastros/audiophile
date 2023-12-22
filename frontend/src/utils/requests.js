@@ -11,6 +11,11 @@ const postData = data => {
   axios.post(`${baseUrl}/checkout-form`, data);
 };
 
+const getNewCartId = async () => {
+  const response = await axios.get(`${baseUrl}/cart/new-cart`);
+  return response.data.cartId;
+};
+
 const getCartData = async () => {
   const cartId = localStorage.getItem('cartId');
   const response = await axios.post(`${baseUrl}/cart/session`, {
@@ -44,11 +49,17 @@ const clearDatabaseCart = cartId => {
   axios.post(`${baseUrl}/cart/clear-cart`, { cartId });
 };
 
+const completePurchase = cartId => {
+  axios.post(`${baseUrl}/cart/purchase-complete`, { cartId });
+};
+
 export {
   getPageContent,
   postData,
+  getNewCartId,
   getCartData,
   increaseItemQuantity,
   decreaseItemQuantity,
   clearDatabaseCart,
+  completePurchase,
 };

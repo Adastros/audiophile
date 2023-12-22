@@ -8,7 +8,7 @@ const path = require("path");
 // website will redirect to index.html. React router
 // on the client side will handle the rest of the routing.
 serverSideRouter.use("/*", (request, response) => {
-  response.sendFile(path.resolve(__dirname, "../static_build/index.html"));
+  response.sendFile(path.resolve(__dirname, "../build/index.html"));
 });
 
 module.exports = serverSideRouter;
