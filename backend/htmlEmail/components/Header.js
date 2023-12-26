@@ -8,7 +8,8 @@ var _react = _interopRequireDefault(require("react"));
 var _components = require("@react-email/components");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 var Header = function Header() {
-  var baseUrl = process.env.REACT_APP_CLOUDINARY_BASE_URL;
+  var logoBaseUrl = process.env.REACT_APP_CLOUDINARY_BASE_URL;
+  var audiophileUrl = "https://audiophile.fan";
 
   // Inline Style
   var sectionStyle = {
@@ -22,10 +23,10 @@ var Header = function Header() {
   return /*#__PURE__*/_react["default"].createElement(_components.Section, {
     style: sectionStyle
   }, /*#__PURE__*/_react["default"].createElement(_components.Link, {
-    href: "#",
+    href: audiophileUrl,
     target: "_blank"
   }, /*#__PURE__*/_react["default"].createElement(_components.Img, {
-    src: "".concat(baseUrl, "assets/email/logo"),
+    src: "".concat(logoBaseUrl, "assets/email/logo"),
     alt: "audiophile logo",
     style: imgStyle,
     height: "25",

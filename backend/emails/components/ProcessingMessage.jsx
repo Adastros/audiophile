@@ -4,7 +4,9 @@ import { Section, Text, Link } from "@react-email/components";
 const ProcessingMessage = ({ method }) => {
   const processingMsgShipping = `We are currently processing your order. You will receive a shipping confirmation with your tracking number once your order ships.`;
   const processingMsgDelivery = `We are currently processing your order. You will receive a delivery confirmation once your order is ready to be delivered.`;
-  const processingMsg = method === "cash" ? processingMsgDelivery : processingMsgShipping;
+  const processingMsg =
+    method === "cash" ? processingMsgDelivery : processingMsgShipping;
+  const audiophileUrl = "https://audiophile.fan";
 
   //Inline Styles
   const sectionStyle = {
@@ -29,7 +31,7 @@ const ProcessingMessage = ({ method }) => {
     <Section style={sectionStyle}>
       <Text style={thankMessageStyle}>
         Thank you for shopping at{" "}
-        <Link href="#" target="_blank">
+        <Link href={audiophileUrl} target="_blank">
           audiophile.
         </Link>
       </Text>

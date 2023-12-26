@@ -12,6 +12,7 @@ var ProcessingMessage = function ProcessingMessage(_ref) {
   var processingMsgShipping = "We are currently processing your order. You will receive a shipping confirmation with your tracking number once your order ships.";
   var processingMsgDelivery = "We are currently processing your order. You will receive a delivery confirmation once your order is ready to be delivered.";
   var processingMsg = method === "cash" ? processingMsgDelivery : processingMsgShipping;
+  var audiophileUrl = "https://audiophile.fan";
 
   //Inline Styles
   var sectionStyle = {
@@ -36,7 +37,7 @@ var ProcessingMessage = function ProcessingMessage(_ref) {
   }, /*#__PURE__*/_react["default"].createElement(_components.Text, {
     style: thankMessageStyle
   }, "Thank you for shopping at", " ", /*#__PURE__*/_react["default"].createElement(_components.Link, {
-    href: "#",
+    href: audiophileUrl,
     target: "_blank"
   }, "audiophile.")), /*#__PURE__*/_react["default"].createElement(_components.Text, {
     style: processingMessageStyle

@@ -2,7 +2,8 @@ import React from "react";
 import { Section, Img, Link } from "@react-email/components";
 
 const Header = () => {
-  const baseUrl = process.env.REACT_APP_CLOUDINARY_BASE_URL;
+  const logoBaseUrl = process.env.REACT_APP_CLOUDINARY_BASE_URL;
+  const audiophileUrl = "https://audiophile.fan";
 
   // Inline Style
   const sectionStyle = {
@@ -13,9 +14,9 @@ const Header = () => {
 
   return (
     <Section style={sectionStyle}>
-      <Link href="#" target="_blank">
+      <Link href={audiophileUrl} target="_blank">
         <Img
-          src={`${baseUrl}assets/email/logo`}
+          src={`${logoBaseUrl}assets/email/logo`}
           alt="audiophile logo"
           style={imgStyle}
           height="25"

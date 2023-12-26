@@ -15,27 +15,28 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 var sendEmail = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data) {
-    var resend, reactEmailTemplate, htmlEmailTemplate, emailResponse;
+    var resend, reactEmailTemplate, htmlEmailTemplate, userEmail, emailResponse;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           // Create new Resend Client
-          resend = new _resend.Resend(process.env.REACT_APP_RESEND_API);
+          resend = new _resend.Resend(process.env.REACT_APP_RESEND_API); // Render the email template
           reactEmailTemplate = /*#__PURE__*/_react["default"].createElement(_OrderConfirmation["default"], {
             data: data
           });
-          htmlEmailTemplate = (0, _components.render)(reactEmailTemplate);
-          _context.next = 5;
+          htmlEmailTemplate = (0, _components.render)(reactEmailTemplate); // Get the user's email
+          userEmail = data.email;
+          _context.next = 6;
           return resend.emails.send({
-            from: "audiophile <onboarding@resend.dev>",
-            to: [process.env.REACT_APP_TEST_EMAIL],
+            from: "audiophile <".concat(process.env.REACT_APP_FROM_EMAIL, ">"),
+            to: userEmail,
             subject: "audiophile Order Confirmation",
             html: htmlEmailTemplate
           });
-        case 5:
+        case 6:
           emailResponse = _context.sent;
           return _context.abrupt("return", emailResponse);
-        case 7:
+        case 8:
         case "end":
           return _context.stop();
       }
