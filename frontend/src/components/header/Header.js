@@ -1,6 +1,6 @@
 import { Flex, Box } from '@chakra-ui/react';
 import Navigation from './Navigation';
-import CartIconButton from '../cartModal/CartIconButton';
+import CartIconButton from './CartIconButton';
 import ExclamationButton from './ExclamationButton';
 import Logo from '../Logo';
 
@@ -48,7 +48,7 @@ const Header = ({
           <Logo logoData={logoData} menuModal={menuModal} />
         </Flex>
         <Navigation headerData={headerData} menuModal={menuModal} />
-        <Box>
+        <Box className="cart-container">
           <CartIconButton
             headerData={headerData}
             onCartModalOpen={onCartModalOpen}

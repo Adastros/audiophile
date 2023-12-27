@@ -20,7 +20,6 @@ const CartIconButton = ({ headerData, onCartModalOpen, menuModal }) => {
   return (
     <IconButton
       id="cart-button"
-      className="iconHover"
       aria-label={cartIconAriaLabel}
       icon={<CartIcon cartIconUrl={cartIconUrl} />}
       onClick={onCartClick}

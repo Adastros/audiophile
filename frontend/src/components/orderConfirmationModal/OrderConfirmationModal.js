@@ -22,7 +22,7 @@ const OrderConfirmationModal = ({
   const cart = useSelector(state => state.cart);
   const checkIconData = headerData.icon.check;
   const route = headerData.route.home;
-  const grandTotalStr = numToLocaleStr(grandTotal);
+  const grandTotalStr = numToLocaleStr(grandTotal, 2);
   const itemImageSize = { height: '3.125rem', width: '3.125rem' };
   const keyStr = 'OrderConfirmItem';
   const orderConfirmationProductList = productList(

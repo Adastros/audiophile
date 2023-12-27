@@ -13,18 +13,18 @@ const ExclamationButton = ({
 
   return (
     <Button
+      className="exclamation"
       h="1rem"
       w="1rem"
       minWidth="1rem"
       padding="0"
       visibility={isCartEmpty ? 'visible' : 'hidden'}
       position="absolute"
-      top="calc(50% - 1.2rem)"
-      right={{ base: '1.6rem', md: '-0.9rem' }}
+      top="calc(50% - 0.95rem)"
+      right={{ base: '1.9rem', md: '-0.5rem' }}
       zIndex="10"
       borderRadius="50%"
       backgroundColor="white"
-      _hover={{ opacity: '0.75' }}
       onClick={handleButtonClick}
     >
       <Image
@@ -34,7 +34,6 @@ const ExclamationButton = ({
         w="100%"
         aria-hidden="true"
         borderRadius="50%"
-        backgroundColor="white"
         onClick={onCartModalOpen}
       />
     </Button>

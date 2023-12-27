@@ -10,8 +10,12 @@ body {
 Only used to change the color of icons when the 
 parent div is hovered over.
 */
-.iconHover:hover path {
+.cart-container:hover path {
   fill: #d87d4a; /* caramel color */
+}
+
+.cart-container:hover .exclamation {
+  background-color: #d87d4a;
 }
 
 .shopLink:hover p {
