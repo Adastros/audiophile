@@ -26,6 +26,7 @@ const CheckoutPage = () => {
       address: '',
       zipCode: '',
       city: '',
+      stateProvince: '',
       country: '',
       radio: 'eMoney',
       eMoneyNumber: '',

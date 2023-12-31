@@ -2,6 +2,7 @@ import { SimpleGrid, GridItem, VStack, Heading } from '@chakra-ui/react';
 import AddressInput from './AddressInput';
 import ZipCodeInput from './ZipCodeInput';
 import CityInput from './CityInput';
+import StateProvinceInput from './StateProvinceInput';
 import CountryInput from './CountryInput';
 import headingStyles from '../../theme/headingStyles';
 
@@ -34,6 +35,9 @@ const ShippingInfo = ({ errors, register }) => {
           <CityInput errors={errors} register={register} />
         </GridItem>
         <GridItem area="d">
+          <StateProvinceInput errors={errors} register={register} />
+        </GridItem>
+        <GridItem area="e">
           <CountryInput errors={errors} register={register} />
         </GridItem>
       </SimpleGrid>

@@ -13,6 +13,7 @@ var InfoSummary = function InfoSummary(_ref) {
   var name = _ref.name,
     address = _ref.address,
     city = _ref.city,
+    stateProvince = _ref.stateProvince,
     country = _ref.country,
     zipCode = _ref.zipCode,
     method = _ref.method;
@@ -26,6 +27,7 @@ var InfoSummary = function InfoSummary(_ref) {
     name: name,
     address: address,
     city: city,
+    stateProvince: stateProvince,
     country: country,
     zipCode: zipCode,
     method: method

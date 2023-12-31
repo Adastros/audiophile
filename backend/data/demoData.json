@@ -11,6 +11,7 @@
     "address": "123 Sesame Street",
     "zipCode": 426875,
     "city": "Lakeside",
+    "stateProvince": "Colorado",
     "country": "USA",
     "eMoneyNumber": 789456123,
     "eMoneyPin": 4567

@@ -42,6 +42,7 @@ var OrderConfirmation = function OrderConfirmation(_ref) {
     name: data.name,
     address: data.address,
     city: data.city,
+    stateProvince: data.stateProvince,
     country: data.country,
     zipCode: data.zipCode,
     method: data.radio

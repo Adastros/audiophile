@@ -30,6 +30,7 @@ const validatorSanitizeArr = [
     .isNumeric({ no_symbols: true })
     .escape(),
   body("city").isLength({ max: 100 }).trim().notEmpty().escape(),
+  body("stateProvince").isLength({ max: 100 }).trim().notEmpty().escape(),
   body("country").isLength({ max: 60 }).trim().notEmpty().escape(),
   body("radio")
     .exists()

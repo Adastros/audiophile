@@ -4,6 +4,7 @@ import { Column, Text } from "@react-email/components";
 const PaymentMethod = ({ method }) => {
   // Inline Styles
   const columnStyle = {
+    minWidth: "160px",
     verticalAlign: "top",
   };
   const headingStyle = {

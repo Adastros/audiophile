@@ -7,6 +7,7 @@ const purchaseOrderSchema = new mongoose.Schema({
   address: String,
   zipCode: Number,
   city: String,
+  stateProvince: String,
   country: String,
   radio: String,
   eMoneyNumber: Number,

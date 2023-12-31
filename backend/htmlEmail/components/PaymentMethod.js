@@ -11,6 +11,7 @@ var PaymentMethod = function PaymentMethod(_ref) {
   var method = _ref.method;
   // Inline Styles
   var columnStyle = {
+    minWidth: "160px",
     verticalAlign: "top"
   };
   var headingStyle = {
