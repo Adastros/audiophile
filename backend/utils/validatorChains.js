@@ -13,7 +13,7 @@ const validatorSanitizeArr = [
     .exists()
     .trim()
     .notEmpty()
-    .isLength({ min: 11, max: 13 })
+    .isLength({ min: 10, max: 32 })
     .isNumeric({ no_symbols: false })
     .escape(),
   body("address")
