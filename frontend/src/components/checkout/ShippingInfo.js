@@ -16,7 +16,8 @@ const ShippingInfo = ({ errors, register }) => {
           base: `"a a"
                  "b b"
                  "c c"
-                 "d d"`,
+                 "d d"
+                 "e e"`,
           md: `"a a"
                "b c"
                "d e"`,
