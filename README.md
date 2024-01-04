@@ -14,9 +14,9 @@
     <br />
     <a href="https://audiophile.fan/">View Demo</a>
     ·
-    <a href="https://github.com/Adastros/audiophile/issues">Report Bug</a>
+    <a href="https://github.com/Adastros/audiophile/issues/new/choose">Report Bug</a>
     ·
-    <a href="https://github.com/Adastros/audiophile/issues">Request Feature</a>
+    <a href="https://github.com/Adastros/audiophile/issues/new/choose">Request Feature</a>
   </p>
 </div>
 
@@ -37,7 +37,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
