@@ -180,24 +180,24 @@ You'll need the following services to run your own version of the website.
 This project is the culmination of more than 6 months of study and work performed in my free time. Of the many things I learned, the following are the major takeaways from working on this project.
 
 ### Website Deployment and System Design
-- how to architect, design, and deploy a website to the internet using a custom domain
+- How to architect, design, and deploy a website to the internet using a custom domain
 
 ### Figma Interpretation and Design
-- how to interpret and recreate Figma wire frame designs 
-- how to create custom wire frame designs in Figma
+- How to interpret and recreate Figma wire frame designs
+- How to create custom wire frame designs in Figma
 
 ### Email Handling
-- how to create email templates and send emails using a third party email vendor
+- How to create email templates and send emails using a third party email vendor
 
 ### Testing
-- how to perform integration tests with Cypress and backend/ server side tests with Postman
+- How to perform integration tests with Cypress and backend/ server side tests with Postman
 
 ### Backend Setup and Server Configuration
-- how to configure and set up a backend server
-- how to use and configure a noSQL/ document database (MongoDB) 
+- How to configure and set up a backend server
+- How to use and configure a noSQL/ document database (MongoDB)
 
 ### Website Routing
-- how website routing is handled on the client and server side
+- How website routing is handled on the client and server side
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
