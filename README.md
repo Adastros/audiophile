@@ -47,7 +47,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://audiophile-1.fly.dev/)
 
-Audiophile is multi-page e-commerce website designed to sell high quality audio products. This website is hosted on [Fly.io](https://fly.io/) and was built using Figma design files, images, and pre-written text content provided by [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
+Audiophile is a multi-page e-commerce website designed to sell high quality audio products. This website is hosted on [Fly.io](https://fly.io/) and was built using Figma design files, images, and pre-written text content provided by [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
 
 Functionally, users on the website are able to:
 
@@ -183,7 +183,7 @@ This project is the culmination of more than 6 months of study and work performe
 - How to architect, design, and deploy a website to the internet using a custom domain
 
 ### Figma Interpretation and Design
-- How to interpret and recreate Figma wire frame designs
+- How to interpret Figma wire frame designs
 - How to create custom wire frame designs in Figma
 
 ### Email Handling
