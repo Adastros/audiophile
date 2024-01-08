@@ -9,7 +9,7 @@
       "mobile": { "path": "assets/home/mobile/image-header_ybjcg9.jpg" },
       "alt": "XX99 MARK II HEADPHONES"
     },
-    "route": "/headphones/XX99MarkII"
+    "route": "/headphones/xx99markii"
   },
   "productCards": {
     "primary": {
@@ -27,7 +27,7 @@
         "circle": { "path": "assets/home/desktop/pattern-circles_lozyyy.svg" },
         "aria": { "hidden": true }
       },
-      "route": "/speakers/ZX9"
+      "route": "/speakers/zx9"
     },
     "secondary": {
       "product": "ZX7 SPEAKER",
@@ -39,7 +39,7 @@
         "mobile": { "path": "assets/home/mobile/image-speaker-zx7_eubgps.jpg" },
         "alt": "ZX7 SPEAKER"
       },
-      "route": "/speakers/ZX7"
+      "route": "/speakers/zx7"
     },
     "tertiary": {
       "product": "YX1 EARPHONES",
@@ -55,7 +55,7 @@
         },
         "alt": "YX1 EARPHONES"
       },
-      "route": "/earphones/YX1Wireless"
+      "route": "/earphones/yx1wireless"
     }
   }
 }

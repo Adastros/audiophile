@@ -17,7 +17,7 @@
         },
         "alt": "XX99 Mark II Headphones"
       },
-      "route": "/headphones/XX99MarkII"
+      "route": "/headphones/xx99markii"
     },
     "secondary": {
       "name": "XX99 Mark I Headphones",
@@ -35,7 +35,7 @@
         },
         "alt": "XX99 Mark I Headphones"
       },
-      "route": "/headphones/XX99MarkI"
+      "route": "/headphones/xx99marki"
     },
     "tertiary": {
       "name": "XX59 Headphones",
@@ -53,7 +53,7 @@
         },
         "alt": "XX59 Headphones"
       },
-      "route": "/headphones/XX59"
+      "route": "/headphones/xx59"
     }
   }
 }

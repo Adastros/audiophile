@@ -112,9 +112,9 @@
   },
   "route": {
     "cart": "/cart",
-    "product1": "/headphones/XX99MarkII",
-    "product2": "/headphones/XX59",
-    "product3": "/speakers/ZX9"
+    "product1": "/headphones/xx99markii",
+    "product2": "/headphones/xx59",
+    "product3": "/speakers/zx9"
   },
   "cartKey": "xx99mki"
 }

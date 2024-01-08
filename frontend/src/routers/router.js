@@ -39,9 +39,9 @@ const router = createBrowserRouter([
             element: <ProductDetailPage />,
             loader: ({ params }) => {
               if (
-                params.productName !== 'XX99MarkII' &&
-                params.productName !== 'XX99MarkI' &&
-                params.productName !== 'XX59'
+                params.productName !== 'xx99markii' &&
+                params.productName !== 'xx99marki' &&
+                params.productName !== 'xx59'
               ) {
                 throw new Response('', {
                   status: 404,
@@ -62,8 +62,8 @@ const router = createBrowserRouter([
             element: <ProductDetailPage />,
             loader: ({ params }) => {
               if (
-                params.productName !== 'ZX9' &&
-                params.productName !== 'ZX7'
+                params.productName !== 'zx9' &&
+                params.productName !== 'zx7'
               ) {
                 throw new Response('', {
                   status: 404,
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
             path: '/earphones/:productName',
             element: <ProductDetailPage />,
             loader: ({ params }) => {
-              if (params.productName !== 'YX1Wireless') {
+              if (params.productName !== 'yx1wireless') {
                 throw new Response('', {
                   status: 404,
                   statusText: 'Not Found',

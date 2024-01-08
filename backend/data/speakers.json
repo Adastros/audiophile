@@ -17,7 +17,7 @@
         },
         "alt": "ZX9 Speaker"
       },
-      "route": "/speakers/ZX9"
+      "route": "/speakers/zx9"
     },
     "secondary": {
       "name": "ZX7 Speaker",
@@ -35,7 +35,7 @@
         },
         "alt": "ZX7 Speaker"
       },
-      "route": "/speakers/ZX7"
+      "route": "/speakers/zx7"
     }
   }
 }
