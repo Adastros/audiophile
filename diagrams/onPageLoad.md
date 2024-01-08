@@ -1,6 +1,10 @@
+---
+title: On Page Load Sequence Diagram
+---
+
 ```mermaid
 sequenceDiagram
-participant c as Client
+participant c as User Client
 participant b as Fly.io Server (Backend)
 participant cl as Cloudinary (Image Hosting)
 participant d as MongoDB (Database)
