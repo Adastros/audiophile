@@ -8,7 +8,6 @@
   </a>
 
 <h3 align="center">audiophile</h3>
-
   <p align="center">
     A static E-Commerce website selling high quality audio products.
     <br />
@@ -28,6 +27,7 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#system-diagrams">System Diagrams</a></li>
       </ul>
     </li>
     <li>
@@ -87,6 +87,114 @@ Functionally, users on the website are able to:
 - [![React Email][React-email]][React-email-url]
 - [![Resend][Resend]][Resend-url]
 - [![Dotenv][Dotenv]][Dotenv-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SYSTEM DIAGRAMS -->
+
+### System Diagrams
+Below are flow and sequence diagrams of the website system. The diagrams were generated using [Mermaid](https://mermaid.js.org/) and can also be found in the [diagrams](/diagrams/) folder.  
+
+#### Flow Diagram
+<details>
+<summary>General System Flow Diagram</summary>
+
+```mermaid
+flowchart LR
+    A[User Client] <-->|Webpage data| B["Fly.io Server (Backend)"]
+    A <--> |Images and icons| E["Cloundinary (Image Hosting)"]
+    B <--> |Purchase order and cart data|C[("MongoDB (Database)")]
+    B --> |Purchase order email header and body data| D["Resend (Email Platform)"]
+    D --> |Purchase order email| A
+```
+
+</details>
+
+#### Sequence Diagrams
+<details>
+<summary>On Page Load Sequence Diagram</summary>
+
+```mermaid
+sequenceDiagram
+participant c as User Client
+participant b as Fly.io Server (Backend)
+participant cl as Cloudinary (Image Hosting)
+participant d as MongoDB (Database)
+
+c->>b: GET https://audiophile.fan
+b-->>c: Send HTML, CSS, Javascript files
+c->>b: GET webpage data (JSON data)
+b-->>c: Send webpage data (JSON data)
+c->>cl: GET images and icons
+cl-->>c: Send images and icons
+c->>b: POST send cart ID
+alt cart ID falsey
+    b->>d: Create new cart document
+    d-->>b: Send newly created cart document's ID 
+    b-->>c: Send new cart ID
+else cart ID truthy
+    b->>d: GET cart info
+    d-->>b: Send cart info
+    b-->>c: Send cart info
+end
+```
+
+</details>
+
+<details>
+<summary>Email Sequence Diagram</summary>
+
+```mermaid
+sequenceDiagram
+participant c as User Client
+participant b as Fly.io Server (Backend)
+participant d as MongoDB (Database)
+participant r as Resend (Email Platform)
+
+c->>b: POST valid, completed checkout form data
+b->>b: Validate and sanitize form data
+par
+    b->>d: POST - Mark purchaseComplete field in cart document as true 
+    d->>d: Update purchaseComplete field in cart document as true
+and
+    c->>b: GET - new cart ID
+    b->>d: Create new cart document
+    d-->>b: Send newly created cart document's ID 
+    b-->>c: Send new cart ID
+and
+    b->>d: POST - Send checkout form data
+    d->>d: Create new purchaseOrder document with received data
+    d-->>b: Fufill promise and send new purchaseOrder document
+    b->>r: Render and send purchase order email template
+    par 
+        b-->>c: Send response 200 status
+    and
+        r-->>c: Send purchase order email
+    end
+end
+```
+
+</details>
+
+<details>
+<summary>Adding Items to Cart Sequence Diagram</summary>
+
+```mermaid
+sequenceDiagram
+participant c as User Client
+participant b as Fly.io Server (Backend)
+participant d as MongoDB (Database)
+
+loop add items to cart
+c->>b: POST - item, quantity, and cart ID
+c->>c: Update redux store with new item and/or quantity
+b->>d: Send item, quantity, and cart ID
+d->>d: Update cart document with received information
+b-->>c: Send response 200 status
+end
+```
+
+</details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -177,7 +285,7 @@ You'll need the following services to run your own version of the website.
 
 ## What I learned
 
-This project is the culmination of more than 6 months of study and work performed in my free time. Of the many things I learned, the following are the major takeaways from working on this project.
+The following are the major takeaways from working on this project:
 
 ### Website Deployment and System Design
 - How to architect, design, and deploy a website to the internet using a custom domain
@@ -208,6 +316,7 @@ This project is the culmination of more than 6 months of study and work performe
 <a href="https://www.linkedin.com/in/dannydo562/">
   <img src = "https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
 </a>
+
 <a href="mailto:dannydo286@gmail.com">
   <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
 </a>
