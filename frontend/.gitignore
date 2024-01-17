@@ -15,7 +15,6 @@
 /cypress/videos
 /cypress/screenshots
 cypress.env.json
-cypress.config.js
 
 # misc
 .DS_Store
