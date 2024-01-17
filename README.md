@@ -265,6 +265,7 @@ You'll need the following services to run your own version of the website.
    REACT_APP_CLOUDINARY_BASE_URL = 'YOUR CLOUDINARY IMAGE BASE URL'
    MONGODB_URI = 'YOUR MONGODB API URI'
    REACT_APP_RESEND_API = "YOUR RESEND API KEY"
+   REACT_APP_FROM_EMAIL = "'FROM' FIELD EMAIL ADDRESS (ex: email@example.com)"
    ```
 8. Create a production build of the website by running the following command in the "frontend" directory.
    ```sh
