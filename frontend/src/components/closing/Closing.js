@@ -11,7 +11,6 @@ const Closing = ({ closingData }) => {
   return (
     <Box w="100%" paddingX={{ base: '1.5rem', md: '2.5rem' }}>
       <Flex
-        id="closing"
         w={{ base: '20.4375rem', md: '40.0625rem', lg: '100%' }}
         maxW="69.375rem"
         margin="0 auto"
@@ -20,6 +19,7 @@ const Closing = ({ closingData }) => {
         align="center"
         justify="space-between"
         gap={{ base: '2rem', md: '3rem', lg: '8rem' }}
+        data-cy="closing"
       >
         <ClosingImage imgData={imgData} />
         <VStack gap="2rem">

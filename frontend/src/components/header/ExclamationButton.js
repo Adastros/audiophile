@@ -25,6 +25,7 @@ const ExclamationButton = ({
       zIndex="10"
       borderRadius="50%"
       backgroundColor="white"
+      data-cy="exclamation-button"
       onClick={handleButtonClick}
     >
       <Image

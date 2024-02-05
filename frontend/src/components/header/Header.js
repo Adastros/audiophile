@@ -15,7 +15,6 @@ const Header = ({
 
   return (
     <Flex
-      id="header"
       w="100%"
       paddingX={{ base: '0', md: '2.5rem', lg: '3rem' }}
       zIndex="1"
@@ -23,7 +22,8 @@ const Header = ({
       align="center"
       justify="center"
       backgroundColor="black"
-      overflowX={'hidden'}
+      overflowX="hidden"
+      data-cy="header"
     >
       <Flex
         w="100%"

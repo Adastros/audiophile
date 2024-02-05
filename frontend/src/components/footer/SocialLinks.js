@@ -19,7 +19,12 @@ const SocialLinks = ({ socialIcons }) => {
   };
 
   return (
-    <Flex id="social-links" w="104px" align="center" justify="space-between">
+    <Flex
+      w="104px"
+      align="center"
+      justify="space-between"
+      data-cy="social-links"
+    >
       {socialIconComponents()}
     </Flex>
   );

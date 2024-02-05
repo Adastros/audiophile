@@ -15,7 +15,6 @@ const MenuIconButton = ({ headerData, menuModal }) => {
 
   return (
     <IconButton
-      id="menu-button"
       className="iconHover"
       aria-label={hamburgerIconAriaLabel}
       h="0.9375rem"
@@ -24,6 +23,7 @@ const MenuIconButton = ({ headerData, menuModal }) => {
       margin="0"
       padding="0"
       icon={<MenuIcon hamburgerIconUrl={hamburgerIconUrl} />}
+      data-cy="menu-button"
       onClick={handleMenuClick}
     />
   );

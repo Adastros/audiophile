@@ -14,7 +14,6 @@ const Footer = ({ footerData, logoData }) => {
 
   return (
     <Flex
-      id="footer"
       w="100%"
       paddingTop={{ base: '3rem' }}
       paddingBottom={{ base: '2.375rem' }}
@@ -24,6 +23,7 @@ const Footer = ({ footerData, logoData }) => {
       textAlign={{ base: 'center', md: 'left' }}
       color="white"
       backgroundColor="black"
+      data-cy="footer"
     >
       <Flex
         w="100%"

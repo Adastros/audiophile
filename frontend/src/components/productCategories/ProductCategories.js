@@ -28,7 +28,6 @@ const ProductCategories = ({ menuModal }) => {
   return (
     <Flex
       as="nav"
-      id="product-categories"
       h="100%"
       w="100%"
       maxW={{ base: '100%', md: '43.0625rem', lg: '69.375rem' }}
@@ -38,6 +37,7 @@ const ProductCategories = ({ menuModal }) => {
       justify={{ base: 'center', md: 'space-between' }}
       backgroundColor="inherit"
       gap={{ base: '2rem', md: '0.625rem', lg: '1rem' }}
+      data-cy="product-categories"
     >
       {thumbnails()}
     </Flex>

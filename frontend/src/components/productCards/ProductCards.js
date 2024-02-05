@@ -6,12 +6,12 @@ import TertiaryProductCards from './TertiaryProductCard';
 const ProductCards = ({ productCardData }) => {
   return (
     <Flex
-      id="homepage-product-cards"
-      h='min-content'
+      h="min-content"
       w="100%"
       direction="column"
       align="center"
       gap={{ base: '1.5rem', md: '2rem' }}
+      data-cy="homepage-product-cards"
     >
       <PrimaryProductCards primaryCardData={productCardData.primary} />
       <SecondaryProductCards secondaryCardData={productCardData.secondary} />

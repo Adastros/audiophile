@@ -11,11 +11,15 @@ const ShopLink = ({ route, menuModal }) => {
   };
 
   return (
-    <LinkBox className="shopLink" onClick={handleShopLinkClick}>
+    <LinkBox
+      className="shopLink"
+      data-cy="shop-link"
+      onClick={handleShopLinkClick}
+    >
       <LinkOverlay as={ReactRouterLink} to={route}>
         <Flex zIndex="1" align="center" justify="center" gap="0.5rem">
           <Text opacity="0.5" textStyle="shopLink">
-            SHOP
+            shop
           </Text>
           <Image
             src={rightArrowIconData.path}

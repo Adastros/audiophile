@@ -15,7 +15,7 @@ const SeeProductButton = ({
   };
 
   return (
-    <LinkBox onClick={handleButtonClick}>
+    <LinkBox onClick={handleButtonClick} data-cy="see-product-button">
       <LinkOverlay as={ReactRouterLink} to={route}>
         <Button variant={buttonVariant} size={buttonSize}>
           See Product

@@ -9,24 +9,24 @@ const NavLinks = ({ flexDir, gaps }) => {
   return (
     <Flex
       as="nav"
-      id="nav-links"
       direction={flexDir}
       align="center"
       gap={gaps}
       color="white"
       textStyle="navLinks"
+      data-cy="nav-links"
     >
       <Link as={ReactRouterLink} to="/">
-        Home
+        home
       </Link>
       <Link as={ReactRouterLink} to="/headphones">
-        HEADPHONES
+        headphones
       </Link>
       <Link as={ReactRouterLink} to="/speakers">
-        SPEAKERS
+        speakers
       </Link>
       <Link as={ReactRouterLink} to="/earphones">
-        EARPHONES
+        earphones
       </Link>
     </Flex>
   );

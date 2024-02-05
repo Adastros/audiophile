@@ -19,7 +19,6 @@ const CartIconButton = ({ headerData, onCartModalOpen, menuModal }) => {
 
   return (
     <IconButton
-      id="cart-button"
       aria-label={cartIconAriaLabel}
       icon={<CartIcon cartIconUrl={cartIconUrl} />}
       onClick={onCartClick}
@@ -28,6 +27,7 @@ const CartIconButton = ({ headerData, onCartModalOpen, menuModal }) => {
       minW="0"
       margin="0"
       padding="0"
+      data-cy="cart-button"
     />
   );
 };

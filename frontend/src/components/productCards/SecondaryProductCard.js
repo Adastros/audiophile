@@ -13,7 +13,6 @@ const SecondaryProductCards = ({ secondaryCardData }) => {
 
   return (
     <Box
-      id="secondary-product-card"
       h="20rem"
       w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}
       maxW="69.375rem"
@@ -27,6 +26,7 @@ const SecondaryProductCards = ({ secondaryCardData }) => {
       backgroundRepeat="no-repeat"
       backgroundPosition="center"
       backgroundColor="brand.antiFlashWhite"
+      data-cy="secondary-product-card"
     >
       <VStack
         h="100%"

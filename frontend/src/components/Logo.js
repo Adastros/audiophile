@@ -10,12 +10,12 @@ const Logo = ({ logoData, menuModal }) => {
     <LinkBox onClick={handleLogoClick}>
       <LinkOverlay as={ReactRouterLink} to={logoData.homeRoute}>
         <Image
-          id="logo"
           src={logoData.logoImg}
           alt={logoData.logoAlt}
           h="25px"
           w="143px"
           flexShrink="0"
+          data-cy="logo"
         />
       </LinkOverlay>
     </LinkBox>

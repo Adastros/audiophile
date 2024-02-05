@@ -16,7 +16,7 @@ const Banner = ({ heroData }) => {
   const productDetailPageRoute = heroData.route;
 
   return (
-    <Box id="homepage-banner" w="100%" backgroundColor="#191919">
+    <Box w="100%" backgroundColor="#191919" data-cy="homepage-banner">
       <Flex
         maxWidth={{
           base: '24rem',

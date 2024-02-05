@@ -8,6 +8,7 @@ const ThumbNailText = ({ text }) => {
       textAlign="center"
       textStyle="thumbnailText"
       textTransform="uppercase"
+      data-cy="product-category-thumbnail-text"
     >
       {text}
     </Text>

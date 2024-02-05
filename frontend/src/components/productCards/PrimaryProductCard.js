@@ -12,7 +12,6 @@ const PrimaryProductCards = ({ primaryCardData }) => {
 
   return (
     <Flex
-      id="primary-product-card"
       h={{ base: '37.5rem', md: '45rem', lg: '35rem' }}
       w={{ base: '20.4375rem', md: '43.0625rem', lg: '100%' }}
       maxW="69.375rem"
@@ -36,6 +35,7 @@ const PrimaryProductCards = ({ primaryCardData }) => {
         lg: 'bottom -22rem left -10.5rem',
       }}
       backgroundColor="brand.caramel"
+      data-cy='primary-product-card'
     >
       <Box
         h={{ base: 'min-content', lg: '100%' }}

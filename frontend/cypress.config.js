@@ -2,7 +2,7 @@ const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'http://localhost:3003',
   },
   component: {
     devServer: {
@@ -10,4 +10,6 @@ module.exports = defineConfig({
       bundler: 'webpack',
     },
   },
+  viewportWidth: 1920,
+  viewportHeight: 1080
 });
