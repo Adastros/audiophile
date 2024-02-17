@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://audiophile.fan/">
     <img src="images/logo.png" alt="Logo" width="150" height="auto">
   </a>
 
@@ -45,7 +45,7 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://audiophile-1.fly.dev/)
+[![Product Name Screen Shot][product-screenshot]](https://audiophile.fan/)
 
 Audiophile is a multi-page e-commerce website designed to sell high quality audio products. This website is hosted on [Fly.io](https://fly.io/) and was built using Figma design files, images, and pre-written text content provided by [Frontend Mentor](https://www.frontendmentor.io/challenges/audiophile-ecommerce-website-C8cuSd_wx).
 
@@ -69,24 +69,25 @@ Functionally, users on the website are able to:
 
 #### Frontend
 
-- [![Create React App][Create-react-app]][Create-react-app-url]
-- [![React][React.js]][React-url]
-- [![Chakra-UI][Chakra-UI]][Chakra-UI-url]
-- [![React Router][React-router]][React-router-url]
-- [![Redux][Redux]][Redux-url]
-- [![React-hook-form][React-hook-form]][React-hook-form-url]
+[![Create React App][Create-react-app]][Create-react-app-url]
+[![React][React.js]][React-url]
+[![Chakra-UI][Chakra-UI]][Chakra-UI-url]
+[![Cypress][Cypress]][Cypress-url]
+[![React Router][React-router]][React-router-url]
+[![Redux][Redux]][Redux-url]
+[![React-hook-form][React-hook-form]][React-hook-form-url]
 
 #### Backend
 
-- [![MongoDB][MongoDB]][MongoDB-url]
-- [![Node][Node.js]][Node-url]
-- [![Express][Express.js]][Express-url]
-- [![Mongoose][Mongoose]][Mongoose-url]
-- [![Babel][Babel]][Babel-url]
-- [![Express-validator][Express-validator]][Express-validator-url]
-- [![React Email][React-email]][React-email-url]
-- [![Resend][Resend]][Resend-url]
-- [![Dotenv][Dotenv]][Dotenv-url]
+[![MongoDB][MongoDB]][MongoDB-url]
+[![Node][Node.js]][Node-url]
+[![Express][Express.js]][Express-url]
+[![Mongoose][Mongoose]][Mongoose-url]
+[![Babel][Babel]][Babel-url]
+[![Express-validator][Express-validator]][Express-validator-url]
+[![React Email][React-email]][React-email-url]
+[![Resend][Resend]][Resend-url]
+[![Dotenv][Dotenv]][Dotenv-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -257,8 +258,6 @@ You'll need the following services to run your own version of the website.
 5. Move to the other directory in your terminal and repeat step 4 to install the required dependencies. 
 6. Create a .env file in the "backend" directory.
 7. Create the variables listed below and add your API key/ secrets to the .env file. If you are using different service providers than what I used for this project, rename, add, or replace the .env variables as needed. Make sure to update the code base to use your .env variables.
-   <br/>
-   <br/>
    ```sh
    LOCAL_PORT = '3003'
    CLOUDINARY_URL = 'YOUR CLOUDINARY URL'
@@ -267,16 +266,24 @@ You'll need the following services to run your own version of the website.
    REACT_APP_RESEND_API = "YOUR RESEND API KEY"
    REACT_APP_FROM_EMAIL = "'FROM' FIELD EMAIL ADDRESS (ex: email@example.com)"
    ```
-8. Create a production build of the website by running the following command in the "frontend" directory.
+8. Transpile the react email template code from the "emails" directory into the "htmlEmail" directory by running one of the following commands. In the first command, babel:build-email is a custom, shortened version of the second command. The script can be found in the package.json and renamed if desired.
+   ```sh
+   npm run babel:build-email
+   ```
+
+   ```sh
+   babel ./emails -d ./htmlEmail
+   ```
+9. Create a production build of the website by running the following command in the "frontend" directory.
    ```sh
    npm run build
    ```
-9. Copy and paste the "build" folder from the "frontend" directory to the "backend" directory.
-10. Run the following command while in the "backend" directory on your terminal to start the server and run the website.
+10. Copy and paste the "build" folder from the "frontend" directory to the "backend" directory.
+11. Run the following command while in the "backend" directory on your terminal to start the server and run the website.
     ```sh
      npm start
     ```
-11. Visit http://localhost:3003/ in your browser to see the website.
+12. Visit http://localhost:3003/ in your browser to see the website.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -312,13 +319,8 @@ The following are the major takeaways from working on this project:
 
 ## Contact
 
-<a href="https://www.linkedin.com/in/dannydo562/">
-  <img src = "https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white">
-</a>
-
-<a href="mailto:dannydo286@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
-</a>
+[![Linkedin][Linkedin]][Linkedin-url]
+[![Gmail][Gmail]][Gmail-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -335,6 +337,8 @@ The following are the major takeaways from working on this project:
 [React-url]: https://reactjs.org/
 [Chakra-ui]: https://shields.io/badge/chakra--ui-%23E5E5E5?logo=chakraui&style=for-the-badge
 [Chakra-ui-url]: https://chakra-ui.com/
+[Cypress]: https://img.shields.io/badge/cypress-%2369D3A7?style=for-the-badge&logo=cypress&logoColor=white
+[Cypress-url]: https://www.cypress.io/
 [React-router]: https://img.shields.io/badge/react%20router-%23121212?style=for-the-badge&logo=reactrouter
 [React-router-url]: https://reactrouter.com/en/main
 [Redux]: https://img.shields.io/badge/redux-%23242526?style=for-the-badge&logo=redux&logoColor=%23764ABC
@@ -362,3 +366,10 @@ The following are the major takeaways from working on this project:
 [Resend-url]: https://resend.com/
 [Dotenv]: https://img.shields.io/badge/dotenv-black?style=for-the-badge&logo=dotenv&logoColor=%23ECD53F
 [Dotenv-url]: https://www.dotenv.org/
+
+<!-- Contact -->
+
+[Linkedin]: https://img.shields.io/badge/linkedin-%230A66C2?style=for-the-badge&logo=linkedin&logoColor=white
+[Linkedin-url]: https://www.linkedin.com/in/dannydo562/
+[Gmail]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[Gmail-url]: mailto:dannydo286@gmail.com

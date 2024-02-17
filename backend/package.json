@@ -10,7 +10,8 @@
     "concur": "concurrently \"nodemon index.js\" \"cd ../frontend && npm start\"",
     "test": "jest --verbose --runInBand",
     "start:test": "NODE_ENV=test node index.js",
-    "email-dev": "email dev"
+    "email-dev": "email dev",
+    "babel:build-email": "babel ./emails -d ./htmlEmail"
   },
   "author": "Danny Do",
   "license": "ISC",
@@ -28,13 +29,13 @@
     "resend": "^2.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.23.0",
-    "@babel/core": "^7.23.3",
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "@flydotio/dockerfile": "^0.4.10",
     "concurrently": "^8.2.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.0.3"
   }
 }
