@@ -1,4 +1,4 @@
-import { VStack } from '@chakra-ui/react';
+import { VStack, Flex } from '@chakra-ui/react';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import Banner from '../components/banner/Banner';
@@ -25,7 +25,14 @@ const HomePage = () => {
         paddingBottom={{ base: '7.5rem', md: '6rem', lg: '10.5rem' }}
         gap={{ base: '7.5rem', md: '6rem', lg: '10.5rem' }}
       >
-        <ProductCategories />
+        <Flex
+          h="min-content"
+          w="100%"
+          justifyContent="center"
+          paddingX={{ base: '1.5rem', md: '2.5rem' }}
+        >
+          <ProductCategories />
+        </Flex>
         <ProductCards productCardData={productCardData} />
       </VStack>
       <Closing closingData={closingData} />

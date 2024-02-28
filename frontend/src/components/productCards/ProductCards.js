@@ -8,6 +8,7 @@ const ProductCards = ({ productCardData }) => {
     <Flex
       h="min-content"
       w="100%"
+      paddingX={{ base: '1.5rem', md: '2.5rem' }}
       direction="column"
       align="center"
       gap={{ base: '1.5rem', md: '2rem' }}
