@@ -28,7 +28,7 @@ const ProductCategories = ({ menuModal }) => {
   return (
     <Flex
       as="nav"
-      h="100%"
+      h={{ base: '100%', md: '217px', lg: '284px' }}
       w="100%"
       maxW={{ base: '100%', md: '43.0625rem', lg: '69.375rem' }}
       position="relative"
