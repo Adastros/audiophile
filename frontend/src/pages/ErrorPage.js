@@ -1,6 +1,6 @@
 import { VStack, Heading, Text, Box, Center } from '@chakra-ui/react';
 import { Helmet } from 'react-helmet';
-import BackToHomeButton from '../components/orderConfirmationModal/BackToHomeButton';
+import BackToHomeButton from '../components/404Error/BackToHomeButton';
 import headingStyles from '../theme/headingStyles';
 
 const ErrorPage = () => {
